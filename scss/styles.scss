@@ -46,32 +46,39 @@ body {
 
 // The banner
 #wpc-banner {
-    background: #fff;
+    background: $wpc-banner-bg-color;
     width: 100%;
     height: $wpc-banner-height;
     position: fixed;
     left: 0;
     top: 0;
     text-align: center;
+    color: $wpc-banner-color;
+    z-index: 1000;
+    @include set-prefix( 'box-shadow', 0px 0px 10px #222 );
 
     .banner-inside {
         display: inline-block;
     }
 
+    a {
+        display: block;
+        color: inherit;
+    }
+
     .wpc-logo {
         display: block;
-        height: $wpc-banner-height;
+        background: $wpc-banner-logo-bg-color;
+        height: $wpc-banner-logo-height;
         float: left;
-        padding: $wpc-banner-logo-padding-top 20px 0 20px;
-        
-        a {
-            display: block;
-        }
+        padding: $wpc-banner-logo-padding-top $wpc-banner-logo-padding-side 0 $wpc-banner-logo-padding-side;
+        margin: 0 $wpc-banner-logo-margin-side;
+        @include set-prefix( 'box-shadow', 0px 0px 10px #222 );
 
         img {
             display: block;
             width: auto;
-            height: 45px;
+            height: 50px;
             margin: 0;
         }
         
@@ -85,6 +92,8 @@ body {
         ul {
             @include reset-ul();
             height: $wpc-banner-height;
+            font-size: 17px;
+            line-height: $wpc-banner-height;
 
             li {
                 display: block;

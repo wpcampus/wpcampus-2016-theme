@@ -1,8 +1,11 @@
 // WPCampus 2016 Settings
 
 // Colors
+$wpcampus-dark-blue: #2e3641;
+$wpcampus-royal-blue: #1159bd;
 $facebook-blue: #465993;
 $twitter-blue: #65a8dc;
+$primary-color: $wpcampus-royal-blue;
 
 // FONTS
 $open_sans: 'Open Sans', sans-serif;
@@ -12,8 +15,14 @@ $open_sans: 'Open Sans', sans-serif;
 $body-font-family: $open_sans;
 
 // Banner
+$wpc-banner-bg-color: #c8814f;
+$wpc-banner-color: #fff;
 $wpc-banner-height: 70px;
-$wpc-banner-logo-padding-top: 13px;
+$wpc-banner-logo-bg-color: $wpcampus-dark-blue; //darken( $wpc-banner-bg-color, 8% );
+$wpc-banner-logo-height: 85px;
+$wpc-banner-logo-padding-top: 17px;
+$wpc-banner-logo-padding-side: 25px;
+$wpc-banner-logo-margin-side: 10px;
 
 //  Foundation for Sites Settings
 //  -----------------------------

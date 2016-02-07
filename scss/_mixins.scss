@@ -30,6 +30,15 @@
 
 }
 
+// Will set box shadow
+@mixin set-prefix( $prefix, $value ) {
+    -webkit-#{$prefix}: $value;
+    -moz-#{$prefix}: $value;
+    -ms-#{$prefix}: $value;
+    -o-#{$prefix}: $value;
+    #{$prefix}: $value;
+}
+
 // Will set placeholder color
 @mixin set-placeholder-color( $color ) {
 
