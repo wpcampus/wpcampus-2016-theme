@@ -21,9 +21,9 @@ $blog_url = get_bloginfo('url');
 				<div class="banner-inside">
 					<div class="menu left">
 						<ul>
-							<li><a href="<?php echo $blog_url; ?>/about/">About</a></li>
-							<li><a href="<?php echo $blog_url; ?>/speakers/">Speakers</a></li>
-							<li><a href="<?php echo $blog_url; ?>/schedule/">Schedule</a></li>
+							<li<?php echo is_page( 'about' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/about/">About</a></li>
+							<li<?php echo is_page( 'speakers' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/speakers/">Speakers</a></li>
+							<li<?php echo is_page( 'schedule' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/schedule/">Schedule</a></li>
 						</ul>
 					</div>
 					<div class="wpc-logo">
@@ -31,9 +31,9 @@ $blog_url = get_bloginfo('url');
 					</div>
 					<div class="menu right">
 						<ul>
-							<li><a href="<?php echo $blog_url; ?>/location">Location</a></li>
-							<li><a href="<?php echo $blog_url; ?>/sponsors">Sponsors</a></li>
-							<li><a href="<?php echo $blog_url; ?>/contact/">Contact</a></li>
+							<li<?php echo is_page( 'location' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/location">Location</a></li>
+							<li<?php echo is_page( 'sponsors' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/sponsors">Sponsors</a></li>
+							<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/contact/">Contact</a></li>
 						</ul>
 					</div>
 				</div>

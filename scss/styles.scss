@@ -122,6 +122,15 @@ body {
                     text-decoration: none;
                 }
 
+                &:hover {
+                    background: darken( $wpc-header-bg-color, 3% );
+                }
+
+                &.current {
+                    background: darken( $wpc-header-bg-color, 8% );
+                    font-weight: bold;
+                }
+
             }
             
         }
