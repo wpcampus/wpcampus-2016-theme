@@ -12,7 +12,7 @@ $blog_url = get_bloginfo('url');
 	<?php wp_head(); ?>
 </head>
 <body>
-	<a href="#wpc-content" id="skip-to-content">Skip to Content</a>
+	<a href="#wpc-main" id="skip-to-content">Skip to Content</a>
 
 	<div id="wpc-banner">
 		<div class="row">
