@@ -14,7 +14,8 @@ $blog_url = get_bloginfo('url');
 <body>
 	<a href="#wpc-main" id="skip-to-content">Skip to Content</a>
 
-	<div id="wpc-banner">
+	<div id="wpc-banner"></div>
+	<div id="wpc-header">
 		<div class="row">
 			<div class="large-12 columns">
 				<div class="banner-inside">
@@ -26,7 +27,7 @@ $blog_url = get_bloginfo('url');
 						</ul>
 					</div>
 					<div class="wpc-logo">
-						<a href="<?php echo $blog_url; ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/wpcampus-logo-tagline-white.svg" alt="WPCampus: Where WordPress Meets Higher Education" /></a>
+						<a href="<?php echo $blog_url; ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/wpcampus-logo-tagline-info-white.svg" alt="WPCampus: Where WordPress Meets Higher Education on July 15-16 in Sarasota, Florida" /></a>
 					</div>
 					<div class="menu right">
 						<ul>

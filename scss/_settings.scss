@@ -15,14 +15,19 @@ $open_sans: 'Open Sans', sans-serif;
 $body-font-family: $open_sans;
 
 // Banner
-$wpc-banner-bg-color: #c8814f;
-$wpc-banner-color: #fff;
-$wpc-banner-height: 70px;
-$wpc-banner-logo-bg-color: $wpcampus-dark-blue; //darken( $wpc-banner-bg-color, 8% );
-$wpc-banner-logo-height: 85px;
-$wpc-banner-logo-padding-top: 17px;
-$wpc-banner-logo-padding-side: 25px;
-$wpc-banner-logo-margin-side: 10px;
+$wpc-banner-bg-color: #F3F3F3;
+$wpc-banner-height: 35px;
+
+// Header
+$wpc-header-bg-color: #c8814f;
+$wpc-header-color: #fff;
+$wpc-header-height: 70px;
+$wpc-header-logo-bg-color: $wpcampus-dark-blue; //darken( $wpc-header-bg-color, 8% );
+$wpc-header-logo-container-height: 120px;
+$wpc-header-logo-height: 80px;
+$wpc-header-logo-padding-top: 21px;
+$wpc-header-logo-padding-side: 25px;
+$wpc-header-logo-margin-side: 10px;
 
 //  Foundation for Sites Settings
 //  -----------------------------
