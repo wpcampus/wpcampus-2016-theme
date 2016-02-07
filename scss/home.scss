@@ -1,0 +1,21 @@
+// Make sure we have valid charset
+@charset "utf-8";
+
+// Import the settings
+@import "settings";
+
+// Import the mixins
+@import "mixins";
+
+html, body {
+    height: 100%;
+}
+
+#wpc-home-hero {
+    background: url('../images/USF-rotunda.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+}

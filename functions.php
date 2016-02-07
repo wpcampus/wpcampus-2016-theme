@@ -31,6 +31,11 @@ function wpcampus_2016_enqueue_scripts() {
 	// Add our theme stylesheet
 	wp_enqueue_style( 'wpcampus-2016', get_template_directory_uri() . '/css/styles.css', array( 'wpcampus-2016-fonts' ) );
 
+	// Add our home styles
+	if ( is_front_page() ) {
+		wp_enqueue_style( 'wpcampus-2016-home', get_template_directory_uri() . '/css/home.css', array( 'wpcampus-2016' ) );
+	}
+
 }
 
 // Hide Query Monitor if admin bar isn't showing
