@@ -1,5 +1,8 @@
 <?php
 
+// Include shortcodes
+require_once( STYLESHEETPATH . '/includes/shortcodes.php' );
+
 // Add <title> support
 add_theme_support( 'title-tag' );
 
