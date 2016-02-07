@@ -1,0 +1,24 @@
+// Make sure we have valid charset
+@charset "utf-8";
+
+// Import the settings
+@import "settings";
+
+// Import Foundation files
+@import "_foundation-files";
+
+// Will hide text visually but allow to be read by screen readers
+.screen-reader-text {
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+// The schedule
+.wpc-schedule {
+    width: 100%;
+}
