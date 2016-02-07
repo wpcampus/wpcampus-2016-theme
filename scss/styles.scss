@@ -116,9 +116,51 @@ body {
 
 }
 
-// The content
-#wpc-content {
-    padding: 30px 0;
+// The content hero
+#wpc-main-hero {
+    background: url('../images/USF-campus.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 220px;
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        background: rgba(0, 0, 0, 0.5);
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        @include set-prefix( 'box-shadow', inset 0 0 100px #000 );
+    }
+
+}
+
+// The main area
+#wpc-main {
+
+    .wpc-page-title {
+        background: #F3F3F3;
+        text-align: center;
+        padding: 22px 0;
+
+        h1 {
+            text-transform: uppercase;
+            font-size: 2.5rem;
+            line-height: 1.2;
+            font-weight: 300;
+            margin: 0;
+        }
+
+    }
+
+    #wpc-content {
+        padding: 40px 0 30px 0;
+    }
+
 }
 
 // The schedule
