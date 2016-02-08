@@ -3,12 +3,17 @@
 // Get URL
 $blog_url = get_bloginfo('url');
 
+// Description for social media
+$desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a gathering of web professionals, educators and people dedicated to the confluence of WordPress in higher education. WPCampus is excited to partner with The University of South-Florida Sarasota-Manatee in order to provide an experience both affordable and relevant for higher education professionals.';
+
 ?><!doctype html>
 <html class="no-js" lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="twitter:description" content="<?php echo $desc; ?>" />
+	<meta property="og:description" content="<?php echo $desc; ?>" />
 	<?php wp_head(); ?>
 </head>
 <body>
