@@ -2,6 +2,9 @@
 
 get_header();
 
+// Set sidebar id
+$sidebar_id = is_page( 'sponsors' ) ? 'sponsors-sidebar' : 'main-sidebar';
+
 // @TODO decrease size of hero image since height decreased
 if ( have_posts() ):
 	while ( have_posts() ):
@@ -29,7 +32,7 @@ if ( have_posts() ):
 				<div class="row"><?php
 
 					// Print the sidebar
-					if ( is_active_sidebar( 'main-sidebar' ) ) {
+					if ( is_active_sidebar( $sidebar_id ) ) {
 
 						?><div class="large-9 columns">
 							<div class="wpc-content"><?php
@@ -38,7 +41,7 @@ if ( have_posts() ):
 						</div>
 						<div class="large-3 columns">
 							<div class="wpc-sidebar">
-								<?php dynamic_sidebar( 'main-sidebar' ); ?>
+								<?php dynamic_sidebar( $sidebar_id ); ?>
 							</div>
 						</div><?php
 

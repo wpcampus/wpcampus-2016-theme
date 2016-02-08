@@ -48,6 +48,17 @@ function wpcampus_2016_register_sidebars() {
 		'after_title'   => '</h2>',
 	) );
 
+	// Register sponsors sidebar
+	register_sidebar( array(
+		'name'			=> 'Sponsors Sidebar',
+		'id'			=> 'sponsors-sidebar',
+		'description' 	=> '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="sidebar-title">',
+		'after_title'   => '</h2>',
+	) );
+
 }
 
 // Enqueues scripts and styles
