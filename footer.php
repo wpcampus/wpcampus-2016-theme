@@ -1,3 +1,12 @@
+<div id="wpc-mailing-list">
+	<div class="row">
+		<div class="large-8 large-centered columns">
+			<h2>Subscribe to the WPCampus 2016 Mailing List</h2>
+			<?php echo do_shortcode( '[gravityform id="4" title="false" description="false" ajax="false"]' ); ?>
+		</div>
+	</div>
+</div>
+
 <div id="wpc-footer">
 	<div class="row">
 		<div class="small-12 columns">

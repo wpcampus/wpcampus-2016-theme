@@ -14,7 +14,17 @@ $blog_url = get_bloginfo('url');
 <body>
 	<a href="#wpc-main" id="skip-to-content">Skip to Content</a>
 
-	<div id="wpc-banner"></div>
+	<div id="wpc-banner">
+		<?php /*<div class="row">
+			<div class="large-12 columns">
+				<div class="menu right">
+					<ul>
+						<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/contact/">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>*/ ?>
+	</div>
 	<div id="wpc-header">
 		<div class="row">
 			<div class="large-12 columns">

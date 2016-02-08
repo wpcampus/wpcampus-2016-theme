@@ -432,6 +432,90 @@ blockquote {
 
 }
 
+// Mailing list
+#wpc-mailing-list {
+    background: #444;
+    padding: 45px 30px 55px 30px;
+    color: #fff;
+
+    h2 {
+        margin: 0 0 20px 0;
+        text-align: center;
+        font-size: 1.7rem;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+
+    input {
+        margin: 0;
+    }
+
+    .gform_wrapper {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+
+        .ginput_container {
+            margin: 0;
+        }
+
+        .validation_error {
+            color: #fff;
+            border-top: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+        }
+
+    }
+
+    // Hide the name field
+    #field_4_5 {
+        display: none;
+    }
+
+    // Email address field
+    #field_4_2 {
+
+        // Hide the label
+        label {
+            @include screen-reader-text();
+        }
+
+        input {
+            width: 100%;
+            height: 45px;
+            padding: 0.5em;
+        }
+
+    }
+
+    .gform_body {
+        float: left;
+        width: 80%;
+    }
+
+    .gform_footer {
+        float: left;
+        clear: none;
+        width: 20%;
+        margin: 0;
+        padding: 0;
+
+        .gform_button {
+            background: $wpc-header-bg-color;
+            color: #fff;
+            height: 45px;
+            font-size: 1.1em;
+            line-height: 45px;
+            font-weight: 400;
+            padding: 0;
+            text-transform: uppercase;
+        }
+
+    }
+
+}
+
 // The footer
 #wpc-footer {
     background: $wpc-footer-bg-color;
