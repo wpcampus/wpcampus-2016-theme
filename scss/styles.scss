@@ -265,6 +265,46 @@ body {
 
     #wpc-content {
         padding: 40px 0 30px 0;
+
+        .wpc-sidebar {
+
+            .widget {
+                margin: 0 0 20px 0;
+            }
+
+            .sidebar-title {
+                font-size: 1.4em;
+                text-transform: uppercase;
+            }
+
+            // Mailing list form
+            #gform_wrapper_4 {
+                margin: 0;
+
+                label {
+                    display: block;
+                    font-size: .9rem;
+                    font-weight: bold;
+                }
+
+                input {
+                    width: 100% !important;
+
+                    &[type=text] {
+                        height: auto;
+                    }
+
+                }
+
+                .gform_footer {
+                    margin: 0;
+                    padding: 0;
+                }
+
+            }
+
+        }
+
     }
 
 }

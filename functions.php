@@ -22,6 +22,23 @@ add_theme_support( 'html5', array(
 	'caption',
 ) );
 
+// Register sidebars
+add_action( 'widgets_init', 'wpcampus_2016_register_sidebars' );
+function wpcampus_2016_register_sidebars() {
+
+	// Register main sidebar
+	register_sidebar( array(
+		'name'			=> 'Main Sidebar',
+		'id'			=> 'main-sidebar',
+		'description' 	=> '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="sidebar-title">',
+		'after_title'   => '</h2>',
+	) );
+
+}
+
 // Enqueues scripts and styles
 add_action( 'wp_enqueue_scripts', 'wpcampus_2016_enqueue_scripts', 20 );
 function wpcampus_2016_enqueue_scripts() {
