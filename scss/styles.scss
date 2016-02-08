@@ -335,6 +335,17 @@ body {
 
 }
 
+// Blockquotes
+blockquote {
+    margin: 2em 0 2em 20px;
+    padding-left: 22px;
+
+    *:last-child {
+        margin-bottom: 0;
+    }
+
+}
+
 // The main notification
 #wpc-notification {
     background-color: #f5e9e1;
@@ -424,5 +435,61 @@ body {
 // The footer
 #wpc-footer {
     background: $wpc-footer-bg-color;
-    min-height: 40px;
+    padding: 35px 20px 35px 20px;
+    color: rgba( #000, $wpc-opacity );
+    font-size: 0.9em;
+    line-height: 1.7;
+    text-align: center;
+
+    * {
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    .wpc-logo {
+        display: block;
+        opacity: $wpc-opacity;
+        margin: 0 0 15px 0;
+
+        img {
+            height: 50px;
+        }
+
+        &:hover {
+            opacity: $wpc-opacity-hover;
+        }
+
+    }
+
+    .github-message {
+        font-style: italic;
+    }
+
+    .icons {
+        text-align: center;
+
+        img {
+            width: auto;
+            height: 30px;
+        }
+
+        a {
+            display: inline-block;
+            margin: 0 3px;
+            opacity: $wpc-opacity;
+
+            &:hover {
+                opacity: $wpc-opacity-hover;
+            }
+
+        }
+
+    }
+
+    .columns {
+        *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
 }
