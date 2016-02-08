@@ -1,6 +1,7 @@
 <?php
 
-// Include shortcodes
+// Include files
+require_once( STYLESHEETPATH . '/includes/filters.php' );
 require_once( STYLESHEETPATH . '/includes/shortcodes.php' );
 
 // Add <title> support
@@ -22,7 +23,7 @@ add_theme_support( 'html5', array(
 ) );
 
 // Enqueues scripts and styles
-add_action( 'wp_enqueue_scripts', 'wpcampus_2016_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'wpcampus_2016_enqueue_scripts', 20 );
 function wpcampus_2016_enqueue_scripts() {
 
 	// Load Fonts

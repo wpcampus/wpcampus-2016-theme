@@ -19,6 +19,11 @@ body {
     padding: ( $wpc-banner-height + $wpc-header-height ) 0 0 0;
 }
 
+// Stylize the "show me" button
+#show-me-the-admin-button {
+    top: 5px;
+}
+
 // Stylize the "Skip To Content" link
 #skip-to-content {
     display: block;
