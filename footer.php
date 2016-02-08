@@ -1,7 +1,8 @@
 <div id="wpc-mailing-list">
 	<div class="row">
 		<div class="large-8 large-centered columns">
-			<h2>Subscribe to the WPCampus 2016 Mailing List</h2>
+			<h2>Subscribe to WPCampus 2016 News</h2>
+			<p>Enter your email address to receive notifications about WPCampus 2016.</p>
 			<?php echo do_shortcode( '[gravityform id="4" title="false" description="false" ajax="false"]' ); ?>
 		</div>
 	</div>

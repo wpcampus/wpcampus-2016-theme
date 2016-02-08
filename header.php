@@ -29,13 +29,37 @@ $blog_url = get_bloginfo('url');
 		<div class="row">
 			<div class="large-12 columns">
 				<div class="banner-inside">
-					<div class="menu left">
+
+					<div id="wpcampus-2016-main-menu-wrapper">
+						<div class="toggle-main-menu">
+							<div class="toggle-icon">
+								<div class="bar one"></div>
+								<div class="bar two"></div>
+								<div class="bar three"></div>
+							</div>
+							<div class="open-menu-label">Menu</div>
+							<div class="close-menu-label">Close</div>
+						</div>
+						<div id="wpcampus-2016-main-menu" class="menu left">
+							<ul>
+								<li<?php echo is_page( 'about' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/about/">About</a></li>
+								<li<?php echo is_page( 'speakers' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/speakers/">Speakers</a></li>
+								<li<?php echo is_page( 'schedule' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/schedule/">Schedule</a></li>
+								<li<?php echo is_page( 'location' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/location">Location</a></li>
+								<li<?php echo is_page( 'sponsors' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/sponsors">Sponsors</a></li>
+								<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/contact/">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div id="wpcampus-2016-main-menu" class="menu left">
 						<ul>
 							<li<?php echo is_page( 'about' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/about/">About</a></li>
 							<li<?php echo is_page( 'speakers' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/speakers/">Speakers</a></li>
 							<li<?php echo is_page( 'schedule' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/schedule/">Schedule</a></li>
 						</ul>
 					</div>
+
 					<div class="wpc-logo">
 						<a href="<?php echo $blog_url; ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/wpcampus-logo-tagline-info-white.svg" alt="WPCampus: Where WordPress Meets Higher Education on July 15-16 in Sarasota, Florida" /></a>
 					</div>

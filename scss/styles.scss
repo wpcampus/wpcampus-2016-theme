@@ -20,7 +20,7 @@ h2 {
 }
 
 body {
-    padding: ( $wpc-banner-height + $wpc-header-height ) 0 0 0;
+    padding: ( $wpc-banner-height + $wpc-header-toggle-height ) 0 0 0;
 }
 
 // Stylize the "show me" button
@@ -117,20 +117,31 @@ body {
 
 }
 
+// The main menu
+#wpcampus-2016-main-menu-wrapper {
+    background: $wpc-header-bg-color;
+    position: fixed;
+    left: 0;
+    top: $wpc-banner-height;
+    width: 100%;
+    z-index: 1000;
+}
+
 // The header
 #wpc-header {
     background: $wpc-header-bg-color;
     width: 100%;
-    height: $wpc-header-height;
-    position: fixed;
-    left: 0;
-    top: $wpc-banner-height;
+    height: auto;
     text-align: center;
     color: $wpc-header-color;
     z-index: 1000;
 
+    .columns {
+        padding: 0;
+    };
+
     .banner-inside {
-        display: inline-block;
+        display: block;
     }
 
     a {
@@ -138,48 +149,107 @@ body {
         color: inherit;
     }
 
+    .toggle-main-menu {
+        display: block;
+        height: $wpc-header-toggle-height;
+        background: none;
+        color: rgba( #fff, 0.9 );
+        text-transform: uppercase;
+        font-size: 1em;
+        line-height: $wpc-header-toggle-height;
+        padding: 0 20px;
+        cursor: pointer;
+        overflow: hidden;
+
+        .open-menu-label,
+        .close-menu-label {
+            display: block;
+            float: left;
+            text-transform: uppercase;
+            height: $wpc-header-toggle-height;
+            line-height: $wpc-header-toggle-height;
+        }
+
+        .close-menu-label {
+            display: none;
+        }
+
+        .toggle-icon {
+            display: block;
+            float: left;
+            width: 22px;
+            height: 18px;
+            cursor: pointer;
+            position: relative;
+            margin: 11px 12px 0 0;
+
+            .bar {
+                background: rgba( #fff, 0.8 );
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                margin: 0;
+                opacity: 1;
+                -webkit-transition: all 200ms ease-out;
+                -moz-transition: all 200ms ease-out;
+                -ms-transition: all 200ms ease-out;
+                -o-transition: all 200ms ease-out;
+                transition: all 200ms ease-out;
+
+                &.two {
+                    margin-top: 8px;
+                }
+
+                &.three {
+                    margin-top: 16px;
+                }
+
+            }
+
+        }
+
+    }
+
     .wpc-logo {
         display: block;
         background: $wpc-header-logo-bg-color;
-        height: $wpc-header-logo-container-height;
-        float: left;
+        height: auto;
         padding: 0;
-        margin: ( 0 - $wpc-banner-height ) $wpc-header-logo-margin-side;
-        @include set-prefix( 'box-shadow', 0px 0px 5px #111 );
+        margin: 0;
 
         a {
-            padding: $wpc-header-logo-padding-top $wpc-header-logo-padding-side 0 $wpc-header-logo-padding-side;
+            display: block;
+            padding: 20px;
         }
 
         img {
             display: block;
-            width: auto;
-            height: $wpc-header-logo-height;
-            margin: 0;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
         }
         
     }
 
     .menu {
-        height: $wpc-header-height;
-        float: left;
+        display: none;
+        height: auto;
         vertical-align: top;
 
         ul {
             @include reset-ul();
-            height: $wpc-header-height;
             font-size: 17px;
-            line-height: $wpc-header-height;
+            line-height: 20px;
+            overflow: auto;
 
             li {
                 display: block;
-                float: left;
-                height: $wpc-header-height;
-                line-height: $wpc-header-height;
 
                 a {
                     display: block;
-                    padding: 0 10px;
+                    padding: 15px 10px;
                     text-transform: uppercase;
                     text-decoration: none;
                 }
@@ -195,6 +265,133 @@ body {
 
             }
             
+        }
+
+        // Only show when expanded
+        &.right {
+            display: none;
+        }
+
+    }
+
+    &.open-menu {
+
+        .toggle-main-menu {
+            background: none;
+
+            &:hover {
+                background: none;
+            }
+
+            .toggle-icon {
+
+                .bar {
+
+                    &.one {
+                        margin-top: 8px;
+                        -webkit-transform: rotate(45deg);
+                        -moz-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        -o-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                    }
+
+                    &.two {
+                        opacity: 0;
+                    }
+
+                    &.three {
+                        margin-top: 8px;
+                        -webkit-transform: rotate(-45deg);
+                        -moz-transform: rotate(-45deg);
+                        -ms-transform: rotate(-45deg);
+                        -o-transform: rotate(-45deg);
+                        transform: rotate(-45deg);
+                    }
+
+                }
+
+            }
+
+            .open-menu-label {
+                display: none;
+            }
+
+            .close-menu-label {
+                display: block;
+            }
+
+        }
+
+    }
+
+}
+
+// Expand the header
+@media screen and (min-width: 1000px) {
+
+    body {
+        padding: ( $wpc-banner-height + $wpc-header-height ) 0 0 0;
+    }
+
+    #wpcampus-2016-main-menu-wrapper {
+        display: none !important;
+        position: static;
+    }
+
+    #wpc-header {
+        height: $wpc-header-height;
+        position: fixed;
+        left: 0;
+        top: $wpc-banner-height;
+
+        .banner-inside {
+            display: inline-block;
+        }
+
+        .toggle-main-menu {
+            display: none !important;
+        }
+
+        .wpc-logo {
+            float: left;
+            height: $wpc-header-logo-container-height;
+            margin: ( 0 - $wpc-banner-height ) $wpc-header-logo-margin-side;
+            @include set-prefix('box-shadow', 0px 0px 5px #111);
+
+            a {
+                padding: $wpc-header-logo-padding-top $wpc-header-logo-padding-side 0 $wpc-header-logo-padding-side;
+            }
+
+            img {
+                width: auto;
+                height: $wpc-header-logo-height;
+            }
+
+        }
+
+        .menu {
+            display: block !important;
+            height: $wpc-header-height;
+            float: left;
+            
+            ul {
+                height: $wpc-header-height;
+                line-height: $wpc-header-height;
+                
+                li {
+                    float: left;
+                    height: $wpc-header-height;
+                    line-height: $wpc-header-height;
+
+                    a {
+                        padding: 0 10px;
+                    }
+                    
+                }
+                
+            }
+
         }
 
     }
@@ -357,14 +554,18 @@ blockquote {
     }
 
 }
+
 // The main area
 #wpc-main {
     background: #fff;
 
     #wpc-content {
-        padding: 40px 30px 30px 30px;
+        padding: 40px 20px 30px 20px;
+
+        .wpc-content {}
 
         .wpc-sidebar {
+            margin: 40px 0 0 0;
 
             .sidebar-title {
                 font-size: 1.3em;
@@ -437,12 +638,12 @@ blockquote {
     background: #444;
     padding: 45px 30px 55px 30px;
     color: #fff;
+    text-align: center;
 
     h2 {
-        margin: 0 0 20px 0;
-        text-align: center;
-        font-size: 1.7rem;
-        line-height: 1;
+        margin: 0;
+        font-size: 1.3rem;
+        line-height: 1.3;
         text-transform: uppercase;
     }
 
@@ -455,6 +656,7 @@ blockquote {
         max-width: 100%;
         margin: 0;
         padding: 0;
+        position: relative;
 
         .ginput_container {
             margin: 0;
@@ -466,50 +668,91 @@ blockquote {
             border-bottom: 2px solid #fff;
         }
 
-    }
-
-    // Hide the name field
-    #field_4_5 {
-        display: none;
-    }
-
-    // Email address field
-    #field_4_2 {
-
-        // Hide the label
-        label {
-            @include screen-reader-text();
+        // Hide the name field
+        #field_4_5 {
+            display: none;
         }
 
-        input {
-            width: 100%;
-            height: 45px;
-            padding: 0.5em;
+        // Email address field
+        #field_4_2 {
+
+            // Hide the label
+            label {
+                @include screen-reader-text();
+            }
+
+            input {
+                width: 100%;
+                height: 45px;
+                padding: 0.5em;
+                text-align: left;
+            }
+
         }
 
-    }
-
-    .gform_body {
-        float: left;
-        width: 80%;
-    }
-
-    .gform_footer {
-        float: left;
-        clear: none;
-        width: 20%;
-        margin: 0;
-        padding: 0;
-
-        .gform_button {
-            background: $wpc-header-bg-color;
-            color: #fff;
-            height: 45px;
-            font-size: 1.1em;
-            line-height: 45px;
-            font-weight: 400;
+        .gform_footer {
+            margin: 0;
             padding: 0;
-            text-transform: uppercase;
+
+            .gform_button {
+                background: $wpc-header-bg-color;
+                color: #fff;
+                width: 100%;
+                height: 45px;
+                font-size: 1.1em;
+                line-height: 45px;
+                font-weight: 400;
+                padding: 0;
+                text-transform: uppercase;
+            }
+
+        }
+
+    }
+
+}
+
+// Move the subscribe button
+@media screen and (min-width: 600px) {
+
+    #wpc-mailing-list {
+
+        .gform_wrapper {
+
+            // Email address field
+            #field_4_2 {
+
+                input {
+                    padding-right: 150px;
+                }
+
+            }
+
+            .gform_footer {
+
+                .gform_button {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: 140px;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+// Expand the mailing list
+@media screen and (min-width: 800px) {
+
+    #wpc-mailing-list {
+
+        h2 {
+            font-size: 1.7rem;
+            line-height: 1.2;
         }
 
     }
@@ -574,6 +817,25 @@ blockquote {
         *:last-child {
             margin-bottom: 0;
         }
+    }
+
+}
+
+
+// Large up
+@media screen and (min-width: 1024px) {
+
+    // The main area
+    #wpc-main {
+
+        #wpc-content {
+
+            .wpc-sidebar {
+                margin-top: 0;
+            }
+
+        }
+
     }
 
 }

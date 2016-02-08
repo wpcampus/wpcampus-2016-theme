@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var minify = require('gulp-minify');
 var $    = require('gulp-load-plugins')();
 
 var sassPaths = [
@@ -19,6 +20,16 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('./css'));
 });
 
-gulp.task('default', ['sass'], function() {
+gulp.task('compress', function() {
+    gulp.src('./js/*.js')
+        .pipe(minify({
+            exclude: ['tasks'],
+            ignoreFiles: ['-min.js']
+        }))
+        .pipe(gulp.dest('js'))
+});
+
+gulp.task('default', ['sass', 'compress'], function() {
     gulp.watch(['./scss/**/*.scss'], ['sass']);
+    gulp.watch(['./js/**/!*-min.js'], ['compress']);
 });

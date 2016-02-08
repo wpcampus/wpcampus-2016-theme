@@ -31,9 +31,11 @@ if ( have_posts() ):
 					// Print the sidebar
 					if ( is_active_sidebar( 'main-sidebar' ) ) {
 
-						?><div class="large-9 columns"><?php
-							the_content();
-						?></div>
+						?><div class="large-9 columns">
+							<div class="wpc-content"><?php
+								the_content();
+							?></div>
+						</div>
 						<div class="large-3 columns">
 							<div class="wpc-sidebar">
 								<?php dynamic_sidebar( 'main-sidebar' ); ?>
@@ -44,9 +46,11 @@ if ( have_posts() ):
 
 					else {
 
-						?><div class="large-12 columns"><?php
-							the_content();
-						?></div><?php
+						?><div class="large-12 columns">
+							<div class="wpc-content"><?php
+								the_content();
+							?></div>
+						</div><?php
 
 					}
 

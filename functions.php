@@ -60,6 +60,9 @@ function wpcampus_2016_enqueue_scripts() {
 	// Add our theme stylesheet
 	wp_enqueue_style( 'wpcampus-2016', get_template_directory_uri() . '/css/styles.css', array( 'wpcampus-2016-fonts' ) );
 
+	// Add our theme script
+	wp_enqueue_script( 'wpcampus-2016', get_template_directory_uri() . '/js/wpcampus-2016-min.js', array( 'jquery' ) );
+
 	// Add our home styles
 	if ( is_front_page() ) {
 		wp_enqueue_style( 'wpcampus-2016-home', get_template_directory_uri() . '/css/home.css', array( 'wpcampus-2016' ) );
