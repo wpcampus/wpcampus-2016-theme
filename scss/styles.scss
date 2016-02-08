@@ -20,7 +20,7 @@ h2 {
 }
 
 body {
-    padding: ( $wpc-banner-height + $wpc-header-toggle-height ) 0 0 0;
+    padding: $wpc-header-toggle-height 0 0 0;
 }
 
 // Stylize the "show me" button
@@ -58,8 +58,31 @@ body {
     background: $wpc-footer-bg-color;
 }
 
+// Alignment
+.alignleft {
+    float: left;
+}
+
+.alignright {
+    float: right;
+}
+
+// Images
+img {
+
+    &.alignleft {
+        margin: 20px 20px 20px 0;
+    }
+
+    &.alignright {
+        margin: 20px 0 20px 20px;
+    }
+
+}
+
 // The banner
 #wpc-banner {
+    display: none;
     background: $wpc-banner-bg-color;
     width: 100%;
     height: $wpc-banner-height;
@@ -122,7 +145,7 @@ body {
     background: $wpc-header-bg-color;
     position: fixed;
     left: 0;
-    top: $wpc-banner-height;
+    top: 0;
     width: 100%;
     z-index: 1000;
 }
@@ -227,6 +250,7 @@ body {
         img {
             display: block;
             width: 100%;
+            max-width: 370px;
             height: auto;
             margin: 0 auto;
         }
@@ -339,6 +363,10 @@ body {
         position: static;
     }
 
+    #wpc-banner {
+        display: block;
+    }
+
     #wpc-header {
         height: $wpc-header-height;
         position: fixed;
@@ -364,7 +392,7 @@ body {
             }
 
             img {
-                width: auto;
+                width: $wpc-header-logo-width;
                 height: $wpc-header-logo-height;
             }
 
@@ -546,7 +574,7 @@ blockquote {
 // The main notification
 #wpc-notification {
     background-color: #f5e9e1;
-    padding: 20px 0;
+    padding: 20px;
     text-align: center;
 
     *:last-child {
@@ -562,7 +590,19 @@ blockquote {
     #wpc-content {
         padding: 40px 20px 30px 20px;
 
-        .wpc-content {}
+        .wpc-content {
+
+            // Responsive images
+            img {
+                display: block;
+                width: 100%;
+                max-width: 500px;
+                float: none;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+        }
 
         .wpc-sidebar {
             margin: 40px 0 0 0;
@@ -829,6 +869,27 @@ blockquote {
     #wpc-main {
 
         #wpc-content {
+
+            .wpc-content {
+
+                // Responsive images
+                img {
+                    width: auto;
+                    max-width: none;
+
+                    &.alignleft {
+                        float: left;
+                        margin-right: 20px;
+                    }
+
+                    &.alignright {
+                        float: right;
+                        margin-left: 20px;
+                    }
+
+                }
+
+            }
 
             .wpc-sidebar {
                 margin-top: 0;
