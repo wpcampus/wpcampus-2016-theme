@@ -10,6 +10,10 @@
 // Import Foundation files
 @import "_foundation-files";
 
+h2 {
+    font-size: 2rem;
+}
+
 // Will hide text visually but allow to be read by screen readers
 .screen-reader-text {
     @include screen-reader-text();
@@ -49,6 +53,11 @@ body {
 
 }
 
+// Let the footer color cover the whole page
+body {
+    background: $wpc-footer-bg-color;
+}
+
 // The banner
 #wpc-banner {
     background: $wpc-banner-bg-color;
@@ -58,6 +67,54 @@ body {
     left: 0;
     top: 0;
     z-index: 1000;
+    color: $wpc-banner-color;
+
+    a {
+        color: inherit;
+    }
+
+    .menu {
+        height: $wpc-banner-height;
+        vertical-align: top;
+
+        ul {
+            @include reset-ul();
+            height: $wpc-banner-height;
+            font-size: $wpc-banner-font-size;
+            line-height: $wpc-banner-height;
+
+            li {
+                display: block;
+                float: left;
+                height: $wpc-banner-height;
+                line-height: $wpc-banner-height;
+
+                a {
+                    display: block;
+                    padding: 0 10px;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                }
+
+                &:hover {
+                    //background: darken( $wpc-header-bg-color, 3% );
+                }
+
+                &.current {
+                    //background: darken( $wpc-header-bg-color, 8% );
+                    //font-weight: bold;
+                }
+
+            }
+
+        }
+
+        &.right {
+            float: right;
+        }
+
+    }
+
 }
 
 // The header
@@ -162,6 +219,7 @@ body {
         top: 0;
         width: 100%;
         height: 100%;
+        will-change: transform;
         @include set-prefix( 'box-shadow', inset 0 0 100px #000 );
     }
 
@@ -259,22 +317,65 @@ body {
 
 }
 
+// The galleries
+.foogallery-container {
+    margin: 0 0 10px 0;
+    overflow: auto;
+
+    .fbx-link {
+        display: block;
+        float: left;
+        width: 20%;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0 0 10px 0 !important;
+        padding: 0 10px 0 0;
+    }
+
+}
+
+// The main notification
+#wpc-notification {
+    background-color: #f5e9e1;
+    padding: 20px 0;
+    text-align: center;
+
+    *:last-child {
+        margin-bottom: 0;
+    }
+
+}
 // The main area
 #wpc-main {
-    padding: 0 30px;
+    background: #fff;
 
     #wpc-content {
-        padding: 40px 0 30px 0;
+        padding: 40px 30px 30px 30px;
 
         .wpc-sidebar {
 
-            .widget {
-                margin: 0 0 20px 0;
+            .sidebar-title {
+                font-size: 1.3em;
+                font-weight: 400;
+                color: #444;
+                text-transform: uppercase;
             }
 
-            .sidebar-title {
-                font-size: 1.4em;
-                text-transform: uppercase;
+            .widget {
+                margin: 0 0 20px 0;
+                border: 1px solid #F3F3F3;
+                padding: 20px;
+
+                &.gform_widget {
+                    margin-top: 24px;
+
+                    .sidebar-title {
+                        margin-top: -43px;
+                        margin-bottom: 8px;
+                    }
+                }
+
             }
 
             // Mailing list form
@@ -321,6 +422,6 @@ body {
 
 // The footer
 #wpc-footer {
-    background: #F3F3F3;
+    background: $wpc-footer-bg-color;
     min-height: 40px;
 }

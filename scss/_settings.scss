@@ -1,28 +1,41 @@
 // WPCampus 2016 Settings
 
-// Colors
-$wpcampus-dark-blue: #2e3641;
-$wpcampus-royal-blue: #1159bd;
+// The Grid
+$global-width: 70rem; //1120px
+$grid-column-gutter: 40px;
+
+// The Colors
+$wpc-dark-blue: #2e3641;
+$wpc-royal-blue: #1159bd;
 $facebook-blue: #465993;
 $twitter-blue: #65a8dc;
-$primary-color: $wpcampus-royal-blue;
+$primary-color: #b46e3d;//$wpc-royal-blue;
 
-// FONTS
+// The Fonts
 $open_sans: 'Open Sans', sans-serif;
 //$source-sans: 'Source Sans Pro', sans-serif;
 
 // Set the base font
 $body-font-family: $open_sans;
 
-// Banner
-$wpc-banner-bg-color: #F3F3F3;
-$wpc-banner-height: 35px;
+// Anchors
+$anchor-text-decoration: underline;
+$anchor-text-decoration-hover: underline;
 
-// Header
-$wpc-header-bg-color: #c8814f;
+// Buttons
+$button-background: $wpc-dark-blue;
+
+// The Banner
+$wpc-banner-bg-color: #F3F3F3;
+$wpc-banner-height: 30px;
+$wpc-banner-font-size: 14px;
+$wpc-banner-color: #444;
+
+// The Header
+$wpc-header-bg-color: #bf7846; //#c8814f;
 $wpc-header-color: #fff;
 $wpc-header-height: 70px;
-$wpc-header-logo-bg-color: $wpcampus-dark-blue; //darken( $wpc-header-bg-color, 8% );
+$wpc-header-logo-bg-color: $wpc-dark-blue; //darken( $wpc-header-bg-color, 8% );
 $wpc-header-logo-container-height: 120px;
 $wpc-header-logo-height: 80px;
 $wpc-header-logo-padding-top: 21px;
@@ -31,6 +44,9 @@ $wpc-header-logo-margin-side: 10px;
 
 // Main Area
 $wpc-main-hero-height: 150px;
+
+// Footer
+$wpc-footer-bg-color: #F3F3F3;
 
 //  Foundation for Sites Settings
 //  -----------------------------

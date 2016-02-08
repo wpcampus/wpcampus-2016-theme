@@ -17,7 +17,13 @@ if ( have_posts() ):
 			</div>
 		</div>
 		<div id="wpc-main">
+
+			<div id="wpc-notification">
+				<p><strong>The <a href="<?php echo get_bloginfo('url'); ?>/speakers/">call for speakers is open</a> and will close at 12 midnight EST on March 21, 2016.</strong></p>
+			</div> <!-- #wpc-notification -->
+
 			<div id="wpc-content">
+
 				<div class="row"><?php
 
 					// Print the sidebar
@@ -27,12 +33,8 @@ if ( have_posts() ):
 							the_content();
 						?></div>
 						<div class="large-3 columns">
-							<div class="wpc-sidebar"><?php
-								dynamic_sidebar( 'main-sidebar' );
-								?><div class="widget twitter-timeline">
-									<a class="twitter-timeline" href="https://twitter.com/wpcampusorg" data-widget-id="696496685959090176">Tweets by @wpcampusorg</a>
-									<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-								</div>
+							<div class="wpc-sidebar">
+								<?php dynamic_sidebar( 'main-sidebar' ); ?>
 							</div>
 						</div><?php
 
