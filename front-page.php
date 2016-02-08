@@ -14,18 +14,20 @@ get_header();
 			// Print the sidebar
 			if ( is_active_sidebar( 'home-sidebar' ) ) {
 
-				?><div class="large-9 columns"><?php
+				?><div class="large-9 columns">
+					<div class="wpc-content"><?php
 
-					if ( have_posts() ) :
-						// Start the Loop.
-						while ( have_posts() ) : the_post();
+						if ( have_posts() ) :
+							// Start the Loop.
+							while ( have_posts() ) : the_post();
 
-							get_template_part( 'content', get_post_format() );
+								get_template_part( 'content', get_post_format() );
 
-						endwhile;
-					endif;
+							endwhile;
+						endif;
 
-				?></div>
+					?></div>
+				</div>
 				<div class="large-3 columns">
 					<div class="wpc-sidebar">
 						<?php dynamic_sidebar( 'home-sidebar' ); ?>
@@ -34,16 +36,18 @@ get_header();
 
 			} else {
 
-				?><div class="large-12 columns"><?php
-					if ( have_posts() ) :
-						// Start the Loop.
-						while ( have_posts() ) : the_post();
+				?><div class="large-12 columns">
+					<div class="wpc-content"><?php
+						if ( have_posts() ) :
+							// Start the Loop.
+							while ( have_posts() ) : the_post();
 
-							get_template_part( 'content', get_post_format() );
+								get_template_part( 'content', get_post_format() );
 
-						endwhile;
-					endif;
-				?></div><?php
+							endwhile;
+						endif;
+					?></div>
+				</div><?php
 
 			}
 
