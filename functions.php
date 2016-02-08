@@ -26,6 +26,17 @@ add_theme_support( 'html5', array(
 add_action( 'widgets_init', 'wpcampus_2016_register_sidebars' );
 function wpcampus_2016_register_sidebars() {
 
+	// Register home sidebar
+	register_sidebar( array(
+		'name'			=> 'Home Sidebar',
+		'id'			=> 'home-sidebar',
+		'description' 	=> '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="sidebar-title">',
+		'after_title'   => '</h2>',
+	) );
+
 	// Register main sidebar
 	register_sidebar( array(
 		'name'			=> 'Main Sidebar',

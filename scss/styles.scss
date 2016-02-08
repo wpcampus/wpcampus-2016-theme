@@ -366,6 +366,7 @@ body {
                 margin: 0 0 20px 0;
                 border: 1px solid #F3F3F3;
                 padding: 20px;
+                @include set-prefix( 'border-radius', 5px );
 
                 &.gform_widget {
                     margin-top: 24px;
