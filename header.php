@@ -45,7 +45,7 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 							<div class="open-menu-label">Menu</div>
 							<div class="close-menu-label">Close</div>
 						</div>
-						<div id="wpcampus-2016-main-menu" class="menu left">
+						<div id="wpcampus-2016-main-menu" class="menu">
 							<ul>
 								<li<?php echo is_page( 'about' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/about/">About</a></li>
 								<li<?php echo is_page( 'speakers' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/speakers/">Speakers</a></li>
@@ -57,7 +57,7 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 						</div>
 					</div>
 
-					<div id="wpcampus-2016-main-menu" class="menu left">
+					<div class="menu left">
 						<ul>
 							<li<?php echo is_page( 'about' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/about/">About</a></li>
 							<li<?php echo is_page( 'speakers' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/speakers/">Speakers</a></li>

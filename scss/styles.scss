@@ -805,9 +805,9 @@ blockquote {
 #wpc-footer {
     background: $wpc-footer-bg-color;
     padding: 35px 20px 35px 20px;
-    color: rgba( #000, $wpc-opacity );
+    color: rgba( #000, $wpc-footer-opacity );
     font-size: 0.9em;
-    line-height: 1.7;
+    line-height: 1.8;
     text-align: center;
 
     * {
@@ -817,7 +817,7 @@ blockquote {
 
     .wpc-logo {
         display: block;
-        opacity: $wpc-opacity;
+        opacity: $wpc-footer-opacity;
         margin: 0 0 15px 0;
 
         img {
@@ -825,7 +825,7 @@ blockquote {
         }
 
         &:hover {
-            opacity: $wpc-opacity-hover;
+            opacity: $wpc-footer-opacity-hover;
         }
 
     }
@@ -845,10 +845,10 @@ blockquote {
         a {
             display: inline-block;
             margin: 0 3px;
-            opacity: $wpc-opacity;
+            opacity: $wpc-footer-opacity;
 
             &:hover {
-                opacity: $wpc-opacity-hover;
+                opacity: $wpc-footer-opacity-hover;
             }
 
         }
