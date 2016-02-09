@@ -109,3 +109,57 @@ add_filter( 'qm/process', 'wpcampus_2016_hide_query_monitor', 10, 2 );
 function wpcampus_2016_hide_query_monitor( $show_qm, $is_admin_bar_showing ) {
 	return $is_admin_bar_showing;
 }
+
+
+// Hero image settings
+
+// add a few images sizes for the reponsive images
+add_image_size( 'ipadp', 768);
+add_image_size( 'ipadl', 1024);
+add_image_size( 'laptop', 1440);
+add_image_size( 'desktop', 1920);
+add_theme_support( 'custom-header' );
+
+//remove the max filter for sizeof
+function remove_max_srcset_image_width( $max_width ) {
+    return false;
+}
+add_filter( 'max_srcset_image_width', 'remove_max_srcset_image_width' );
+
+function wpcampus_2016_register_theme_customizer( $wp_customize ) {
+
+    //create our section
+    $wp_customize->add_section(
+        'wpcampus_2016_display_options',
+        array(
+            'title'     => 'Homepage Hero',
+            'priority'  => 200
+        )
+    ); 
+
+    // Homepage Hero settings
+
+
+    $wp_customize->add_setting(
+        'homepage_hero_image',
+        array(
+            'default'    =>  '',
+            'transport'  =>  'postMessage'
+        )
+    );
+
+    //register the conrols
+    $wp_customize->add_control( 
+        new WP_Customize_Media_Control( 
+            $wp_customize, 
+            'homepage_hero_image', 
+            array(
+               'label'      => __( 'Image', 'theme_name' ),
+               'section'    => 'wpcampus_2016_display_options',
+                'mime_type' => 'image',
+            ) 
+        ) 
+    );    
+    
+}
+add_action( 'customize_register', 'wpcampus_2016_register_theme_customizer' );

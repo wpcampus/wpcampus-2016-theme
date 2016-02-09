@@ -3,6 +3,38 @@
 get_header();
 
 ?><div id="wpc-home-hero">
+    <style>
+    <?php 
+    if ( 0 < count( strlen( ( $background_image_id = get_theme_mod( 'homepage_hero_image' ) ) ) ) ) { 
+        $img_src = wp_get_attachment_image_url( $background_image_id );
+        $img_srcset = wp_get_attachment_image_srcset( $background_image_id );
+        
+        $sizes = array_map(
+            function ($substr) {
+                return explode(' ', trim($substr));
+            }, 
+            explode(',', $img_srcset)
+        );
+        for ($i = 0; $i < sizeof($sizes); $i++) {
+            if($i == 0){
+                ?>
+                @media (max-width: <?php echo str_replace("w", "px", $sizes[$i][1]); ?> ) { #wpc-home-hero:after{ background-image: url(<?php echo $sizes[$i][0]; ?>); } }
+                <?php
+
+            } else if ($i == sizeof($sizes)-1 ) {
+                ?>
+                @media (min-width: <?php echo str_replace("w", "px", $sizes[$i-1][1]); ?> ) { #wpc-home-hero:after{ background-image: url(<?php echo $sizes[$i][0]; ?>); } }
+                <?php
+                
+            } else {
+                ?>
+                @media (min-width: <?php echo str_replace("w", "px", $sizes[$i-1][1]); ?> ) and (max-width: <?php echo str_replace("w", "px", $sizes[$i][1]); ?> ) { #wpc-home-hero:after{ background-image: url(<?php echo $sizes[$i][0]; ?>); } }
+                <?php                
+            }
+        }      
+    }
+    ?>
+    </style>
 	<div id="wpc-notification">
 		<p><strong>The <a href="<?php echo get_bloginfo('url'); ?>/speakers/">call for speakers is open</a> and will close at 12 midnight EST on March 21, 2016.</strong></p>
 	</div> <!-- #wpc-notification -->

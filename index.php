@@ -11,7 +11,40 @@ if ( have_posts() ):
 		the_post();
 
 		?><div id="wpc-main-hero">
-			<div class="wpc-page-title">
+            <style>
+            <?php 
+            $header = get_custom_header();
+            if ( $header->url != '') {
+                $img_src = wp_get_attachment_image_url( $header->attachment_id );
+                $img_srcset = wp_get_attachment_image_srcset( $header->attachment_id );
+                
+                $sizes = array_map(
+                    function ($substr) {
+                        return explode(' ', trim($substr));
+                    }, 
+                    explode(',', $img_srcset)
+                );
+                for ($i = 0; $i < sizeof($sizes); $i++) {
+                    if($i == 0){
+                        ?>
+                        @media (max-width: <?php echo str_replace("w", "px", $sizes[$i][1]); ?> ) { #wpc-main-hero{ background-image: url(<?php echo $sizes[$i][0]; ?>); } }
+                        <?php
+
+                    } else if ($i == sizeof($sizes)-1 ) {
+                        ?>
+                        @media (min-width: <?php echo str_replace("w", "px", $sizes[$i-1][1]); ?> ) { #wpc-main-hero{ background-image: url(<?php echo $sizes[$i][0]; ?>); } }
+                        <?php
+                        
+                    } else {
+                        ?>
+                        @media (min-width: <?php echo str_replace("w", "px", $sizes[$i-1][1]); ?> ) and (max-width: <?php echo str_replace("w", "px", $sizes[$i][1]); ?> ) { #wpc-main-hero{ background-image: url(<?php echo $sizes[$i][0]; ?>); } }
+                        <?php                
+                    }
+                }      
+            }
+            ?>
+            </style>            
+            <div class="wpc-page-title">
 				<div class="row">
 					<div class="large-12 columns">
 						<h1><?php the_title(); ?></h1>

@@ -428,11 +428,9 @@ img {
 
 // The content hero
 #wpc-main-hero {
-    background: url('../images/USF-campus.jpg') no-repeat center ( $wpc-banner-height + $wpc-header-height ) fixed;
-    /*-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;*/
+    background-repeat: no-repeat ;
+    background-position: center center;    
+    background-size: cover;
     height: $wpc-main-hero-height;
     position: relative;
 
