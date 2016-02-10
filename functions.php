@@ -69,14 +69,14 @@ function wpcampus_2016_enqueue_scripts() {
 	wp_enqueue_style( 'wpcampus-2016-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:600,400,300' );
 
 	// Add our theme stylesheet
-	wp_enqueue_style( 'wpcampus-2016', get_template_directory_uri() . '/css/styles.css', array( 'wpcampus-2016-fonts' ) );
+	wp_enqueue_style( 'wpcampus-2016', get_template_directory_uri() . '/css/styles.css', array( 'wpcampus-2016-fonts' ), filemtime( get_template_directory() . '/css/styles.css' ) );
 
 	// Add our theme script
-	wp_enqueue_script( 'wpcampus-2016', get_template_directory_uri() . '/js/wpcampus-2016-min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'wpcampus-2016', get_template_directory_uri() . '/js/wpcampus-2016-min.js', array( 'jquery' ), filemtime( get_template_directory() . '/js/wpcampus-2016-min.js' ) );
 
 	// Add our home styles
 	if ( is_front_page() ) {
-		wp_enqueue_style( 'wpcampus-2016-home', get_template_directory_uri() . '/css/home.css', array( 'wpcampus-2016' ) );
+		wp_enqueue_style( 'wpcampus-2016-home', get_template_directory_uri() . '/css/home.css', array( 'wpcampus-2016' ), filemtime( get_template_directory() . '/css/home.css' ) );
 	}
 
 }
