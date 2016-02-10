@@ -16,7 +16,7 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 	<meta property="og:description" content="<?php echo $desc; ?>" />
 	<?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 	<a href="#wpc-main" id="skip-to-content">Skip to Content</a>
 
 	<div id="wpc-banner">
