@@ -30,7 +30,7 @@
 
 }
 
-// Will set box shadow
+// Will set prefix
 @mixin set-prefix( $prefix, $value ) {
     -webkit-#{$prefix}: $value;
     -moz-#{$prefix}: $value;
