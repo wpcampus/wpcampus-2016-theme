@@ -21,15 +21,14 @@ gulp.task('sass', function() {
 });
 
 gulp.task('compress', function() {
-    gulp.src('./js/*.js')
+    gulp.src('js/wpcampus-2016.js')
         .pipe(minify({
-            exclude: ['tasks'],
-            ignoreFiles: ['-min.js']
+            exclude: ['tasks']
         }))
         .pipe(gulp.dest('js'))
 });
 
 gulp.task('default', ['sass', 'compress'], function() {
-    gulp.watch(['./scss/**/*.scss'], ['sass']);
-    gulp.watch(['./js/**/!*-min.js'], ['compress']);
+    gulp.watch(['scss/**/*.scss'], ['sass']);
+    gulp.watch(['js/wpcampus-2016.js'], ['compress']);
 });
