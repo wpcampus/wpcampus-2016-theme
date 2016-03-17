@@ -24,7 +24,7 @@ if ( have_posts() ):
 			<div id="wpc-notification"><?php
 				// Don't include link on speakers page
 				$include_link = ! is_page( 'speakers' );
-				?><p><strong>The <?php echo $include_link ? '<a href="' . get_bloginfo('url') . '/speakers/">call for speakers is open</a>' : 'call for speakers is open'; ?> and will close at 12 midnight EST on March 21, 2016.</strong></p>
+				?><p><strong>The <?php echo $include_link ? '<a href="' . get_bloginfo('url') . '/speakers/">call for speakers is open</a>' : 'call for speakers is open'; ?> and will close at 12 midnight PST on March 21, 2016.</strong></p>
 			</div> <!-- #wpc-notification -->
 
 			<div id="wpc-content">
