@@ -18,12 +18,22 @@ $open_sans: 'Open Sans', sans-serif;
 // Set the base font
 $body-font-family: $open_sans;
 
+// Font sizes
+//$h3-font-size: 1.7rem;
+//$h3-font-size: rem-calc(27);
+
 // Anchors
 $anchor-text-decoration: underline;
 $anchor-text-decoration-hover: underline;
 
 // Buttons
 $button-background: $wpc-dark-blue;
+$button-sizes: (
+    tiny: 0.75rem,
+    small: 0.9rem,
+    default: 1rem,
+    large: 1.25rem,
+);
 
 // Blockquotes
 $blockquote-color: #666;

@@ -1,0 +1,53 @@
+//
+// These are the base form settings for WPCampus.
+//
+
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// Include Foundation settings to reuse them
+@import '_settings';
+
+#wpc-content {
+
+	.gform_confirmation_message {
+		background: rgba(0, 255, 0, 0.2);
+		padding: 20px;
+	}
+
+	.gform_wrapper {
+
+		.gform_fields {
+
+			.gfield {
+
+				&.field-desc-callout {
+
+					&.gsection {
+						border-bottom: 0;
+						padding-bottom: 0;
+						margin-bottom: 0;
+					}
+
+					.gsection_description {
+						background-color: #ebebeb;
+						margin: 0 0 1rem 0;
+						padding: 1rem;
+						border: 1px solid rgba(10, 10, 10, 0.25);
+						border-radius: 0;
+						position: relative;
+					}
+
+					.gsection_title + .gsection_description {
+						margin-top: 10px;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
