@@ -830,6 +830,34 @@ blockquote {
 
     }
 
+    .wpc-footer-menu {
+        @include reset-ul();
+        display: inline-block;
+        overflow: auto;
+        text-align: center;
+
+        li {
+            float: left;
+
+            a {
+                color: inherit;
+            }
+
+            &:before {
+                content: '-';
+                padding: 0 5px;
+            }
+
+            &:first-child {
+                &:before {
+                    display: none;
+                }
+            }
+
+        }
+
+    }
+
     .github-message {
         font-style: italic;
     }
