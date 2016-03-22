@@ -2,11 +2,11 @@
 
 get_header();
 
-?><div id="wpc-home-hero">
-	<div id="wpc-notification">
+?><div id="wpc-home-hero"><?php
+	/* <div id="wpc-notification">
 		<p><strong>The <a href="<?php echo get_bloginfo('url'); ?>/speakers/">call for speakers is open</a> and will close at 12 midnight PST on March 21, 2016.</strong></p>
-	</div> <!-- #wpc-notification -->
-</div>
+	</div> <!-- #wpc-notification --> */
+?></div>
 <div id="wpc-main">
 	<div id="wpc-content">
 		<div class="row"><?php
