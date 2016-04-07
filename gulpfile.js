@@ -1,20 +1,18 @@
 var gulp = require('gulp');
 var minify = require('gulp-minify');
-var $    = require('gulp-load-plugins')();
+var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 
-var sassPaths = [
-    'bower_components/foundation-sites/scss',
-    'bower_components/motion-ui/src'
-];
+var sassPaths = [ 'bower_components/foundation-sites/scss' ];
 
 gulp.task('sass', function() {
     return gulp.src('./scss/*.scss')
-        .pipe($.sass({
+        .pipe(sass({
                 includePaths: sassPaths,
 				outputStyle: 'compressed'
             })
-            .on('error', $.sass.logError))
-        .pipe($.autoprefixer({
+            .on('error', sass.logError))
+        .pipe(autoprefixer({
             browsers: ['last 2 versions', 'ie >= 9']
         }))
         .pipe(gulp.dest('./css'));
