@@ -10,15 +10,26 @@ if ( have_posts() ):
 	while ( have_posts() ):
 		the_post();
 
-		?><div id="wpc-main-hero">
-			<div class="wpc-page-title">
+		?><div id="wpc-main-hero"><?php
+			
+			?><div class="wpc-page-title">
 				<div class="row">
 					<div class="large-12 columns">
-						<h1><?php the_title(); ?></h1>
+						<h1><?php
+							
+							// Do not print title with content for blog posts
+							if ( is_single() ) {
+								echo 'WPCampus 2016 Blog';
+							} else {
+								the_title();
+							}
+							
+						?></h1>
 					</div>
 				</div>
-			</div>
-		</div>
+			</div><?php
+			
+		?></div>
 		<div id="wpc-main"><?php
 
 			/* <div id="wpc-notification"><?php
@@ -36,6 +47,12 @@ if ( have_posts() ):
 
 						?><div class="large-9 columns">
 							<div class="wpc-content"><?php
+								
+								// Print title with content for blog posts
+								if ( is_single() ) {
+									?><h1><?php the_title(); ?></h1><?php
+								}
+								
 								the_content();
 							?></div>
 						</div>
