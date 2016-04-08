@@ -50,7 +50,12 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 								<li<?php echo is_page( 'about' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/about/">About</a></li>
 								<li<?php echo is_page( 'speakers' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/speakers/">Speakers</a></li>
 								<li<?php echo is_page( 'schedule' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/schedule/">Schedule</a></li>
-								<li<?php echo is_page( 'location' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/location">Location</a></li>
+								<li class="has-submenu<?php echo ( is_page( 'location' ) || is_page( 'hotels' ) ) ? ' current': null; ?>">
+									<a href="<?php echo $blog_url; ?>/location">Location</a>
+									<ul class="submenu">
+										<li><a href="<?php echo $blog_url; ?>/location/hotels/">Hotels</a></li>
+									</ul>
+								</li>
 								<li<?php echo is_page( 'sponsors' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/sponsors">Sponsors</a></li>
 								<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/contact/">Contact</a></li>
 							</ul>
@@ -70,7 +75,12 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 					</div>
 					<div class="menu right">
 						<ul>
-							<li<?php echo is_page( 'location' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/location">Location</a></li>
+							<li class="has-submenu<?php echo ( is_page( 'location' ) || is_page( 'hotels' ) ) ? ' current': null; ?>">
+								<a href="<?php echo $blog_url; ?>/location">Location</a>
+								<ul class="submenu">
+									<li><a href="<?php echo $blog_url; ?>/location/hotels/">Hotels</a></li>
+								</ul>
+							</li>
 							<li<?php echo is_page( 'sponsors' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/sponsors">Sponsors</a></li>
 							<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/contact/">Contact</a></li>
 						</ul>

@@ -266,29 +266,42 @@ img {
         height: auto;
         vertical-align: top;
 
-        ul {
+        & > ul {
             @include reset-ul();
             font-size: 17px;
             line-height: 20px;
             overflow: auto;
 
-            li {
+            & > li {
                 display: block;
 
-                a {
+                & > a {
                     display: block;
                     padding: 15px 10px;
                     text-transform: uppercase;
                     text-decoration: none;
-                }
-
-                &:hover {
-                    background: darken( $wpc-header-bg-color, 3% );
+                }                
+                
+                a:hover {
+	                background: darken( $wpc-header-bg-color, 3% );
                 }
 
                 &.current {
-                    background: darken( $wpc-header-bg-color, 8% );
-                    font-weight: bold;
+	                
+	                & > a {
+	                    background: darken( $wpc-header-bg-color, 8% );
+                    	font-weight: bold;
+                	}
+                	
+                }
+                
+                &.has-submenu {
+	                
+	                .submenu {
+		                @include reset-ul();
+		                padding: 0 0 10px 0;
+	                }
+	                
                 }
 
             }
@@ -407,17 +420,74 @@ img {
             height: $wpc-header-height;
             float: left;
             
-            ul {
+            & > ul {
                 height: $wpc-header-height;
                 line-height: $wpc-header-height;
+                overflow: visible;
                 
-                li {
+                & > li {
                     float: left;
                     height: $wpc-header-height;
                     line-height: $wpc-header-height;
 
                     a {
                         padding: 0 10px;
+                    }
+                    
+                    &.has-submenu {
+	                    position: relative;
+	                    
+	                    & > .submenu {
+		                    @include reset-ul();
+		                    display: block;
+		                    background: #fff;
+						    position: absolute;
+						    left: 4%;
+						    top: 90%;
+						    min-width: 92%;
+						    height: auto;
+						    line-height: 1.1;
+						    text-align: left;
+						    color: #222;
+						    padding: 10px 0;
+						    margin: 0;
+						    opacity: 0;
+						    //@include set-prefix( transition, top ease-in 0.52s );
+						    -webkit-transition: opacity ease-in 0.2s;
+						    -moz-transition: opacity ease-in 0.2s;
+						    -ms-transition: opacity ease-in 0.2s;
+						    -o-transition: opacity ease-in 0.2s;
+						    transition: opacity ease-in 0.2s;
+						    
+						    & > li {
+							    float: none;
+							    height: auto;
+							    line-height: inherit;
+							    padding: 0;
+							    
+							    & > a {
+								    display: block;
+								    padding: 5px 10px;
+								    text-decoration: none;
+								    
+								    &:hover {
+									    background: #eee;
+								    }
+								    
+							    }
+							    
+						    }
+						    
+	                    }
+	                    
+	                    &:hover {
+		                    
+		                    & > .submenu {
+			                    opacity: 1;
+			                }
+			                    
+	                    }
+	                    
                     }
                     
                 }
