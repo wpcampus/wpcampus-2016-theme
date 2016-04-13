@@ -3,6 +3,7 @@
 // Include files
 require_once( STYLESHEETPATH . '/includes/filters.php' );
 require_once( STYLESHEETPATH . '/includes/shortcodes.php' );
+require_once( STYLESHEETPATH . '/includes/forms-preview.php' );
 
 // Add <title> support
 add_theme_support( 'title-tag' );
