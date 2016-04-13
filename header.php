@@ -48,7 +48,7 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 						<div id="wpcampus-2016-main-menu" class="menu">
 							<ul>
 								<li<?php echo is_page( 'about' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/about/">About</a></li>
-								<li<?php echo is_page( 'speakers' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/speakers/">Speakers</a></li>
+								<li<?php echo is_page( 'tickets' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/tickets/">Tickets</a></li>
 								<li<?php echo is_page( 'schedule' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/schedule/">Schedule</a></li>
 								<li class="has-submenu<?php echo ( is_page( 'location' ) || is_page( 'hotels' ) ) ? ' current': null; ?>">
 									<a href="<?php echo $blog_url; ?>/location">Location</a>
@@ -65,7 +65,7 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 					<div class="menu left">
 						<ul>
 							<li<?php echo is_page( 'about' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/about/">About</a></li>
-							<li<?php echo is_page( 'speakers' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/speakers/">Speakers</a></li>
+							<li<?php echo is_page( 'tickets' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/tickets/">Tickets</a></li>
 							<li<?php echo is_page( 'schedule' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/schedule/">Schedule</a></li>
 						</ul>
 					</div>
