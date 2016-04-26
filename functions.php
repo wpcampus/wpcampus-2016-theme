@@ -110,3 +110,162 @@ add_filter( 'qm/process', 'wpcampus_2016_hide_query_monitor', 10, 2 );
 function wpcampus_2016_hide_query_monitor( $show_qm, $is_admin_bar_showing ) {
 	return $is_admin_bar_showing;
 }
+
+// Get the post type archive title
+function wpcampus_get_post_type_archive_title( $post_type = '' ) {
+
+	// Make sure we have a post type
+	if ( ! $post_type ) {
+		$post_type = get_query_var( 'post_type' );
+	}
+
+	// Get post type archive title
+	if ( $post_type ) {
+
+		// Make sure its not an array
+		if ( is_array( $post_type ) ) {
+			$post_type = reset( $post_type );
+		}
+
+		// Get the post type data
+		if ( $post_type_obj = get_post_type_object( $post_type ) ) {
+
+			// Get the title
+			$title = apply_filters( 'post_type_archive_title', $post_type_obj->labels->name, $post_type );
+
+			// Return the title
+			return apply_filters( 'wpcampus_post_type_archive_title', $title, $post_type );
+
+		}
+
+	}
+
+	return null;
+}
+
+// Get breadcrumbs
+function wpcampus_get_breadcrumbs_html() {
+
+	// Build array of breadcrumbs
+	$breadcrumbs = array();
+
+	// Not for front page
+	if ( is_front_page() ) {
+		return false;
+	}
+
+	// Get post type
+	$post_type = get_query_var( 'post_type' );
+
+	// Make sure its not an array
+	if ( is_array( $post_type ) ) {
+		$post_type = reset( $post_type );
+	}
+
+	// Add home
+	$breadcrumbs[] = array(
+		'url'   => get_bloginfo( 'url' ),
+		'label' => 'Home',
+	);
+
+	// Add archive(s)
+	if ( is_archive() ) {
+
+		// Add the archive breadcrumb
+		if ( is_post_type_archive() ) {
+
+			// Get the info
+			$post_type_archive_link = get_post_type_archive_link( $post_type );
+			$post_type_archive_title = wpcampus_get_post_type_archive_title( $post_type );
+
+			// Add the breadcrumb
+			if ( $post_type_archive_link && $post_type_archive_title ) {
+				$breadcrumbs[] = array( 'url' => $post_type_archive_link, 'label' => $post_type_archive_title );
+			}
+
+		}
+
+	} else {
+
+		// Add links to archive
+		if ( is_singular() ) {
+
+			// Get the information
+			$post_type_archive_link = get_post_type_archive_link( $post_type );
+			$post_type_archive_title = wpcampus_get_post_type_archive_title( $post_type );
+
+			if ( $post_type_archive_link ) {
+				$breadcrumbs[] = array( 'url' => $post_type_archive_link, 'label' => $post_type_archive_title );
+			}
+
+		}
+
+		// Print info for the current post
+		if ( ( $post = get_queried_object() ) && is_a( $post, 'WP_Post' ) ) {
+
+			// Get ancestors
+			$post_ancestors = isset( $post ) ? get_post_ancestors( $post->ID ) : array();
+
+			// Add the ancestors
+			foreach ( $post_ancestors as $post_ancestor_id ) {
+
+				// Add ancestor
+				$breadcrumbs[] = array( 'ID' => $post_ancestor_id, 'url' => get_permalink( $post_ancestor_id ), 'label' => get_the_title( $post_ancestor_id ), );
+
+			}
+
+			// Add current page - if not home page
+			if ( isset( $post ) ) {
+				$breadcrumbs[ 'current' ] = array( 'ID' => $post->ID, 'url' => get_permalink( $post ), 'label' => get_the_title( $post->ID ), );
+			}
+
+		}
+
+	}
+
+	// Filter the breadcrumbs
+	$breadcrumbs = apply_filters( 'wpcampus_2016_breadcrumbs', $breadcrumbs );
+
+	// Build breadcrumbs HTML
+	$breadcrumbs_html = null;
+
+	foreach( $breadcrumbs as $crumb_key => $crumb ) {
+
+		// Make sure we have what we need
+		if ( empty( $crumb[ 'label' ] ) ) {
+			continue;
+		}
+
+		// If no string crumb key, set as ancestor
+		if ( ! $crumb_key || is_numeric( $crumb_key ) ) {
+			$crumb_key = 'ancestor';
+		}
+
+		// Setup classes
+		$crumb_classes = array( $crumb_key );
+
+		// Add if current
+		if ( isset( $crumb[ 'current' ] ) && $crumb[ 'current' ] ) {
+			$crumb_classes[] = 'current';
+		}
+
+		$breadcrumbs_html .= '<li role="menuitem"' . ( ! empty( $crumb_classes ) ? ' class="' . implode( ' ', $crumb_classes ) . '"' : null ) . '>';
+
+		// Add URL and label
+		if ( ! empty( $crumb[ 'url' ] ) ) {
+			$breadcrumbs_html .= '<a href="' . $crumb[ 'url' ] . '"' . ( ! empty( $crumb[ 'title' ] ) ? ' title="' . $crumb[ 'title' ] . '"' : null ) . '>' . $crumb[ 'label' ] . '</a>';
+		} else {
+			$breadcrumbs_html .= $crumb[ 'label' ];
+		}
+
+		$breadcrumbs_html .= '</li>';
+
+	}
+
+	// Wrap them in nav
+	$breadcrumbs_html = '<div class="breadcrumbs-wrapper"><nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">' . $breadcrumbs_html . '</nav></div>';
+
+	//  We change up the variable so it doesn't interfere with global variable
+	return $breadcrumbs_html;
+
+}

@@ -42,12 +42,18 @@ if ( have_posts() ):
 
 				<div class="row"><?php
 
-					// Print the sidebar
+                    // Get breadcrumbs
+                    $breadcrumbs_html = wpcampus_get_breadcrumbs_html();
+
+                    // Print the sidebar
 					if ( is_active_sidebar( $sidebar_id ) ) {
 
 						?><div class="large-9 columns">
 							<div class="wpc-content"><?php
-								
+
+                                // Print breadcrumbs
+                                echo $breadcrumbs_html;
+
 								// Print title with content for blog posts
 								if ( is_single() ) {
 									?><h1><?php the_title(); ?></h1><?php
@@ -68,6 +74,10 @@ if ( have_posts() ):
 
 						?><div class="large-12 columns">
 							<div class="wpc-content"><?php
+
+                                // Print breadcrumbs
+                                echo $breadcrumbs_html;
+
 								the_content();
 							?></div>
 						</div><?php
