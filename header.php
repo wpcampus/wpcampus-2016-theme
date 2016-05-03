@@ -54,6 +54,7 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 									<a href="<?php echo $blog_url; ?>/location">Location</a>
 									<ul class="submenu">
 										<li><a href="<?php echo $blog_url; ?>/location/hotels/">Hotels</a></li>
+										<li><a href="<?php echo $blog_url; ?>/location/transportation/">Transportation</a></li>
 									</ul>
 								</li>
 								<li class="has-submenu<?php echo ( is_page( 'sponsors' ) || is_page( 'become-a-sponsor' ) ) ? ' current': null; ?>">
@@ -84,6 +85,7 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 								<a href="<?php echo $blog_url; ?>/location">Location</a>
 								<ul class="submenu">
 									<li><a href="<?php echo $blog_url; ?>/location/hotels/">Hotels</a></li>
+									<li><a href="<?php echo $blog_url; ?>/location/transportation/">Transportation</a></li>
 								</ul>
 							</li>
 							<li class="has-submenu<?php echo ( is_page( 'sponsors' ) || is_page( 'become-a-sponsor' ) ) ? ' current': null; ?>">
