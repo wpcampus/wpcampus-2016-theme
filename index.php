@@ -18,8 +18,10 @@ if ( have_posts() ):
 						<h1><?php
 							
 							// Do not print title with content for blog posts
-							if ( is_single() ) {
+							if ( is_singular( 'post' ) ) {
 								echo 'WPCampus 2016 Blog';
+							} else if ( is_singular( 'schedule' ) ) {
+                                echo 'Schedule';
 							} else {
 								the_title();
 							}
