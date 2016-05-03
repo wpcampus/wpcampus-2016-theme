@@ -678,6 +678,24 @@ blockquote {
                 margin-right: auto;
             }
 
+            .wpc-sponsor-logos {
+                margin: 40px 0;
+
+                img {
+
+                    &.wpc-sponsor-logo {
+
+                        &.wpc-sponsor-vp {
+                            max-width: 80% !important;
+                            margin-bottom: 25px !important;
+                        }
+
+                    }
+
+                }
+
+            }
+
         }
 
         .wpc-sidebar {
@@ -979,7 +997,7 @@ blockquote {
                 // Responsive images
                 img {
                     width: auto;
-                    max-width: none;
+                    max-width: 100%;
 
                     &.alignleft {
                         float: left;
