@@ -78,6 +78,11 @@ if ( have_posts() ):
                                 // Print breadcrumbs
                                 echo $breadcrumbs_html;
 
+                                // Print title with content for blog posts
+                                if ( is_single() ) {
+                                    ?><h1><?php the_title(); ?></h1><?php
+                                }
+
 								the_content();
 							?></div>
 						</div><?php
