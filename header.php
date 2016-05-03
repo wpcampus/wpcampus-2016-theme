@@ -56,7 +56,12 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 										<li><a href="<?php echo $blog_url; ?>/location/hotels/">Hotels</a></li>
 									</ul>
 								</li>
-								<li<?php echo is_page( 'sponsors' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/sponsors">Sponsors</a></li>
+								<li class="has-submenu<?php echo ( is_page( 'sponsors' ) || is_page( 'become-a-sponsor' ) ) ? ' current': null; ?>">
+									<a href="<?php echo $blog_url; ?>/sponsors">Sponsors</a>
+									<ul class="submenu">
+										<li><a href="<?php echo $blog_url; ?>/sponsors/become-a-sponsor/">Become A Sponsor</a></li>
+									</ul>
+								</li>
 								<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/contact/">Contact</a></li>
 							</ul>
 						</div>
@@ -81,7 +86,11 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 									<li><a href="<?php echo $blog_url; ?>/location/hotels/">Hotels</a></li>
 								</ul>
 							</li>
-							<li<?php echo is_page( 'sponsors' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/sponsors">Sponsors</a></li>
+							<li class="has-submenu<?php echo ( is_page( 'sponsors' ) || is_page( 'become-a-sponsor' ) ) ? ' current': null; ?>">
+								<a href="<?php echo $blog_url; ?>/sponsors">Sponsors</a>
+								<ul class="submenu">
+									<li><a href="<?php echo $blog_url; ?>/sponsors/become-a-sponsor/">Become A Sponsor</a></li>
+								</ul></li>
 							<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/contact/">Contact</a></li>
 						</ul>
 					</div>
