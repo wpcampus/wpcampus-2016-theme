@@ -684,10 +684,14 @@ blockquote {
                 img {
 
                     &.wpc-sponsor-logo {
+                        margin-bottom: 25px !important;
 
                         &.wpc-sponsor-vp {
                             max-width: 80% !important;
-                            margin-bottom: 25px !important;
+                        }
+
+                        &.wpc-sponsor-grad {
+                            max-width: 60% !important;
                         }
 
                     }
