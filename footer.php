@@ -18,6 +18,7 @@ $blog_url = get_bloginfo('url');
 		<div class="small-12 columns">
 			<a class="wpc-logo" href="https://wpcampus.org/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/wpcampus-logo-tagline.svg" alt="WPCampus: Where WordPress Meets Higher Education" /></a>
 			<ul class="wpc-footer-menu" role="navigation">
+				<li><a href="https://www.surveymonkey.com/r/WPCampus2016">Survey</a></li>
 				<li><a href="<?php echo $blog_url; ?>/code-of-conduct/">Code of Conduct</a></li>
 				<li><a href="<?php echo $blog_url; ?>/contact/">Contact Us</a></li>
 			</ul>
