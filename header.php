@@ -18,43 +18,82 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 </head>
 <body <?php body_class(); ?>>
 	<a href="#wpc-main" id="skip-to-content">Skip to Content</a>
-
-	<div id="wpc-banner">
-		<?php /*<div class="row">
-			<div class="large-12 columns">
-				<div class="menu right">
-					<ul>
-						<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/contact/">Contact</a></li>
-					</ul>
-				</div>
+	
+	<div id="wpcampus-2016-main-menu">
+		<div class="toggle-main-menu">
+			<div class="toggle-icon">
+				<div class="bar one"></div>
+				<div class="bar two"></div>
+				<div class="bar three"></div>
 			</div>
-		</div>*/ ?>
+			<div class="open-menu-label">Menu</div>
+			<div class="close-menu-label">Close</div>
+		</div>
+		<ul class="menu">
+			<li<?php echo is_page( 'about' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/about/">About</a></li>
+			<li<?php echo is_page( 'tickets' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/tickets/">Tickets</a></li>
+			<li<?php echo ( is_page( 'schedule' ) || is_singular( 'schedule' ) ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/schedule/">Schedule</a></li>
+			<li<?php echo is_page( 'attendees' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/attendees/">Attendees</a></li>
+			<li class="has-submenu<?php echo ( is_page( 'venue' ) || is_page( 'hotels' ) ) ? ' current': null; ?>">
+				<a href="<?php echo $blog_url; ?>/venue">Venue</a>
+				<ul class="submenu">
+					<li><a href="<?php echo $blog_url; ?>/venue/hotels/">Hotels</a></li>
+					<li><a href="<?php echo $blog_url; ?>/venue/transportation/">Transportation</a></li>
+				</ul>
+			</li>
+			<li class="has-submenu<?php echo ( is_page( 'sponsors' ) || is_page( 'become-a-sponsor' ) ) ? ' current': null; ?>">
+				<a href="<?php echo $blog_url; ?>/sponsors">Sponsors</a>
+				<ul class="submenu">
+					<li><a href="<?php echo $blog_url; ?>/sponsors/become-a-sponsor/">Become A Sponsor</a></li>
+				</ul>
+			</li>
+			<li<?php echo is_page( 'volunteer' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/volunteer/">Volunteer</a></li>
+			<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/contact/">Contact</a></li>
+			<li><a href="https://www.surveymonkey.com/r/WPCampus2016">Take Our Survey</a></li>
+			<li><a href="https://wpcampus.org/get-involved/">Join Our Community</a></li>
+		</ul>
 	</div>
+					
 	<div id="wpc-header">
 		<div class="row">
 			<div class="large-12 columns">
 				<div class="banner-inside">
-
-					<div id="wpcampus-2016-main-menu-wrapper">
-						<div class="toggle-main-menu">
-							<div class="toggle-icon">
-								<div class="bar one"></div>
-								<div class="bar two"></div>
-								<div class="bar three"></div>
-							</div>
-							<div class="open-menu-label">Menu</div>
-							<div class="close-menu-label">Close</div>
+					
+					<div id="wpc-header-left">
+						<div class="wpc-banner">
+							<ul class="menu">
+								<li><a href="https://www.surveymonkey.com/r/WPCampus2016">Survey</a></li>
+								<li><a href="https://wpcampus.org/get-involved/">Community</a></li>
+							</ul>
 						</div>
-						<div id="wpcampus-2016-main-menu" class="menu">
-							<ul>
+						<div class="wpc-header-menu">
+							<ul class="menu">
 								<li<?php echo is_page( 'about' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/about/">About</a></li>
 								<li<?php echo is_page( 'tickets' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/tickets/">Tickets</a></li>
 								<li<?php echo ( is_page( 'schedule' ) || is_singular( 'schedule' ) ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/schedule/">Schedule</a></li>
-								<li class="has-submenu<?php echo ( is_page( 'location' ) || is_page( 'hotels' ) ) ? ' current': null; ?>">
-									<a href="<?php echo $blog_url; ?>/location">Location</a>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="wpc-logo">
+						<a href="<?php echo $blog_url; ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/wpcampus-logo-tagline-info-white.svg" alt="WPCampus: Where WordPress Meets Higher Education on July 15-16 in Sarasota, Florida" /></a>
+					</div>
+					
+					<div id="wpc-header-right">
+						<div class="wpc-banner">
+							<ul class="menu">
+								<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/contact/">Contact</a></li>
+								<li<?php echo is_page( 'volunteer' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/volunteer/">Volunteer</a></li>
+							</ul>
+						</div>
+						<div class="wpc-header-menu">
+							<ul class="menu">
+								<li<?php echo is_page( 'attendees' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/attendees/">Attendees</a></li>
+								<li class="has-submenu<?php echo ( is_page( 'venue' ) || is_page( 'hotels' ) ) ? ' current': null; ?>">
+									<a href="<?php echo $blog_url; ?>/venue">Venue</a>
 									<ul class="submenu">
-										<li><a href="<?php echo $blog_url; ?>/location/hotels/">Hotels</a></li>
-										<li><a href="<?php echo $blog_url; ?>/location/transportation/">Transportation</a></li>
+										<li><a href="<?php echo $blog_url; ?>/venue/hotels/">Hotels</a></li>
+										<li><a href="<?php echo $blog_url; ?>/venue/transportation/">Transportation</a></li>
 									</ul>
 								</li>
 								<li class="has-submenu<?php echo ( is_page( 'sponsors' ) || is_page( 'become-a-sponsor' ) ) ? ' current': null; ?>">
@@ -63,38 +102,8 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 										<li><a href="<?php echo $blog_url; ?>/sponsors/become-a-sponsor/">Become A Sponsor</a></li>
 									</ul>
 								</li>
-								<li<?php echo is_page( 'volunteer' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/volunteer/">Volunteer</a></li>
 							</ul>
 						</div>
-					</div>
-
-					<div class="menu left">
-						<ul>
-							<li<?php echo is_page( 'about' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/about/">About</a></li>
-							<li<?php echo is_page( 'tickets' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/tickets/">Tickets</a></li>
-							<li<?php echo ( is_page( 'schedule' ) || is_singular( 'schedule' ) ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/schedule/">Schedule</a></li>
-						</ul>
-					</div>
-
-					<div class="wpc-logo">
-						<a href="<?php echo $blog_url; ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/wpcampus-logo-tagline-info-white.svg" alt="WPCampus: Where WordPress Meets Higher Education on July 15-16 in Sarasota, Florida" /></a>
-					</div>
-					<div class="menu right">
-						<ul>
-							<li class="has-submenu<?php echo ( is_page( 'location' ) || is_page( 'hotels' ) ) ? ' current': null; ?>">
-								<a href="<?php echo $blog_url; ?>/location">Location</a>
-								<ul class="submenu">
-									<li><a href="<?php echo $blog_url; ?>/location/hotels/">Hotels</a></li>
-									<li><a href="<?php echo $blog_url; ?>/location/transportation/">Transportation</a></li>
-								</ul>
-							</li>
-							<li class="has-submenu<?php echo ( is_page( 'sponsors' ) || is_page( 'become-a-sponsor' ) ) ? ' current': null; ?>">
-								<a href="<?php echo $blog_url; ?>/sponsors">Sponsors</a>
-								<ul class="submenu">
-									<li><a href="<?php echo $blog_url; ?>/sponsors/become-a-sponsor/">Become A Sponsor</a></li>
-								</ul></li>
-							<li<?php echo is_page( 'volunteer' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/volunteer/">Volunteer</a></li>
-						</ul>
 					</div>
 				</div>
 			</div>

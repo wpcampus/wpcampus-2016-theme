@@ -45,13 +45,17 @@ $list-side-margin: 2.25rem;
 // The Banner
 $wpc-banner-bg-color: #F3F3F3;
 $wpc-banner-height: 30px;
-$wpc-banner-font-size: 14px;
+$wpc-banner-font-size: 13px;
 $wpc-banner-color: #444;
+
+// The Header Menu
+$wpc-header-menu-height: 70px;
+$wpc-header-menu-font-size: 16px;
 
 // The Header
 $wpc-header-bg-color: #bf7846; //#c8814f;
 $wpc-header-color: #fff;
-$wpc-header-height: 70px;
+$wpc-header-height: $wpc-banner-height + $wpc-header-menu-height;
 $wpc-header-logo-bg-color: $wpc-dark-blue; //darken( $wpc-header-bg-color, 8% );
 $wpc-header-logo-container-height: 120px;
 $wpc-header-logo-width: 300px;

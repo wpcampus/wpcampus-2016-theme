@@ -1,7 +1,6 @@
 jQuery(document).ready(function($) {
 	
-	// Get the header and main menu
-	var $header = jQuery( '#wpc-header' );
+	// Get the main menu
 	var $main_menu = jQuery( '#wpcampus-2016-main-menu' );
 	
 	// Add listener to all elements who have the class to toggle the main menu
@@ -11,16 +10,16 @@ jQuery(document).ready(function($) {
 		$event.stopPropagation();
 		$event.preventDefault();
 		
-		// If header isn't open, open it
-		if ( ! $header.hasClass( 'open-menu' ) ) {
+		// If main menu isn't open, open it
+		if ( ! $main_menu.hasClass( 'open-menu' ) ) {
 
-			$header.addClass( 'open-menu' );
-			$main_menu.slideDown( 400 );
+			$main_menu.addClass( 'open-menu' );
+			$main_menu.find( '.menu' ).slideDown( 400 );
 			
 		} else {
 
-			$header.removeClass( 'open-menu' );
-			$main_menu.slideUp( 400 );
+			$main_menu.removeClass( 'open-menu' );
+			$main_menu.find( '.menu' ).slideUp( 400 );
 			
 		}
 		

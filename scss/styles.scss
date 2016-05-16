@@ -84,103 +84,24 @@ img {
 
 }
 
-// The banner
-#wpc-banner {
-    display: none;
-    background: $wpc-banner-bg-color;
-    width: 100%;
-    height: $wpc-banner-height;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 1000;
-    color: $wpc-banner-color;
-
-    a {
-        color: inherit;
-    }
-
-    .menu {
-        height: $wpc-banner-height;
-        vertical-align: top;
-
-        ul {
-            @include reset-ul();
-            height: $wpc-banner-height;
-            font-size: $wpc-banner-font-size;
-            line-height: $wpc-banner-height;
-
-            li {
-                display: block;
-                float: left;
-                height: $wpc-banner-height;
-                line-height: $wpc-banner-height;
-
-                a {
-                    display: block;
-                    padding: 0 10px;
-                    text-transform: uppercase;
-                    text-decoration: none;
-                }
-
-                &:hover {
-                    //background: darken( $wpc-header-bg-color, 3% );
-                }
-
-                &.current {
-                    //background: darken( $wpc-header-bg-color, 8% );
-                    //font-weight: bold;
-                }
-
-            }
-
-        }
-
-        &.right {
-            float: right;
-        }
-
-    }
-
-}
-
 // The main menu
-#wpcampus-2016-main-menu-wrapper {
+#wpcampus-2016-main-menu {
     background: $wpc-header-bg-color;
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     z-index: 1000;
-}
-
-// The header
-#wpc-header {
-    background: $wpc-header-bg-color;
-    width: 100%;
-    height: auto;
-    text-align: center;
     color: $wpc-header-color;
-    z-index: 1000;
-
-    .columns {
-        padding: 0;
-    };
-
-    .banner-inside {
-        display: block;
-    }
-
+    
     a {
-        display: block;
-        color: inherit;
+	    color: inherit;
     }
-
+    
     .toggle-main-menu {
         display: block;
         height: $wpc-header-toggle-height;
         background: none;
-        color: rgba( #fff, 0.9 );
         text-transform: uppercase;
         font-size: 1em;
         line-height: $wpc-header-toggle-height;
@@ -238,83 +159,59 @@ img {
         }
 
     }
-
-    .wpc-logo {
-        display: block;
-        background: $wpc-header-logo-bg-color;
-        height: auto;
-        padding: 0;
-        margin: 0;
-
-        a {
-            display: block;
-            padding: 20px;
-        }
-
-        img {
-            display: block;
-            width: 100%;
-            max-width: 370px;
-            height: auto;
-            margin: 0 auto;
-        }
-        
-    }
-
+    
     .menu {
+	    @include reset-ul();
         display: none;
         height: auto;
         vertical-align: top;
+        font-size: 17px;
+        line-height: 20px;
+        overflow: auto;
+        text-align: center;
 
-        & > ul {
-            @include reset-ul();
-            font-size: 17px;
-            line-height: 20px;
-            overflow: auto;
+        & > li {
+            display: block;
 
-            & > li {
+            a {
                 display: block;
-
-                & > a {
-                    display: block;
-                    padding: 15px 10px;
-                    text-transform: uppercase;
-                    text-decoration: none;
-                }                
+                padding: 5px 10px;
+                text-transform: none;
                 
-                a:hover {
+                &:hover {
 	                background: darken( $wpc-header-bg-color, 3% );
                 }
-
-                &.current {
-	                
-	                & > a {
-	                    background: darken( $wpc-header-bg-color, 8% );
-                    	font-weight: bold;
-                	}
-                	
-                }
                 
-                &.has-submenu {
-	                
-	                .submenu {
-		                @include reset-ul();
-		                padding: 0 0 10px 0;
-	                }
-	                
-                }
-
             }
             
-        }
+            & > a {
+	            padding: 15px 10px;
+	            text-transform: uppercase;
+	            text-decoration: none;
+	        }
 
-        // Only show when expanded
-        &.right {
-            display: none;
+            &.current {
+                
+                & > a {
+                    background: darken( $wpc-header-bg-color, 8% );
+                	font-weight: bold;
+            	}
+            	
+            }
+            
+            &.has-submenu {
+                
+                .submenu {
+	                @include reset-ul();
+	                padding: 0 0 10px 0;
+                }
+                
+            }
+
         }
 
     }
-
+    
     &.open-menu {
 
         .toggle-main-menu {
@@ -365,6 +262,61 @@ img {
         }
 
     }
+    
+}
+
+// The header
+#wpc-header {
+    background: $wpc-header-bg-color;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    color: $wpc-header-color;
+    z-index: 1000;
+
+    .columns {
+        padding: 0;
+    }
+
+    .banner-inside {
+        display: block;
+    }
+
+    a {
+        display: block;
+        color: inherit;
+    }
+    
+    .menu {
+	    display: none;
+    }
+
+    .wpc-logo {
+        display: block;
+        background: $wpc-header-logo-bg-color;
+        height: auto;
+        padding: 0;
+        margin: 0;
+
+        a {
+            display: block;
+            padding: 20px;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            max-width: 370px;
+            height: auto;
+            max-height: $wpc-header-logo-height;
+            margin: 0 auto;
+        }
+        
+    }    
+    
+    .wpc-banner {
+	    color: $wpc-banner-color;
+    }
 
 }
 
@@ -372,36 +324,193 @@ img {
 @media screen and (min-width: 1000px) {
 
     body {
-        padding: ( $wpc-banner-height + $wpc-header-height ) 0 0 0;
+        padding: $wpc-header-height 0 0 0;
     }
 
-    #wpcampus-2016-main-menu-wrapper {
+    #wpcampus-2016-main-menu {
         display: none !important;
         position: static;
     }
 
-    #wpc-banner {
-        display: block;
-    }
-
-    #wpc-header {
+	// The header
+	#wpc-header {
         height: $wpc-header-height;
         position: fixed;
         left: 0;
-        top: $wpc-banner-height;
+        top: 0;
+        text-align: center;
+        
+        &:before {
+	        content: '';
+	        background: $wpc-banner-bg-color;
+	        position: absolute;
+	        left: 0;
+	        top: 0;
+	        width: 100%;
+	        height: $wpc-banner-height;
+	        z-index: -1;
+        }
+        
+        .menu {
+	        @include reset-ul();
+            display: block !important;
+            text-align: left;
+            overflow: visible;
+            height: auto;
+	        vertical-align: top;
+	        font-size: $wpc-header-menu-font-size;
+	        line-height: $wpc-header-height;
+            
+            & > li {
+	            display: inline-block;
+
+                & > a {
+	                display: block;
+                    padding: 0 10px;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    
+                    &:hover {
+		                background: darken( $wpc-header-bg-color, 3% );
+	                }
+	                
+                }
+                
+                &.has-submenu {
+                    position: relative;
+                    
+                    & > .submenu {
+	                    @include reset-ul();
+	                    display: block;
+	                    background: #fff;
+					    position: absolute;
+					    left: 4%;
+					    top: 90%;
+					    min-width: 92%;
+					    height: auto;
+					    line-height: 1.1;
+					    text-align: left;
+					    color: #222;
+					    padding: 10px 0;
+					    margin: 0;
+					    opacity: 0;
+					    //@include set-prefix( transition, top ease-in 0.52s );
+					    -webkit-transition: opacity ease-in 0.2s;
+					    -moz-transition: opacity ease-in 0.2s;
+					    -ms-transition: opacity ease-in 0.2s;
+					    -o-transition: opacity ease-in 0.2s;
+					    transition: opacity ease-in 0.2s;
+					    
+					    & > li {
+						    height: auto;
+						    line-height: inherit;
+						    padding: 0;
+						    
+						    & > a {
+							    display: block;
+							    padding: 5px 10px;
+							    text-decoration: none;
+							    
+							    &:hover {
+								    background: #eee;
+							    }
+							    
+						    }
+						    
+					    }
+					    
+                    }
+                    
+                    &:hover {
+	                    
+	                    & > .submenu {
+		                    opacity: 1;
+		                }
+		                    
+                    }
+                    
+                }
+	            
+				&.current {
+	                
+	                & > a {
+	                    background: darken( $wpc-header-bg-color, 8% );
+	                	font-weight: bold;
+	            	}
+	            	
+	            }
+                
+            }
+
+        }
+        
+        .wpc-banner {
+	        background: $wpc-banner-bg-color;
+	        height: $wpc-banner-height;
+	        
+	        .menu {
+		        font-size: $wpc-banner-font-size;
+				line-height: $wpc-banner-height;
+		        height: $wpc-banner-height;
+		        color: #222;
+				
+				& > li {
+					height: $wpc-banner-height;
+                	line-height: $wpc-banner-height;
+                	
+                	a {
+	                	background: none;
+	                	padding: 0 8px;
+                	}
+                	
+                	a:hover,
+                	&.current a {
+	                	color: #000;
+	                	background: rgba(0,0,0,0.08);
+                	}
+                	
+                }
+                
+	        }
+	        
+        }
+        
+        .wpc-header-menu {
+	        background: $wpc-header-bg-color;
+	        height: $wpc-header-menu-height;
+	        
+	        .menu {
+		        height: $wpc-header-menu-height;
+				line-height: $wpc-header-menu-height;
+				
+				& > li {
+                	height: $wpc-header-menu-height;
+					line-height: $wpc-header-menu-height;
+                }
+                
+	        }
+	        
+        }
 
         .banner-inside {
             display: inline-block;
+            width: 100%;
         }
+        
+        #wpc-header-left,
+        .wpc-logo,
+        #wpc-header-right {
+	        float: left;
+	    }
 
         .toggle-main-menu {
             display: none !important;
         }
 
         .wpc-logo {
-            float: left;
+	        width: 32%;
             height: $wpc-header-logo-container-height;
-            margin: ( 0 - $wpc-banner-height ) $wpc-header-logo-margin-side;
+            margin: 0;
             @include set-prefix('box-shadow', 0px 0px 5px #111);
 
             a {
@@ -409,100 +518,46 @@ img {
             }
 
             img {
-                width: $wpc-header-logo-width;
-                height: $wpc-header-logo-height;
+                max-width: $wpc-header-logo-width;
+                max-height: $wpc-header-logo-height;
             }
 
         }
-
-        .menu {
-            display: block !important;
-            height: $wpc-header-height;
-            float: left;
-            
-            & > ul {
-                height: $wpc-header-height;
-                line-height: $wpc-header-height;
-                overflow: visible;
-                
-                & > li {
-                    float: left;
-                    height: $wpc-header-height;
-                    line-height: $wpc-header-height;
-
-                    a {
-                        padding: 0 10px;
-                    }
-                    
-                    &.has-submenu {
-	                    position: relative;
-	                    
-	                    & > .submenu {
-		                    @include reset-ul();
-		                    display: block;
-		                    background: #fff;
-						    position: absolute;
-						    left: 4%;
-						    top: 90%;
-						    min-width: 92%;
-						    height: auto;
-						    line-height: 1.1;
-						    text-align: left;
-						    color: #222;
-						    padding: 10px 0;
-						    margin: 0;
-						    opacity: 0;
-						    //@include set-prefix( transition, top ease-in 0.52s );
-						    -webkit-transition: opacity ease-in 0.2s;
-						    -moz-transition: opacity ease-in 0.2s;
-						    -ms-transition: opacity ease-in 0.2s;
-						    -o-transition: opacity ease-in 0.2s;
-						    transition: opacity ease-in 0.2s;
-						    
-						    & > li {
-							    float: none;
-							    height: auto;
-							    line-height: inherit;
-							    padding: 0;
-							    
-							    & > a {
-								    display: block;
-								    padding: 5px 10px;
-								    text-decoration: none;
-								    
-								    &:hover {
-									    background: #eee;
-								    }
-								    
-							    }
-							    
-						    }
-						    
-	                    }
-	                    
-	                    &:hover {
-		                    
-		                    & > .submenu {
-			                    opacity: 1;
-			                }
-			                    
-	                    }
-	                    
-                    }
-                    
-                }
-                
-            }
-
+        
+        #wpc-header-left,
+        #wpc-header-right {
+	        width: 34%;
         }
-
+        
+        #wpc-header-left {
+	        padding-right: $wpc-header-logo-margin-side;
+	        
+	        .menu {
+		        text-align: right;
+	        }
+	        
+        }
+        
+        #wpc-header-right {
+	        padding-left: $wpc-header-logo-margin-side;
+	        
+	        .menu {
+		        text-align: left;
+	        }
+	        
+	        .wpc-banner {
+		        padding-left: 2px;
+	        }
+	        
+	    }
+	    
     }
 
 }
 
 // The content hero
 #wpc-main-hero {
-    background: url('../images/USF-campus.jpg') no-repeat center ( $wpc-banner-height + $wpc-header-height ) fixed;
+    background: url('../images/USF-campus.jpg') no-repeat center $wpc-header-height fixed;
     /*-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
