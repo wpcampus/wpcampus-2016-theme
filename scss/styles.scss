@@ -1047,6 +1047,35 @@ blockquote {
 
 }
 
+// Medium up
+@media screen and (min-width: 512px) {
+	
+	// The main area
+    #wpc-main {
+
+        #wpc-content {
+
+            .wpc-content {
+	
+				ul.columns-two,
+				ol.columns-two {
+					overflow: auto;
+					
+					li {
+						float: left;
+						width: 50%;
+						list-style-position: inside;
+					}
+						        
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}
 
 // Large up
 @media screen and (min-width: 1024px) {
