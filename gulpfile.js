@@ -21,7 +21,8 @@ gulp.task('sass', function() {
 gulp.task('compress', function() {
     gulp.src('js/wpcampus-2016.js')
         .pipe(minify({
-            exclude: ['tasks']
+            exclude: ['tasks'],
+            mangle: false
         }))
         .pipe(gulp.dest('js'))
 });
