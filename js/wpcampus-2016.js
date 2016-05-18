@@ -15,11 +15,13 @@ jQuery(document).ready(function($) {
 
 			$main_menu.addClass( 'open-menu' );
 			$main_menu.find( '.menu' ).slideDown( 400 );
+			jQuery( 'body' ).addClass( 'open-menu' );
 			
 		} else {
 
 			$main_menu.removeClass( 'open-menu' );
 			$main_menu.find( '.menu' ).slideUp( 400 );
+			jQuery( 'body' ).removeClass( 'open-menu' );
 			
 		}
 		

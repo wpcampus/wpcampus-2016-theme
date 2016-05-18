@@ -26,6 +26,11 @@ h2 {
 body {
     background: $wpc-footer-bg-color; // Let the footer color cover the whole page
     padding: $wpc-header-toggle-height 0 0 0;
+
+    &.open-menu {
+        overflow: hidden;
+    }
+
 }
 
 // Stylize the "show me" button
@@ -209,6 +214,9 @@ img {
     }
     
     &.open-menu {
+        height: 100%;
+        overflow: scroll;
+        padding: 5px 0 15px 0;
 
         .toggle-main-menu {
             background: none;
@@ -321,6 +329,11 @@ img {
 
     body {
         padding: $wpc-header-height 0 0 0;
+
+        &.open-menu {
+            overflow: auto;
+        }
+
     }
 
     #wpcampus-2016-main-menu {
