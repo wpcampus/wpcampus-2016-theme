@@ -24,6 +24,7 @@ h2 {
 }
 
 body {
+    background: $wpc-footer-bg-color; // Let the footer color cover the whole page
     padding: $wpc-header-toggle-height 0 0 0;
 }
 
@@ -55,11 +56,6 @@ body {
         padding: 10px;
     }
 
-}
-
-// Let the footer color cover the whole page
-body {
-    background: $wpc-footer-bg-color;
 }
 
 // Alignment
