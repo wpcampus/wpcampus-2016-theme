@@ -419,12 +419,12 @@ img {
 							    display: block;
 							    padding: 5px 10px;
 							    text-decoration: none;
-							    
-							    &:hover {
-								    background: #eee;
-							    }
-							    
 						    }
+
+                            &.current,
+                            & > a:hover {
+                                background: #eee;
+                            }
 						    
 					    }
 					    
@@ -602,6 +602,15 @@ img {
 
     }
 
+}
+
+// The event map
+#wpcampus-2016-map {
+    width: 100%;
+    height: 350px;
+    border:0;
+    margin: 0 0 -6px 0;
+    padding: 0;
 }
 
 // Forms

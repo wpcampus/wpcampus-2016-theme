@@ -80,6 +80,11 @@ function wpcampus_2016_enqueue_scripts() {
 		wp_enqueue_style( 'wpcampus-2016-home', get_template_directory_uri() . '/css/home.css', array( 'wpcampus-2016' ), filemtime( get_template_directory() . '/css/home.css' ) );
 	}
 
+	// Add our map script
+	if ( is_page_template( 'template-map.php' ) ) {
+		wp_enqueue_script( 'wpcampus-2016-map', get_template_directory_uri() . '/js/wpcampus-2016-map-min.js', array( 'jquery' ), filemtime( get_template_directory() . '/js/wpcampus-2016-map-min.js' ) );
+	}
+
 }
 
 // Load favicons

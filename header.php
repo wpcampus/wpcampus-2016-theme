@@ -34,17 +34,18 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 			<li<?php echo is_page( 'tickets' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/tickets/">Tickets</a></li>
 			<li<?php echo ( is_page( 'schedule' ) || is_singular( 'schedule' ) ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/schedule/">Schedule</a></li>
 			<li<?php echo is_page( 'attendees' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/attendees/">Attendees</a></li>
-			<li class="has-submenu<?php echo ( is_page( 'venue' ) || is_page( 'hotels' ) ) ? ' current': null; ?>">
+			<li class="has-submenu<?php echo ( is_page( 'venue' ) || is_page( 'map' ) || is_page( 'hotels' ) || is_page( 'transportation' ) ) ? ' current': null; ?>">
 				<a href="<?php echo $blog_url; ?>/venue">Venue</a>
 				<ul class="submenu">
-					<li><a href="<?php echo $blog_url; ?>/venue/hotels/">Hotels</a></li>
-					<li><a href="<?php echo $blog_url; ?>/venue/transportation/">Transportation</a></li>
+					<li<?php echo is_page( 'hotels' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/venue/hotels/">Hotels</a></li>
+					<li<?php echo is_page( 'transportation' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/venue/transportation/">Transportation</a></li>
+					<li<?php echo is_page( 'map' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/map/">Map</a></li>
 				</ul>
 			</li>
 			<li class="has-submenu<?php echo ( is_page( 'sponsors' ) || is_page( 'become-a-sponsor' ) ) ? ' current': null; ?>">
 				<a href="<?php echo $blog_url; ?>/sponsors">Sponsors</a>
 				<ul class="submenu">
-					<li><a href="<?php echo $blog_url; ?>/sponsors/become-a-sponsor/">Become A Sponsor</a></li>
+					<li<?php echo is_page( 'become-a-sponsor' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/sponsors/become-a-sponsor/">Become A Sponsor</a></li>
 				</ul>
 			</li>
 			<li<?php echo is_page( 'volunteer' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/volunteer/">Volunteer</a></li>
@@ -89,17 +90,18 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 						<div class="wpc-header-menu">
 							<ul class="menu">
 								<li<?php echo is_page( 'attendees' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/attendees/">Attendees</a></li>
-								<li class="has-submenu<?php echo ( is_page( 'venue' ) || is_page( 'hotels' ) ) ? ' current': null; ?>">
+								<li class="has-submenu<?php echo ( is_page( 'venue' ) || is_page( 'map' ) || is_page( 'hotels' ) || is_page( 'transportation' ) ) ? ' current': null; ?>">
 									<a href="<?php echo $blog_url; ?>/venue">Venue</a>
 									<ul class="submenu">
-										<li><a href="<?php echo $blog_url; ?>/venue/hotels/">Hotels</a></li>
-										<li><a href="<?php echo $blog_url; ?>/venue/transportation/">Transportation</a></li>
+										<li<?php echo is_page( 'hotels' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/venue/hotels/">Hotels</a></li>
+										<li<?php echo is_page( 'transportation' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/venue/transportation/">Transportation</a></li>
+										<li<?php echo is_page( 'map' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/map/">Map</a></li>
 									</ul>
 								</li>
 								<li class="has-submenu<?php echo ( is_page( 'sponsors' ) || is_page( 'become-a-sponsor' ) ) ? ' current': null; ?>">
 									<a href="<?php echo $blog_url; ?>/sponsors">Sponsors</a>
 									<ul class="submenu">
-										<li><a href="<?php echo $blog_url; ?>/sponsors/become-a-sponsor/">Become A Sponsor</a></li>
+										<li<?php echo is_page( 'become-a-sponsor' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/sponsors/become-a-sponsor/">Become A Sponsor</a></li>
 									</ul>
 								</li>
 							</ul>

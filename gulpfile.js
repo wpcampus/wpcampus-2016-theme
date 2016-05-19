@@ -19,7 +19,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('compress', function() {
-    gulp.src('js/wpcampus-2016.js')
+    gulp.src(['js/wpcampus-2016.js','js/wpcampus-2016-map.js'])
         .pipe(minify({
             exclude: ['tasks'],
             mangle: false
@@ -29,5 +29,5 @@ gulp.task('compress', function() {
 
 gulp.task('default', ['sass', 'compress'], function() {
     gulp.watch(['scss/**/*.scss'], ['sass']);
-    gulp.watch(['js/wpcampus-2016.js'], ['compress']);
+    gulp.watch(['js/wpcampus-2016.js','js/wpcampus-2016-map.js'], ['compress']);
 });
