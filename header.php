@@ -50,7 +50,6 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 			</li>
 			<li<?php echo is_page( 'volunteer' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/volunteer/">Volunteer</a></li>
 			<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/contact/">Contact</a></li>
-			<li><a href="https://www.surveymonkey.com/r/WPCampus2016">Take Our Survey</a></li>
 			<li><a href="https://wpcampus.org/get-involved/">Join Our Community</a></li>
 		</ul>
 	</div>
@@ -63,7 +62,6 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 					<div id="wpc-header-left">
 						<div class="wpc-banner">
 							<ul class="menu">
-								<li><a href="https://www.surveymonkey.com/r/WPCampus2016">Survey</a></li>
 								<li><a href="https://wpcampus.org/get-involved/">Community</a></li>
 							</ul>
 						</div>
