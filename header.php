@@ -62,7 +62,7 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 					<div id="wpc-header-left">
 						<div class="wpc-banner">
 							<ul class="menu">
-								<li><a href="https://wpcampus.org/get-involved/">Community</a></li>
+								<li><a href="https://wpcampus.org/get-involved/">Join Our Community</a></li>
 							</ul>
 						</div>
 						<div class="wpc-header-menu">
