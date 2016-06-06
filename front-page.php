@@ -25,63 +25,75 @@ get_header();
 			if ( is_active_sidebar( 'home-sidebar' ) ) {
 
 				?><div class="large-9 columns">
-					<div class="wpc-content"><?php
+					<div class="wpc-content">
+						
+						<h2>What Is WPCampus?</h2>
+						<p>A two-day event with <a href="https://2016.wpcampus.org/schedule/">38 sessions from 41 speakers</a> covering a variety of topics, all dedicated to the confluence of WordPress in higher education.</p>
+						
+						<p><strong>Not to mention the endless networking opportunities!</strong> Meeting other web professionals from around the country can be invaluable and can provide you with a team of like-minded colleagues and experts to collaborate and consult with long into the future.</p>
+						
+						<h2>Who Will Be There?</h2>
+						<p>Members of the higher education and WordPress communities from all over the United States and Canada. Our event is open to faculty, staff, students, and even professionals outside full time higher education.</p>
+						
+						<p>At this time, <a href="https://2016.wpcampus.org/attendees/">over 45 institutions</a> will be represented.</p>
 
-						if ( have_posts() ) :
-							// Start the Loop.
-							while ( have_posts() ) : the_post();
+						<?php if ( have_posts() ) :
+							while ( have_posts() ) :
+								the_post(); ?>
 							
-								?><article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-									<header class="entry-header"><?php
-										the_title( '<h2 class="entry-title"><a href="' . get_permalink() . '">', '</a></h2>' );
-									?></header><!-- .entry-header --><?php
+									<header class="entry-header">
+										<?php the_title( '<h2 class="entry-title"><a href="' . get_permalink() . '">', '</a></h2>' );?>
+									</header><!-- .entry-header -->
 								
-									the_excerpt( sprintf(
+									<?php the_excerpt( sprintf(
 										'Continue reading<span class="screen-reader-text"> "%s"</span>',
 										get_the_title()
-									) );
+									) ); ?>
 								
-								?></article><?php
+								</article>
 	
-							endwhile;
-						endif;
+							<?php endwhile;
+						endif; ?>
 
-					?></div>
+					</div>
 				</div>
 				<div class="large-3 columns">
 					<div class="wpc-sidebar">
 						<?php dynamic_sidebar( 'home-sidebar' ); ?>
 					</div>
-				</div><?php
+				</div>
 
-			} else {
+			<?php } else { ?>
 
-				?><div class="large-12 columns">
-					<div class="wpc-content"><?php
-						if ( have_posts() ) :
-							// Start the Loop.
-							while ( have_posts() ) : the_post();
+				<div class="large-12 columns">
+					<div class="wpc-content">
+						
+						<?php if ( have_posts() ) :
+							while ( have_posts() ) :
+								the_post(); ?>
 								
-								?><article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-									<header class="entry-header"><?php
-										the_title( '<h2 class="entry-title"><a href="' . get_permalink() . '">', '</a></h2>' );
-									?></header><!-- .entry-header --><?php
+									<header class="entry-header">
+										<?php the_title( '<h2 class="entry-title"><a href="' . get_permalink() . '">', '</a></h2>' );?>
+									</header><!-- .entry-header -->
 								
-									the_excerpt( sprintf(
+									<?php the_excerpt( sprintf(
 										'Continue reading<span class="screen-reader-text"> "%s"</span>',
 										get_the_title()
-									) );
+									) ); ?>
 								
-								?></article><?php
+								</article>
 									
-							endwhile;
-						endif;
-					?></div>
-				</div><?php
+							<?php endwhile;
+						endif; ?>
+						
+					</div>
+				</div>
 
-			}
+			<?php }
 
 		?></div>
 	</div> <!-- #wpc-content -->
