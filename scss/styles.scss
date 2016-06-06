@@ -85,6 +85,20 @@ img {
 
 }
 
+// Style the buttons
+.button {
+	
+	&.orange {
+		background-color: $wpc-orange;
+		
+		&:hover {
+			background: darken( $wpc-orange, 3% );
+		}
+		
+	}
+	
+}
+
 // The main menu
 #wpcampus-2016-main-menu {
     background: $wpc-header-bg-color;

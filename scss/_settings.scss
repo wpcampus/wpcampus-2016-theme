@@ -7,6 +7,7 @@ $grid-column-gutter: 40px;
 // The Colors
 $wpc-dark-blue: #2e3641;
 $wpc-royal-blue: #1159bd;
+$wpc-orange: #bf7846;
 $facebook-blue: #465993;
 $twitter-blue: #65a8dc;
 $primary-color: #b46e3d;//$wpc-royal-blue;
@@ -53,7 +54,7 @@ $wpc-header-menu-height: 70px;
 $wpc-header-menu-font-size: 16px;
 
 // The Header
-$wpc-header-bg-color: #bf7846; //#c8814f;
+$wpc-header-bg-color: $wpc-orange;
 $wpc-header-color: #fff;
 $wpc-header-height: $wpc-banner-height + $wpc-header-menu-height;
 $wpc-header-logo-bg-color: $wpc-dark-blue; //darken( $wpc-header-bg-color, 8% );
