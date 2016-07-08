@@ -27,8 +27,6 @@ get_header();
 				?><div class="large-9 columns">
 					<div class="wpc-content">
 
-						<div class="callout primary"><strong>Tickets are still available but will close Thursday, July 7.</strong> <a href="//2016.wpcampus.org/tickets/">Purchase your ticket today!</a></div>
-						
 						<h2>What Is WPCampus?</h2>
 						<p>A two-day event with <a href="https://2016.wpcampus.org/schedule/">38 sessions from 41 speakers</a> covering a variety of topics, all dedicated to the confluence of WordPress in higher education.</p>
 						
