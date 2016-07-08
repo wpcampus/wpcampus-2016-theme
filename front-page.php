@@ -37,7 +37,7 @@ get_header();
 						<h2>Who Will Be There?</h2>
 						<p>Members of the higher education and WordPress communities from all over the United States and Canada. Our event is open to faculty, staff, students, and even professionals outside full time higher education.</p>
 						
-						<p>At this time, <a href="https://2016.wpcampus.org/attendees/">over 45 institutions</a> will be represented.</p>
+						<p>At this time, <a href="https://2016.wpcampus.org/attendees/">over 60 institutions</a> will be represented.</p>
 
 						<?php if ( have_posts() ) :
 							while ( have_posts() ) :
