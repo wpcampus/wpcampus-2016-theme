@@ -108,6 +108,10 @@ img {
     width: 100%;
     z-index: 1000;
     color: $wpc-header-color;
+
+	body.admin-bar & {
+		top: $wp-admin-bar-height-small;
+	}
     
     a {
 	    color: inherit;
@@ -338,6 +342,20 @@ img {
 
 }
 
+// Expand the admin bar
+@media screen and (min-width: 782px) {
+
+	// The main menu
+	#wpcampus-2016-main-menu {
+
+		body.admin-bar & {
+			top: $wp-admin-bar-height;
+		}
+
+	}
+
+}
+
 // Expand the header
 @media screen and (min-width: 1000px) {
 
@@ -364,7 +382,7 @@ img {
         text-align: center;
 
 		body.admin-bar & {
-			top: 32px;
+			top: $wp-admin-bar-height;
 		}
         
         &:before {
