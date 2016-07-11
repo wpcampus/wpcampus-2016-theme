@@ -27,6 +27,8 @@ get_header();
 				?><div class="large-9 columns">
 					<div class="wpc-content">
 
+						<div class="callout primary">As WPCampus week is finally upon us, ticket sales are now closed. If you're unable to join us in person, you can <a href="https://tagboard.com/wpcampus/300756">follow along on Twitter at #WPCampus</a>. It's also highly likely we will have a livestream. Hope to see you soon!</div>
+
 						<h2>What Is WPCampus?</h2>
 						<p>A two-day event with <a href="https://2016.wpcampus.org/schedule/">38 sessions from 41 speakers</a> covering a variety of topics, all dedicated to the confluence of WordPress in higher education.</p>
 						

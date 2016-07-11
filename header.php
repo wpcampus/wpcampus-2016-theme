@@ -6,6 +6,9 @@ $blog_url = get_bloginfo('url');
 // Description for social media
 $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a gathering of web professionals, educators and people dedicated to the confluence of WordPress in higher education. WPCampus is excited to partner with The University of South-Florida Sarasota-Manatee in order to provide an experience both affordable and relevant for higher education professionals.';
 
+// URL for the tagboard
+$tweets_tagboard = 'https://tagboard.com/wpcampus/300756';
+
 ?><!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -31,7 +34,7 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 		</div>
 		<ul class="menu">
 			<li<?php echo is_page( 'about' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/about/">About</a></li>
-			<li<?php echo is_page( 'tickets' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/tickets/">Tickets</a></li>
+			<li><a href="<?php echo $tweets_tagboard; ?>">Tweets</a></li>
 			<li<?php echo ( is_page( 'schedule' ) || is_singular( 'schedule' ) ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/schedule/">Schedule</a></li>
 			<li<?php echo is_page( 'attendees' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/attendees/">Attendees</a></li>
 			<li class="has-submenu<?php echo ( is_page( 'venue' ) || is_page( 'map' ) || is_page( 'hotels' ) || is_page( 'transportation' ) ) ? ' current': null; ?>">
@@ -68,7 +71,7 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 						<div class="wpc-header-menu">
 							<ul class="menu">
 								<li<?php echo is_page( 'about' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/about/">About</a></li>
-								<li<?php echo is_page( 'tickets' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/tickets/">Tickets</a></li>
+								<li><a href="<?php echo $tweets_tagboard; ?>">Tweets</a></li>
 								<li<?php echo ( is_page( 'schedule' ) || is_singular( 'schedule' ) ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/schedule/">Schedule</a></li>
 							</ul>
 						</div>
