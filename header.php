@@ -51,9 +51,10 @@ $tweets_tagboard = 'https://tagboard.com/wpcampus/300756';
 					<li<?php echo is_page( 'become-a-sponsor' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/sponsors/become-a-sponsor/">Become A Sponsor</a></li>
 				</ul>
 			</li>
-			<li<?php echo is_page( 'volunteer' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/volunteer/">Volunteer</a></li>
-			<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/contact/">Contact</a></li>
 			<li><a href="https://wpcampus.org/get-involved/">Join Our Community</a></li>
+			<li<?php echo is_page( 'volunteer' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/volunteer/">Volunteer</a></li>
+			<li<?php echo is_page( 'thank-you' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/thank-you/">Thank You</a></li>
+			<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/contact/">Contact Us</a></li>
 		</ul>
 	</div>
 					
@@ -65,7 +66,8 @@ $tweets_tagboard = 'https://tagboard.com/wpcampus/300756';
 					<div id="wpc-header-left">
 						<div class="wpc-banner">
 							<ul class="menu">
-								<li><a href="https://wpcampus.org/get-involved/">Join Our Community</a></li>
+								<li><a href="https://wpcampus.org/get-involved/">Join Community</a></li>
+								<li<?php echo is_page( 'volunteer' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/volunteer/">Volunteer</a></li>
 							</ul>
 						</div>
 						<div class="wpc-header-menu">
@@ -84,8 +86,8 @@ $tweets_tagboard = 'https://tagboard.com/wpcampus/300756';
 					<div id="wpc-header-right">
 						<div class="wpc-banner">
 							<ul class="menu">
+								<li<?php echo is_page( 'thank-you' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/thank-you/">Thank You</a></li>
 								<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/contact/">Contact</a></li>
-								<li<?php echo is_page( 'volunteer' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/volunteer/">Volunteer</a></li>
 							</ul>
 						</div>
 						<div class="wpc-header-menu">

@@ -1,7 +1,7 @@
 <?php
 
 // Get URL
-$blog_url = get_bloginfo('url');
+$blog_url = get_bloginfo( 'url' );
 
 // Get directory
 $stylesheet_dir = get_stylesheet_directory_uri();
@@ -22,6 +22,7 @@ $stylesheet_dir = get_stylesheet_directory_uri();
 			<a class="wpc-logo" href="https://wpcampus.org/"><img src="<?php echo $stylesheet_dir; ?>/images/wpcampus-logo-tagline.svg" alt="WPCampus: Where WordPress Meets Higher Education" /></a>
 			<ul class="wpc-footer-menu" role="navigation">
 				<li><a href="<?php echo $blog_url; ?>/code-of-conduct/">Code of Conduct</a></li>
+				<li><a href="<?php echo $blog_url; ?>/thank-you/">Thank You</a></li>
 				<li><a href="<?php echo $blog_url; ?>/contact/">Contact Us</a></li>
 			</ul>
 			<p><strong>WPCampus is a <a href="https://wpcampus.org" title="Learn more about the WPCampus community">community</a> and conference for those using WordPress in the world of higher education.</strong><br />If you'd like to get involved, <a href="https://wpcampus.org/">visit the WPCampus website</a> for more information.<br />
