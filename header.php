@@ -36,13 +36,13 @@ $tweets_tagboard = 'https://tagboard.com/wpcampus/300756';
 			<li<?php echo is_page( 'about' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/about/">About</a></li>
 			<li><a href="<?php echo $tweets_tagboard; ?>">Tweets</a></li>
 			<li<?php echo ( is_page( 'schedule' ) || is_singular( 'schedule' ) ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/schedule/">Schedule</a></li>
+			<li<?php echo is_page( 'map' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/map/">Map</a></li>
 			<li<?php echo is_page( 'attendees' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/attendees/">Attendees</a></li>
-			<li class="has-submenu<?php echo ( is_page( 'venue' ) || is_page( 'map' ) || is_page( 'hotels' ) || is_page( 'transportation' ) ) ? ' current': null; ?>">
+			<li class="has-submenu<?php echo ( is_page( 'venue' ) || is_page( 'hotels' ) || is_page( 'transportation' ) ) ? ' current': null; ?>">
 				<a href="<?php echo $blog_url; ?>/venue">Venue</a>
 				<ul class="submenu">
 					<li<?php echo is_page( 'hotels' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/venue/hotels/">Hotels</a></li>
 					<li<?php echo is_page( 'transportation' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/venue/transportation/">Transportation</a></li>
-					<li<?php echo is_page( 'map' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/map/">Map</a></li>
 				</ul>
 			</li>
 			<li class="has-submenu<?php echo ( is_page( 'sponsors' ) || is_page( 'become-a-sponsor' ) ) ? ' current': null; ?>">
@@ -54,6 +54,7 @@ $tweets_tagboard = 'https://tagboard.com/wpcampus/300756';
 			<li><a href="https://wpcampus.org/get-involved/">Join Our Community</a></li>
 			<li<?php echo is_page( 'volunteer' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/volunteer/">Volunteer</a></li>
 			<li<?php echo is_page( 'thank-you' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/thank-you/">Thank You</a></li>
+			<li<?php echo is_page( 'wifi' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/wifi/">Wifi</a></li>
 			<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/contact/">Contact Us</a></li>
 		</ul>
 	</div>
@@ -87,13 +88,15 @@ $tweets_tagboard = 'https://tagboard.com/wpcampus/300756';
 						<div class="wpc-banner">
 							<ul class="menu">
 								<li<?php echo is_page( 'thank-you' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/thank-you/">Thank You</a></li>
+								<li<?php echo is_page( 'map' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/map/">Map</a></li>
+								<li<?php echo is_page( 'wifi' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/wifi/">Wifi</a></li>
 								<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/contact/">Contact</a></li>
 							</ul>
 						</div>
 						<div class="wpc-header-menu">
 							<ul class="menu">
 								<li<?php echo is_page( 'attendees' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/attendees/">Attendees</a></li>
-								<li class="has-submenu<?php echo ( is_page( 'venue' ) || is_page( 'map' ) || is_page( 'hotels' ) || is_page( 'transportation' ) ) ? ' current': null; ?>">
+								<li class="has-submenu<?php echo ( is_page( 'venue' ) || is_page( 'hotels' ) || is_page( 'transportation' ) ) ? ' current': null; ?>">
 									<a href="<?php echo $blog_url; ?>/venue">Venue</a>
 									<ul class="submenu">
 										<li<?php echo is_page( 'hotels' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/venue/hotels/">Hotels</a></li>
