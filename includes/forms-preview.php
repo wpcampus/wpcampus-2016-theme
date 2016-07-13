@@ -14,11 +14,16 @@ class GWPreviewConfirmation {
 
     public static function replace_merge_tags( $form ) {
 
-        $current_page = isset(GFFormDisplay::$submission[$form['id']]) ? GFFormDisplay::$submission[$form['id']]['page_number'] : 1;
-        $fields = array();
+	    // Make sure we have fields
+	    if ( empty( $form['fields']  ) ) {
+		    return $form;
+	    }
 
-        // get all HTML fields on the current page
-        foreach($form['fields'] as &$field) {
+	    // Get the current page
+        $current_page = isset( GFFormDisplay::$submission[ $form['id'] ] ) ? GFFormDisplay::$submission[ $form['id'] ]['page_number'] : 1;
+
+        // Get all HTML fields on the current page
+        foreach( $form['fields'] as &$field) {
 
             // skip all fields on the first page
             if(rgar($field, 'pageNumber') <= 1)
