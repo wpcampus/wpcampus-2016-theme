@@ -21,6 +21,7 @@ $stylesheet_dir = get_stylesheet_directory_uri();
 		<div class="small-12 columns">
 			<a class="wpc-logo" href="https://wpcampus.org/"><img src="<?php echo $stylesheet_dir; ?>/images/wpcampus-logo-tagline.svg" alt="WPCampus: Where WordPress Meets Higher Education" /></a>
 			<ul class="wpc-footer-menu" role="navigation">
+				<li><a href="<?php echo $blog_url; ?>/donate/">Donate</a></li>
 				<li><a href="<?php echo $blog_url; ?>/code-of-conduct/">Code of Conduct</a></li>
 				<li><a href="<?php echo $blog_url; ?>/thank-you/">Thank You</a></li>
 				<li><a href="<?php echo $blog_url; ?>/contact/">Contact Us</a></li>
