@@ -12,11 +12,13 @@ add_filter( 'excerpt_more', function( $excerpt_more ) {
 
 get_header();
 
-?><div id="wpc-home-hero"><?php
-	/* <div id="wpc-notification">
-		<p><strong>The <a href="<?php echo get_bloginfo('url'); ?>/speakers/">call for speakers is open</a> and will close at 12 midnight PST on March 21, 2016.</strong></p>
-	</div> <!-- #wpc-notification --> */
-?></div>
+$blog_url = get_bloginfo( 'url' );
+
+?><div id="wpc-home-hero">
+	<div id="wpc-notification">
+		<p><a href="<?php echo $blog_url; ?>/watch/">Watch the WPCampus 2016 live stream</a></p>
+	</div> <!-- #wpc-notification -->
+</div>
 <div id="wpc-main">
 	<div id="wpc-content">
 		<div class="row"><?php
@@ -27,17 +29,17 @@ get_header();
 				?><div class="large-9 columns">
 					<div class="wpc-content">
 
-						<div class="callout primary">As WPCampus week is finally upon us, ticket sales are now closed. If you're unable to join us in person, you can <a href="https://tagboard.com/wpcampus/300756">follow along on Twitter at #WPCampus</a>. It also looks like we'll have a live stream during the event! We will be sure to spread the word when official. Hope to see you soon!</div>
+						<div class="callout primary">If you were unable to join us in Sarasota, you can still be a part of WPCampus by <a href="<?php echo $blog_url; ?>/watch/">watching the live stream</a> and <a href="https://tagboard.com/wpcampus/300756">following along on Twitter at #WPCampus</a>.</div>
 
 						<h2>What Is WPCampus?</h2>
-						<p>A two-day event with <a href="https://2016.wpcampus.org/schedule/">38 sessions from 41 speakers</a> covering a variety of topics, all dedicated to the confluence of WordPress in higher education.</p>
+						<p>A two-day event with <a href="<?php echo $blog_url; ?>/schedule/">38 sessions from 41 speakers</a> covering a variety of topics, all dedicated to the confluence of WordPress in higher education.</p>
 						
 						<p><strong>Not to mention the endless networking opportunities!</strong> Meeting other web professionals from around the country can be invaluable and can provide you with a team of like-minded colleagues and experts to collaborate and consult with long into the future.</p>
 						
 						<h2>Who Will Be There?</h2>
 						<p>Members of the higher education and WordPress communities from all over the United States and Canada. Our event is open to faculty, staff, students, and even professionals outside full time higher education.</p>
 						
-						<p><a href="https://2016.wpcampus.org/attendees/">Over 60 institutions</a> will be represented from the United States and Canada.</p>
+						<p><a href="<?php echo $blog_url; ?>/attendees/">Over 60 institutions</a> will be represented from the United States and Canada.</p>
 
 						<?php if ( have_posts() ) :
 							while ( have_posts() ) :
