@@ -28,6 +28,7 @@ $stylesheet_dir = get_stylesheet_directory_uri();
 			<p><strong>WPCampus is a <a href="https://wpcampus.org" title="Learn more about the WPCampus community">community</a> and conference for those using WordPress in the world of higher education.</strong><br />If you'd like to get involved, <a href="https://wpcampus.org/">visit the WPCampus website</a> for more information.<br />
 			<span class="github-message">This site is powered by <a href="https://wordpress.org/">WordPress</a>. You can view, and contribute to, the theme on <a href="https://github.com/wpcampus/wpcampus-2016-theme">GitHub</a>.</span></p>
 			<p class="icons">
+				<a href="https://conferencia.io/events/wpcampus/"><img src="<?php echo $stylesheet_dir; ?>/images/conferencia-mic.png" alt="Follow WPCampus on conferencia" /></a>
 				<a href="http://lanyrd.com/2016/wpcampus-conference/"><img src="<?php echo $stylesheet_dir; ?>/images/lanyrd-black.png" alt="Follow WPCampus on Lanyrd" /></a>
 				<a href="https://twitter.com/wpcampusorg/"><img src="<?php echo $stylesheet_dir; ?>/images/twitter-black.svg" alt="Follow WPCampus on Twitter" /></a>
 				<a href="https://github.com/wpcampus/"><img src="<?php echo $stylesheet_dir; ?>/images/github-black.svg" alt="Follow WPCampus on GitHub" /></a>
