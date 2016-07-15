@@ -34,7 +34,7 @@ $tweets_tagboard = 'https://tagboard.com/wpcampus/300756';
 		</div>
 		<ul class="menu">
 			<li<?php echo is_page( 'about' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/about/">About</a></li>
-			<li><a href="<?php echo $tweets_tagboard; ?>">Tweets</a></li>
+			<li<?php echo is_page( 'watch' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/watch/">Watch</a></li>
 			<li<?php echo ( is_page( 'schedule' ) || is_singular( 'schedule' ) ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/schedule/">Schedule</a></li>
 			<li<?php echo is_page( 'map' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/map/">Map</a></li>
 			<li<?php echo is_page( 'attendees' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/attendees/">Attendees</a></li>
@@ -52,7 +52,7 @@ $tweets_tagboard = 'https://tagboard.com/wpcampus/300756';
 				</ul>
 			</li>
 			<li><a href="https://wpcampus.org/get-involved/">Join Our Community</a></li>
-			<li<?php echo is_page( 'volunteer' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/volunteer/">Volunteer</a></li>
+			<li><a href="<?php echo $tweets_tagboard; ?>">Tweets</a></li>
 			<li<?php echo is_page( 'thank-you' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/thank-you/">Thank You</a></li>
 			<li<?php echo is_page( 'wifi' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/wifi/">Wifi</a></li>
 			<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/contact/">Contact Us</a></li>
@@ -68,13 +68,13 @@ $tweets_tagboard = 'https://tagboard.com/wpcampus/300756';
 						<div class="wpc-banner">
 							<ul class="menu">
 								<li><a href="https://wpcampus.org/get-involved/">Join Community</a></li>
-								<li<?php echo is_page( 'volunteer' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/volunteer/">Volunteer</a></li>
+								<li><a href="<?php echo $tweets_tagboard; ?>">Tweets</a></li>
 							</ul>
 						</div>
 						<div class="wpc-header-menu">
 							<ul class="menu">
 								<li<?php echo is_page( 'about' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/about/">About</a></li>
-								<li><a href="<?php echo $tweets_tagboard; ?>">Tweets</a></li>
+								<li<?php echo is_page( 'watch' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/watch/">Watch</a></li>
 								<li<?php echo ( is_page( 'schedule' ) || is_singular( 'schedule' ) ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/schedule/">Schedule</a></li>
 							</ul>
 						</div>
@@ -87,7 +87,7 @@ $tweets_tagboard = 'https://tagboard.com/wpcampus/300756';
 					<div id="wpc-header-right">
 						<div class="wpc-banner">
 							<ul class="menu">
-								<li<?php echo is_page( 'thank-you' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/thank-you/">Thank You</a></li>
+								<li<?php echo is_page( 'thank-you' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/thank-you/">Thanks</a></li>
 								<li<?php echo is_page( 'map' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/map/">Map</a></li>
 								<li<?php echo is_page( 'wifi' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/wifi/">Wifi</a></li>
 								<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/contact/">Contact</a></li>
