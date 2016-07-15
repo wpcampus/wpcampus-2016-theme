@@ -33,6 +33,7 @@ $tweets_tagboard = 'https://tagboard.com/wpcampus/300756';
 			<div class="close-menu-label">Close</div>
 		</div>
 		<ul class="menu">
+			<li<?php echo is_front_page() ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>">Home</a></li>
 			<li<?php echo is_page( 'about' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/about/">About</a></li>
 			<li<?php echo is_page( 'watch' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/watch/">Watch</a></li>
 			<li<?php echo ( is_page( 'schedule' ) || is_singular( 'schedule' ) ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/schedule/">Schedule</a></li>

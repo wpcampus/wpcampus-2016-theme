@@ -35,10 +35,17 @@ html, body {
 
 // The main notification
 #wpc-notification {
+	background: #1159bd;
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
+	color: #fff;
+
+	a {
+		color: inherit;
+	}
+
 }
 
 .wpc-content {
