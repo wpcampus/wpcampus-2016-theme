@@ -640,6 +640,53 @@ img {
 
 }
 
+#conf-sch-single-livestream .callout,
+.wpc-ls-callout {
+	text-align: center;
+	font-size: 1.2em;
+	font-weight: bold;
+	background: #1159bd;
+	margin: 15px 0;
+	padding: 0;
+
+	a {
+		display: block;
+		color: #fff;
+		padding: 1rem;
+	}
+
+}
+
+#wpcampus-2016-livestream {
+
+	.wpc-ls {
+		margin: 0 0 30px 0;
+		line-height: 1.65;
+
+		.event-title {
+			margin-bottom: 3px;
+		}
+
+		.event-dt {
+			font-size: 90%;
+		}
+
+		.event-speakers {
+			font-size: 1.4rem;
+			line-height: 1.4;
+			margin-bottom: 5px;
+
+			.event-speaker {}
+
+		}
+
+		.event-categories {
+			font-style: italic;
+		}
+	}
+
+}
+
 // iframe elements: map
 .wpcampus-2016-iframe {
 	width: 100%;

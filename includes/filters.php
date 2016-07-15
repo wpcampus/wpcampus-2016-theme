@@ -16,28 +16,30 @@ add_filter( 'wpcampus_2016_breadcrumbs', function( $breadcrumbs ) {
 		// Copy to new crumbs
 		$new_crumbs = array();
 
-		foreach( $breadcrumbs as $crumb_key => $crumb ) {
+		if ( ! empty( $breadcrumbs ) ) {
+			foreach ( $breadcrumbs as $crumb_key => $crumb ) {
 
-			// If crumb is equal to page...
-			if ( $post->ID == $crumb[ 'ID' ] ) {
+				// If crumb is equal to page...
+				if ( ! empty( $crumb['ID'] ) && $crumb['ID'] == $post->ID ) {
 
-				// Get schedule page
-				if ( $schedule_page = get_page_by_path( 'schedule' ) ) {
+					// Get schedule page
+					if ( $schedule_page = get_page_by_path( 'schedule' ) ) {
 
-					// Add schedule and then add crumb
-					$new_crumbs[] = array(
-						'ID' => $schedule_page->ID,
-						'url' => get_permalink( $schedule_page->ID ),
-  						'label' => get_the_title( $schedule_page->ID )
-					);
+						// Add schedule and then add crumb
+						$new_crumbs[] = array(
+							'ID'    => $schedule_page->ID,
+							'url'   => get_permalink( $schedule_page->ID ),
+							'label' => get_the_title( $schedule_page->ID )
+						);
+
+					}
 
 				}
 
+				// Add current crumb to the mix
+				$new_crumbs[ $crumb_key ] = $crumb;
+
 			}
-
-			// Add current crumb to the mix
-			$new_crumbs[ $crumb_key ] = $crumb;
-
 		}
 
 		return $new_crumbs;

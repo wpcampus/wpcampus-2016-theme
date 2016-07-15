@@ -7,12 +7,7 @@ require_once( STYLESHEETPATH . '/includes/forms-preview.php' );
 
 // Add <title> support
 add_theme_support( 'title-tag' );
-
-// This theme uses wp_nav_menu() in two locations.
-/*register_nav_menus( array(
-	'primary' => 'Primary Menu',
-	'footer'  => 'Footer Menu',
-) );*/
+add_theme_support( 'post-thumbnails' );
 
 // Switch default core markup for search form, comment form, and comments to output valid HTML5
 add_theme_support( 'html5', array(
@@ -83,6 +78,31 @@ function wpcampus_2016_enqueue_scripts() {
 	// Add our iframe script
 	if ( is_page_template( 'template-map.php' ) ) {
 		wp_enqueue_script( 'wpcampus-2016-iframe', get_template_directory_uri() . '/js/wpcampus-2016-iframe-min.js', array( 'jquery' ), filemtime( get_template_directory() . '/js/wpcampus-2016-iframe-min.js' ) );
+	}
+
+	// Register handlebars
+	wp_register_script( 'handlebars', '//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js' );
+
+	// Get the API route
+	$wp_rest_api_route = function_exists( 'rest_get_url_prefix' ) ? rest_get_url_prefix() : '';
+	if ( ! empty( $wp_rest_api_route ) ) {
+		$wp_rest_api_route = "/{$wp_rest_api_route}/wp/v2/";
+	}
+
+	// For the livestream page
+	if ( is_page_template( 'template-livestream.php' ) ) {
+
+		// Enqueue the schedule script
+		wp_enqueue_script( 'wpcampus-2016-livestream', get_template_directory_uri() . '/js/wpcampus-2016-livestream-min.js', array(
+			'jquery',
+			'handlebars'
+		), false, true );
+
+		// Pass some data
+		wp_localize_script( 'wpcampus-2016-livestream', 'wpc_ls', array(
+			'wp_api_route'  => $wp_rest_api_route,
+		) );
+
 	}
 
 }
