@@ -11,3 +11,9 @@ The WordPress theme for the 2016 WPCampus conference.
 7. Make them changes!
 8. Submit a pull request
 9. Drink some well-deserved coffee because you're awesome
+
+## Disclaimer
+
+This repo is shared for educational purposes. Feel free to explore, copy, submit fixes, and share the code.
+
+**However, please respect that the WPCampus branding and design are intended solely for the WPCampus organization.**
