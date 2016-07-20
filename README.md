@@ -1,5 +1,6 @@
 # WPCampus 2016 - Theme
-The WordPress theme for the 2016 WPCampus conference.
+
+This is the WordPress theme used to power the 2016 WPCampus conference website at [https://2016.wpcampus.org](https://2016.wpcampus.org).
 
 ## How to setup on your localhost
 1. Clone the repo to a folder on your computer
