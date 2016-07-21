@@ -29,7 +29,7 @@ $blog_url = get_bloginfo( 'url' );
 				?><div class="large-9 columns">
 					<div class="wpc-content">
 
-						<div class="callout primary">If you were unable to join us in Sarasota, you can still be a part of WPCampus by <a href="<?php echo $blog_url; ?>/watch/">watching the live stream</a> and <a href="https://tagboard.com/wpcampus/300756">following along on Twitter at #WPCampus</a>.</div>
+						<div class="callout primary">Video recordings of all sessions will be available soon!</div>
 
 						<h2>What Is WPCampus?</h2>
 						<p>A two-day event with <a href="<?php echo $blog_url; ?>/schedule/">38 sessions from 41 speakers</a> covering a variety of topics, all dedicated to the confluence of WordPress in higher education.</p>
