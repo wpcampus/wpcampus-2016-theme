@@ -54,6 +54,7 @@ $tweets_tagboard = 'https://tagboard.com/wpcampus/300756';
 			</li>
 			<li><a href="https://wpcampus.org/get-involved/">Join Our Community</a></li>
 			<li><a href="<?php echo $tweets_tagboard; ?>">Tweets</a></li>
+			<li><a href="https://goo.gl/photos/8FyEvaZg7zwj2ZTN6">Photos</a></li>
 			<li<?php echo is_page( 'thank-you' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/thank-you/">Thank You</a></li>
 			<li<?php echo is_page( 'wifi' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/wifi/">Wifi</a></li>
 			<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/contact/">Contact Us</a></li>
@@ -68,8 +69,9 @@ $tweets_tagboard = 'https://tagboard.com/wpcampus/300756';
 					<div id="wpc-header-left">
 						<div class="wpc-banner">
 							<ul class="menu">
-								<li><a href="https://wpcampus.org/get-involved/">Join Community</a></li>
+								<li><a href="https://wpcampus.org/get-involved/">Community</a></li>
 								<li><a href="<?php echo $tweets_tagboard; ?>">Tweets</a></li>
+								<li><a href="https://goo.gl/photos/8FyEvaZg7zwj2ZTN6">Photos</a></li>
 							</ul>
 						</div>
 						<div class="wpc-header-menu">
