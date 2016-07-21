@@ -15,9 +15,9 @@ get_header();
 $blog_url = get_bloginfo( 'url' );
 
 ?><div id="wpc-home-hero">
-	<div id="wpc-notification">
+	<?php /*<div id="wpc-notification">
 		<p><a href="<?php echo $blog_url; ?>/watch/">Watch the WPCampus 2016 live stream</a></p>
-	</div> <!-- #wpc-notification -->
+	</div> <!-- #wpc-notification -->*/ ?>
 </div>
 <div id="wpc-main">
 	<div id="wpc-content">
