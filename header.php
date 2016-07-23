@@ -10,9 +10,9 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 $tweets_tagboard = 'https://tagboard.com/wpcampus/300756';
 
 ?><!doctype html>
-<html class="no-js" lang="en">
+<html <?php language_attributes(); ?> class="no-js">
 <head>
-	<meta charset="utf-8">
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="twitter:description" content="<?php echo $desc; ?>" />
