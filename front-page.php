@@ -15,9 +15,9 @@ get_header();
 $blog_url = get_bloginfo( 'url' );
 
 ?><div id="wpc-home-hero">
-	<?php /*<div id="wpc-notification">
-		<p><a href="<?php echo $blog_url; ?>/watch/">Watch the WPCampus 2016 live stream</a></p>
-	</div> <!-- #wpc-notification -->*/ ?>
+	<div id="wpc-notification">
+		<p><a href="<?php echo $blog_url; ?>/2016/07/conference-survey/">A huge thank you + the WPCampus 2016 conference survey</a></p>
+	</div> <!-- #wpc-notification -->
 </div>
 <div id="wpc-main">
 	<div id="wpc-content">
@@ -29,17 +29,27 @@ $blog_url = get_bloginfo( 'url' );
 				?><div class="large-9 columns">
 					<div class="wpc-content">
 
-						<div class="callout primary">A big thank you to all involved for helping make our inaugural event a success! Video recordings of all sessions will be available soon.</div>
+						<div class="callout primary">A <a href="https://2016.wpcampus.org/thank-you/">BIG THANK YOU</a> to all involved for helping make the inaugural WPCampus conference a success!</div>
 
 						<h2>What Is WPCampus?</h2>
 						<p>A two-day event with <a href="<?php echo $blog_url; ?>/schedule/">38 sessions from 41 speakers</a> covering a variety of topics, all dedicated to the confluence of WordPress in higher education.</p>
+
+						<p>The inaugural WPCampus conference took place July 15-16 at <a href="http://usfsm.edu/">The University of South Florida Sarasota-Manatee</a> in beautiful Sarasota, Florida.</p>
 						
-						<p><strong>Not to mention the endless networking opportunities!</strong> Meeting other web professionals from around the country can be invaluable and can provide you with a team of like-minded colleagues and experts to collaborate and consult with long into the future.</p>
+						<h2>Who Was There?</h2>
+						<p>Members of the higher education and WordPress communities from all over the United States and Canada. WPCampus events are open to faculty, staff, students, and even professionals outside full time higher education.</p>
 						
-						<h2>Who Will Be There?</h2>
-						<p>Members of the higher education and WordPress communities from all over the United States and Canada. Our event is open to faculty, staff, students, and even professionals outside full time higher education.</p>
-						
-						<p><a href="<?php echo $blog_url; ?>/attendees/">Over 60 institutions</a> will be represented from the United States and Canada.</p>
+						<p><a href="<?php echo $blog_url; ?>/attendees/">Over 60 institutions</a> were represented from the United States and Canada.</p>
+
+						<div class="callout primary" style="text-align:center;">
+							<h2>WPCampus Session Recordings Available</h2>
+							<p><strong>All WPCampus sessions were recorded and will be archived on our website.</strong> We have started uploading them to the website so be sure to <a href="/schedule/" style="color:#003366;"><strong>visit the WPCampus schedule</strong></a> to check them out.</p>
+						</div>
+
+						<div class="callout secondary" style="text-align:center;">
+							<h2>Will your campus be WPCampus 2017?</h2>
+							<p>The WPCampus planning team is already hard at work preparing for next year's conference. In order to choose a location, we will be releasing the hosting application within the next few weeks. If you would like your campus to be considered for 2017, please start rounding up any questions you might have and begin talking to campus administrators.</p>
+						</div>
 
 						<?php if ( have_posts() ) :
 							while ( have_posts() ) :

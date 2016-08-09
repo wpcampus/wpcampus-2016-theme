@@ -27,6 +27,11 @@
 
 			.gfield {
 
+				input[type=radio],
+				input[type=checkbox] {
+					margin: 0 5px 0 1px !important;
+				}
+
 				&.field-desc-callout {
 
 					&.gsection {
@@ -78,4 +83,16 @@
 		background: #eee;
 	}
 
+}
+
+#field_10_29 {
+	color: red;
+	font-weight: bold;
+	font-size: 105%;
+}
+
+#field_10_30_dmessage {
+	margin-top: 5px;
+	font-size: 91%;
+	font-style: italic;
 }
