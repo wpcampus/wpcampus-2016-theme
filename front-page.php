@@ -47,7 +47,7 @@ $blog_url = get_bloginfo( 'url' );
 						</div>
 
 						<div class="callout secondary" style="text-align:center;">
-							<h2>Will your campus be WPCampus 2017?</h2>
+							<h2>Will Your Campus Be WPCampus 2017?</h2>
 							<p>The WPCampus planning team is already hard at work preparing for next year's conference. In order to choose a location, we will be releasing the hosting application within the next few weeks. If you would like your campus to be considered for 2017, please start rounding up any questions you might have and begin talking to campus administrators.</p>
 						</div>
 
