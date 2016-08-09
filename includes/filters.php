@@ -1,5 +1,34 @@
 <?php
 
+// Filter the session videl
+add_filter( 'conf_schedule_session_video_html', 'wpcampus_2016_filter_session_video_html', 100, 3 );
+function wpcampus_2016_filter_session_video_html( $video_html, $video_url, $post_id ) {
+
+	// If a USFSM video, then return an iframe
+	if ( preg_match( '/mediasite\.usfsm\.edu/i', $video_url ) ) {
+
+		// Define video HTML
+		$video_html = '<iframe src="' . $video_url . '"></iframe>';
+
+		// Designate videos group together with times
+		$grouped_videos = array(
+			'146' => '00:28',
+			'286' => '14:35',
+			'177' => '30:15',
+			'198' => '1:02:40',
+			'133' => '2:01:40',
+		);
+
+		// Add message for Saturday afternoon videos
+		if ( array_key_exists( $post_id, $grouped_videos ) ) {
+			$video_html = '<p><em>With our apologies, due to circumstances outside our control, all sessions from Saturday afternoon in the auditorium are grouped together into one video. We are trying to get this sorted out.</em></p><p><em><strong>In the meantime, skip to minute ' . $grouped_videos[ $post_id ] . ' in this video to view this session.</strong></em></p>' . $video_html;
+		}
+
+	}
+	
+	return $video_html;
+}
+
 // Set the tabindex to 0 for accessibility
 add_filter( 'gform_tabindex', 'wpcampus_2016_filter_gform_tabindex', 10, 2 );
 function wpcampus_2016_filter_gform_tabindex( $tabindex, $form ) {
