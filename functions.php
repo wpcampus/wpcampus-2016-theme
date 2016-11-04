@@ -131,12 +131,6 @@ function wpcampus_2016_add_favicons() {
 
 }
 
-// Hide Query Monitor if admin bar isn't showing
-add_filter( 'qm/process', 'wpcampus_2016_hide_query_monitor', 10, 2 );
-function wpcampus_2016_hide_query_monitor( $show_qm, $is_admin_bar_showing ) {
-	return $is_admin_bar_showing;
-}
-
 // Get the post type archive title
 function wpcampus_get_post_type_archive_title( $post_type = '' ) {
 
