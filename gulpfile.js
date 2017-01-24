@@ -5,29 +5,47 @@ var autoprefixer = require('gulp-autoprefixer');
 
 var sassPaths = [ 'bower_components/foundation-sites/scss' ];
 
-gulp.task('sass', function() {
-    return gulp.src('./scss/*.scss')
+// Define the source paths for each file type
+var src = {
+    scss: ['assets/scss/**/*'],
+    js: ['assets/js/**/*','!assets/js/**/*.min.js']
+}
+
+// Define the destination paths for each file type
+var dest = {
+	scss: 'assets/css',
+	js: 'assets/js'
+}
+
+gulp.task('sass',function() {
+    return gulp.src(src.scss)
         .pipe(sass({
-                includePaths: sassPaths,
-				outputStyle: 'compressed'
-            })
-            .on('error', sass.logError))
+        	includePaths: sassPaths,
+			outputStyle: 'compressed'
+		})
+        .on('error',sass.logError))
         .pipe(autoprefixer({
-            browsers: ['last 2 versions', 'ie >= 9']
+            browsers: ['last 2 versions','ie >= 9']
         }))
-        .pipe(gulp.dest('./css'));
+        .pipe(gulp.dest(dest.scss));
 });
 
-gulp.task('compress', function() {
-    gulp.src(['js/wpcampus-2016.js','js/wpcampus-2016-iframe.js','js/wpcampus-2016-livestream.js'])
+gulp.task('js',function() {
+    gulp.src(src.js)
         .pipe(minify({
-            exclude: ['tasks'],
-            mangle: false
+        	mangle: false,
+        	ext:{
+        		min:'.min.js'
+        	}
         }))
-        .pipe(gulp.dest('js'))
+        .pipe(gulp.dest(dest.js))
 });
 
-gulp.task('default', ['sass', 'compress'], function() {
-    gulp.watch(['scss/**/*.scss'], ['sass']);
-    gulp.watch(['js/wpcampus-2016.js','js/wpcampus-2016-iframe.js','js/wpcampus-2016-livestream.js'], ['compress']);
+// I've got my eyes on you(r file changes)
+gulp.task('watch', function() {
+	gulp.watch(src.scss,['sass']);
+	gulp.watch(src.js,['js']);
 });
+
+gulp.task('default',['compile']);
+gulp.task('compile', ['sass','js']);

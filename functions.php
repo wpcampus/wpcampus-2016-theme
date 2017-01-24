@@ -85,19 +85,19 @@ function wpcampus_2016_enqueue_scripts() {
 	wp_enqueue_style( 'wpcampus-2016-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:600,400,300' );
 
 	// Add our theme stylesheet
-	wp_enqueue_style( 'wpcampus-2016', get_template_directory_uri() . '/css/styles.css', array( 'wpcampus-2016-fonts' ), filemtime( get_template_directory() . '/css/styles.css' ) );
+	wp_enqueue_style( 'wpcampus-2016', get_template_directory_uri() . '/assets/css/styles.css', array( 'wpcampus-2016-fonts' ), filemtime( get_template_directory() . '/assets/css/styles.css' ) );
 
 	// Add our theme script
-	wp_enqueue_script( 'wpcampus-2016', get_template_directory_uri() . '/js/wpcampus-2016-min.js', array( 'jquery' ), filemtime( get_template_directory() . '/js/wpcampus-2016-min.js' ) );
+	wp_enqueue_script( 'wpcampus-2016', get_template_directory_uri() . '/assets/js/wpcampus-2016.min.js', array( 'jquery' ), filemtime( get_template_directory() . '/assets/js/wpcampus-2016.min.js' ) );
 
 	// Add our home styles
 	if ( is_front_page() ) {
-		wp_enqueue_style( 'wpcampus-2016-home', get_template_directory_uri() . '/css/home.css', array( 'wpcampus-2016' ), filemtime( get_template_directory() . '/css/home.css' ) );
+		wp_enqueue_style( 'wpcampus-2016-home', get_template_directory_uri() . '/assets/css/home.css', array( 'wpcampus-2016' ), filemtime( get_template_directory() . '/assets/css/home.css' ) );
 	}
 
 	// Add our iframe script
 	if ( is_page_template( 'template-map.php' ) ) {
-		wp_enqueue_script( 'wpcampus-2016-iframe', get_template_directory_uri() . '/js/wpcampus-2016-iframe-min.js', array( 'jquery' ), filemtime( get_template_directory() . '/js/wpcampus-2016-iframe-min.js' ) );
+		wp_enqueue_script( 'wpcampus-2016-iframe', get_template_directory_uri() . '/assets/js/wpcampus-2016-iframe.min.js', array( 'jquery' ), filemtime( get_template_directory() . '/assets/js/wpcampus-2016-iframe.min.js' ) );
 	}
 
 	// Register handlebars
@@ -113,7 +113,7 @@ function wpcampus_2016_enqueue_scripts() {
 	if ( is_page_template( 'template-livestream.php' ) ) {
 
 		// Enqueue the schedule script
-		wp_enqueue_script( 'wpcampus-2016-livestream', get_template_directory_uri() . '/js/wpcampus-2016-livestream-min.js', array(
+		wp_enqueue_script( 'wpcampus-2016-livestream', get_template_directory_uri() . '/assets/js/wpcampus-2016-livestream.min.js', array(
 			'jquery',
 			'handlebars'
 		), false, true );
@@ -134,7 +134,7 @@ add_action( 'login_head', 'wpcampus_2016_add_favicons' );
 function wpcampus_2016_add_favicons() {
 
 	// Set the images folder
-	$favicons_folder = get_stylesheet_directory_uri() . '/images/favicons/';
+	$favicons_folder = get_stylesheet_directory_uri() . '/assets/images/favicons/';
 
 	// Print the default icons
 	?><link rel="shortcut icon" href="<?php echo $favicons_folder; ?>wpcampus-favicon-60.png"/>

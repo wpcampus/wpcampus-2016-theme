@@ -1,6 +1,4 @@
 bower_components
-css
 node_modules
-wpcampus-2016-min.js
-wpcampus-2016-iframe-min.js
-wpcampus-2016-livestream-min.js
+assets/css
+assets/js/*.min.js
