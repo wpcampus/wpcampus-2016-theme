@@ -1,26 +1,44 @@
 <?php
 
-// Include files
+// Include files.
 require_once( STYLESHEETPATH . '/includes/filters.php' );
 require_once( STYLESHEETPATH . '/includes/shortcodes.php' );
 require_once( STYLESHEETPATH . '/includes/forms-preview.php' );
 require_once( STYLESHEETPATH . '/includes/session-surveys.php' );
 
-// Add <title> support
-add_theme_support( 'title-tag' );
-add_theme_support( 'post-thumbnails' );
+/**
+ * Sets up theme defaults and registers
+ * support for various WordPress features.
+ *
+ * @since 1.0.0
+ */
+function wpcampus_2016_theme_setup() {
 
-// Switch default core markup for search form, comment form, and comments to output valid HTML5
-add_theme_support( 'html5', array(
-	'search-form',
-	'comment-form',
-	'comment-list',
-	'gallery',
-	'caption',
-) );
+	// Make theme available for translation
+	load_theme_textdomain( 'wpcampus-2016', get_stylesheet_directory() . '/languages' );
+
+	// Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
+
+	// Let WordPress manage the document title
+	add_theme_support( 'title-tag' );
+
+	// Enable support for Post Thumbnails on posts and pages
+	add_theme_support( 'post-thumbnails' );
+
+	// Switch default core markup for search form, comment form, and comments to output valid HTML5
+	add_theme_support( 'html5', array(
+		'search-form',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
+	));
+
+}
+add_action( 'after_setup_theme', 'wpcampus_2016_theme_setup' );
 
 // Register sidebars
-add_action( 'widgets_init', 'wpcampus_2016_register_sidebars' );
 function wpcampus_2016_register_sidebars() {
 
 	// Register home sidebar
@@ -32,7 +50,7 @@ function wpcampus_2016_register_sidebars() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="sidebar-title">',
 		'after_title'   => '</h2>',
-	) );
+	));
 
 	// Register main sidebar
 	register_sidebar( array(
@@ -43,7 +61,7 @@ function wpcampus_2016_register_sidebars() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="sidebar-title">',
 		'after_title'   => '</h2>',
-	) );
+	));
 
 	// Register sponsors sidebar
 	register_sidebar( array(
@@ -54,9 +72,10 @@ function wpcampus_2016_register_sidebars() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="sidebar-title">',
 		'after_title'   => '</h2>',
-	) );
+	));
 
 }
+add_action( 'widgets_init', 'wpcampus_2016_register_sidebars' );
 
 // Enqueues scripts and styles
 add_action( 'wp_enqueue_scripts', 'wpcampus_2016_enqueue_scripts', 20 );
@@ -102,7 +121,7 @@ function wpcampus_2016_enqueue_scripts() {
 		// Pass some data
 		wp_localize_script( 'wpcampus-2016-livestream', 'wpc_ls', array(
 			'wp_api_route'  => $wp_rest_api_route,
-		) );
+		));
 
 	}
 
