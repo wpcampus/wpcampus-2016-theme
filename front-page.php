@@ -14,7 +14,8 @@ get_header();
 
 $blog_url = get_bloginfo( 'url' );
 
-?><div id="wpc-home-hero">
+?>
+<div id="wpc-home-hero">
 	<div id="wpc-notification">
 		<p><a href="<?php echo $blog_url; ?>/2016/07/conference-survey/">A huge thank you + the WPCampus 2016 conference survey</a></p>
 	</div> <!-- #wpc-notification -->
@@ -25,8 +26,9 @@ $blog_url = get_bloginfo( 'url' );
 			<?php
 
 			// Print the sidebar
-			if ( is_active_sidebar( 'home-sidebar' ) ) { ?>
+			if ( is_active_sidebar( 'home-sidebar' ) ) :
 
+				?>
 				<div class="large-9 columns">
 					<div class="wpc-content">
 
@@ -87,8 +89,9 @@ $blog_url = get_bloginfo( 'url' );
 					</div>
 				</div>
 
-			<?php } else { ?>
+			else :
 
+				?>
 				<div class="large-12 columns">
 					<div class="wpc-content">
 						<?php
@@ -108,7 +111,7 @@ $blog_url = get_bloginfo( 'url' );
 									the_excerpt( sprintf(
 										'Continue reading<span class="screen-reader-text"> "%s"</span>',
 										get_the_title()
-									) );
+									));
 
 									?>
 								</article>
@@ -122,11 +125,13 @@ $blog_url = get_bloginfo( 'url' );
 				</div>
 				<?php
 
-			}
+			endif;
 
-		?></div> <!-- .row -->
+			?>
+		</div> <!-- .row -->
 	</div> <!-- #wpc-content -->
 
-</div> <!-- #wpc-main --><?php
+</div> <!-- #wpc-main -->
+<?php
 
 get_footer();

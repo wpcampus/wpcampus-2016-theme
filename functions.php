@@ -78,26 +78,28 @@ function wpcampus_2016_register_sidebars() {
 add_action( 'widgets_init', 'wpcampus_2016_register_sidebars' );
 
 // Enqueues scripts and styles
-add_action( 'wp_enqueue_scripts', 'wpcampus_2016_enqueue_scripts', 20 );
 function wpcampus_2016_enqueue_scripts() {
+
+	$theme_dir = get_template_directory();
+	$theme_dir_uri = get_stylesheet_directory_uri();
 
 	// Load Fonts
 	wp_enqueue_style( 'wpcampus-2016-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:600,400,300' );
 
 	// Add our theme stylesheet
-	wp_enqueue_style( 'wpcampus-2016', get_template_directory_uri() . '/assets/css/styles.css', array( 'wpcampus-2016-fonts' ), filemtime( get_template_directory() . '/assets/css/styles.css' ) );
+	wp_enqueue_style( 'wpcampus-2016', $theme_dir_uri . '/assets/css/styles.css', array( 'wpcampus-2016-fonts' ), filemtime( $theme_dir . '/assets/css/styles.css' ) );
 
 	// Add our theme script
-	wp_enqueue_script( 'wpcampus-2016', get_template_directory_uri() . '/assets/js/wpcampus-2016.min.js', array( 'jquery' ), filemtime( get_template_directory() . '/assets/js/wpcampus-2016.min.js' ) );
+	wp_enqueue_script( 'wpcampus-2016', $theme_dir_uri . '/assets/js/wpcampus-2016.min.js', array( 'jquery' ), filemtime( $theme_dir . '/assets/js/wpcampus-2016.min.js' ) );
 
 	// Add our home styles
 	if ( is_front_page() ) {
-		wp_enqueue_style( 'wpcampus-2016-home', get_template_directory_uri() . '/assets/css/home.css', array( 'wpcampus-2016' ), filemtime( get_template_directory() . '/assets/css/home.css' ) );
+		wp_enqueue_style( 'wpcampus-2016-home', $theme_dir_uri . '/assets/css/home.css', array( 'wpcampus-2016' ), filemtime( $theme_dir . '/assets/css/home.css' ) );
 	}
 
 	// Add our iframe script
 	if ( is_page_template( 'template-map.php' ) ) {
-		wp_enqueue_script( 'wpcampus-2016-iframe', get_template_directory_uri() . '/assets/js/wpcampus-2016-iframe.min.js', array( 'jquery' ), filemtime( get_template_directory() . '/assets/js/wpcampus-2016-iframe.min.js' ) );
+		wp_enqueue_script( 'wpcampus-2016-iframe', $theme_dir_uri . '/assets/js/wpcampus-2016-iframe.min.js', array( 'jquery' ), filemtime( $theme_dir . '/assets/js/wpcampus-2016-iframe.min.js' ) );
 	}
 
 	// Register handlebars
@@ -113,9 +115,9 @@ function wpcampus_2016_enqueue_scripts() {
 	if ( is_page_template( 'template-livestream.php' ) ) {
 
 		// Enqueue the schedule script
-		wp_enqueue_script( 'wpcampus-2016-livestream', get_template_directory_uri() . '/assets/js/wpcampus-2016-livestream.min.js', array(
+		wp_enqueue_script( 'wpcampus-2016-livestream', $theme_dir_uri . '/assets/js/wpcampus-2016-livestream.min.js', array(
 			'jquery',
-			'handlebars'
+			'handlebars',
 		), false, true );
 
 		// Pass some data
@@ -124,36 +126,41 @@ function wpcampus_2016_enqueue_scripts() {
 		));
 
 	}
-
 }
+add_action( 'wp_enqueue_scripts', 'wpcampus_2016_enqueue_scripts', 20 );
 
 // Load favicons
-add_action( 'wp_head', 'wpcampus_2016_add_favicons' );
-add_action( 'admin_head', 'wpcampus_2016_add_favicons' );
-add_action( 'login_head', 'wpcampus_2016_add_favicons' );
 function wpcampus_2016_add_favicons() {
 
-	// Set the images folder
+	// Set the images folder.
 	$favicons_folder = get_stylesheet_directory_uri() . '/assets/images/favicons/';
 
-	// Print the default icons
-	?><link rel="shortcut icon" href="<?php echo $favicons_folder; ?>wpcampus-favicon-60.png"/>
-	<link rel="apple-touch-icon" href="<?php echo $favicons_folder; ?>wpcampus-favicon-60.png"/><?php
+	?>
+	<link rel="shortcut icon" href="<?php echo $favicons_folder; ?>wpcampus-favicon-60.png"/>
+	<link rel="apple-touch-icon" href="<?php echo $favicons_folder; ?>wpcampus-favicon-60.png"/>
+	<?php
 
 	// Set the image sizes
 	$image_sizes = array( 57, 72, 76, 114, 120, 144, 152 );
 
 	// Print favicons
-	foreach( $image_sizes as $size ) {
-		?><link rel="apple-touch-icon" sizes="<?php echo "{$size}x{$size}"; ?>" href="<?php echo $favicons_folder; ?>wpcampus-favicon-<?php echo $size; ?>.png"/><?php
-	}
+	foreach ( $image_sizes as $size ) :
+
+		?>
+		<link rel="apple-touch-icon" sizes="<?php echo "{$size}x{$size}"; ?>" href="<?php echo $favicons_folder; ?>wpcampus-favicon-<?php echo $size; ?>.png"/>
+		<?php
+
+	endforeach;
 
 }
+add_action( 'wp_head', 'wpcampus_2016_add_favicons' );
+add_action( 'admin_head', 'wpcampus_2016_add_favicons' );
+add_action( 'login_head', 'wpcampus_2016_add_favicons' );
 
 // Get the post type archive title
 function wpcampus_get_post_type_archive_title( $post_type = '' ) {
 
-	// Make sure we have a post type
+	// Make sure we have a post type.
 	if ( ! $post_type ) {
 		$post_type = get_query_var( 'post_type' );
 	}
@@ -176,7 +183,6 @@ function wpcampus_get_post_type_archive_title( $post_type = '' ) {
 			return apply_filters( 'wpcampus_post_type_archive_title', $title, $post_type );
 
 		}
-
 	}
 
 	return null;
@@ -204,7 +210,7 @@ function wpcampus_get_breadcrumbs_html() {
 	// Add home
 	$breadcrumbs[] = array(
 		'url'   => get_bloginfo( 'url' ),
-		'label' => 'Home',
+		'label' => __( 'Home', 'wpcampus-2016' ),
 	);
 
 	// Add archive(s)
@@ -219,11 +225,12 @@ function wpcampus_get_breadcrumbs_html() {
 
 			// Add the breadcrumb
 			if ( $post_type_archive_link && $post_type_archive_title ) {
-				$breadcrumbs[] = array( 'url' => $post_type_archive_link, 'label' => $post_type_archive_title );
+				$breadcrumbs[] = array(
+					'url' 	=> $post_type_archive_link,
+					'label' => $post_type_archive_title,
+				);
 			}
-
 		}
-
 	} else {
 
 		// Add links to archive
@@ -234,13 +241,16 @@ function wpcampus_get_breadcrumbs_html() {
 			$post_type_archive_title = wpcampus_get_post_type_archive_title( $post_type );
 
 			if ( $post_type_archive_link ) {
-				$breadcrumbs[] = array( 'url' => $post_type_archive_link, 'label' => $post_type_archive_title );
+				$breadcrumbs[] = array(
+					'url'	=> $post_type_archive_link,
+					'label'	=> $post_type_archive_title,
+				);
 			}
-
 		}
 
 		// Print info for the current post
-		if ( ( $post = get_queried_object() ) && is_a( $post, 'WP_Post' ) ) {
+		$post = get_queried_object();
+		if ( $post && is_a( $post, 'WP_Post' ) ) {
 
 			// Get ancestors
 			$post_ancestors = isset( $post ) ? get_post_ancestors( $post->ID ) : array();
@@ -249,17 +259,23 @@ function wpcampus_get_breadcrumbs_html() {
 			foreach ( $post_ancestors as $post_ancestor_id ) {
 
 				// Add ancestor
-				$breadcrumbs[] = array( 'ID' => $post_ancestor_id, 'url' => get_permalink( $post_ancestor_id ), 'label' => get_the_title( $post_ancestor_id ), );
+				$breadcrumbs[] = array(
+					'ID' 	=> $post_ancestor_id,
+					'url' 	=> get_permalink( $post_ancestor_id ),
+					'label' => get_the_title( $post_ancestor_id ),
+				);
 
 			}
 
 			// Add current page - if not home page
 			if ( isset( $post ) ) {
-				$breadcrumbs[ 'current' ] = array( 'ID' => $post->ID, 'url' => get_permalink( $post ), 'label' => get_the_title( $post->ID ), );
+				$breadcrumbs['current'] = array(
+					'ID'	=> $post->ID,
+					'url'	=> get_permalink( $post ),
+					'label'	=> get_the_title( $post->ID ),
+				);
 			}
-
 		}
-
 	}
 
 	// Filter the breadcrumbs
@@ -268,10 +284,10 @@ function wpcampus_get_breadcrumbs_html() {
 	// Build breadcrumbs HTML
 	$breadcrumbs_html = null;
 
-	foreach( $breadcrumbs as $crumb_key => $crumb ) {
+	foreach ( $breadcrumbs as $crumb_key => $crumb ) {
 
 		// Make sure we have what we need
-		if ( empty( $crumb[ 'label' ] ) ) {
+		if ( empty( $crumb['label'] ) ) {
 			continue;
 		}
 
@@ -284,17 +300,17 @@ function wpcampus_get_breadcrumbs_html() {
 		$crumb_classes = array( $crumb_key );
 
 		// Add if current
-		if ( isset( $crumb[ 'current' ] ) && $crumb[ 'current' ] ) {
+		if ( isset( $crumb['current'] ) && $crumb['current'] ) {
 			$crumb_classes[] = 'current';
 		}
 
 		$breadcrumbs_html .= '<li role="menuitem"' . ( ! empty( $crumb_classes ) ? ' class="' . implode( ' ', $crumb_classes ) . '"' : null ) . '>';
 
 		// Add URL and label
-		if ( ! empty( $crumb[ 'url' ] ) ) {
-			$breadcrumbs_html .= '<a href="' . $crumb[ 'url' ] . '"' . ( ! empty( $crumb[ 'title' ] ) ? ' title="' . $crumb[ 'title' ] . '"' : null ) . '>' . $crumb[ 'label' ] . '</a>';
+		if ( ! empty( $crumb['url'] ) ) {
+			$breadcrumbs_html .= '<a href="' . $crumb['url'] . '"' . ( ! empty( $crumb['title'] ) ? ' title="' . $crumb['title'] . '"' : null ) . '>' . $crumb['label'] . '</a>';
 		} else {
-			$breadcrumbs_html .= $crumb[ 'label' ];
+			$breadcrumbs_html .= $crumb['label'];
 		}
 
 		$breadcrumbs_html .= '</li>';
@@ -306,5 +322,4 @@ function wpcampus_get_breadcrumbs_html() {
 
 	//  We change up the variable so it doesn't interfere with global variable
 	return $breadcrumbs_html;
-
 }

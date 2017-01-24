@@ -4,7 +4,7 @@
 add_filter( 'conf_sch_feedback_url', function( $feedback_url, $object ) {
 
 	// If a session, define the URL
-	$event_types = wp_get_object_terms( $object[ 'id' ], 'event_types', array( 'fields' => 'slugs' ) );
+	$event_types = wp_get_object_terms( $object['id'], 'event_types', array( 'fields' => 'slugs' ) );
 	if ( ! empty( $event_types ) && in_array( 'session', $event_types ) ) {
 		return add_query_arg( 'session', $object['id'], get_bloginfo( 'url' ) . '/session-survey/' );
 	}
@@ -39,7 +39,7 @@ function wpcampus_2016_session_survey_populate( $form ) {
 	// Loop through the fields
 	foreach ( $form['fields'] as &$field ) {
 
-		switch( $field->inputName ) {
+		switch ( $field->inputName ) {
 
 			case 'sessiontitle':
 
@@ -60,7 +60,7 @@ function wpcampus_2016_session_survey_populate( $form ) {
 
 					// Get speakers info
 					$speakers = array();
-					foreach( $event_speaker_ids as $speaker_id ) {
+					foreach ( $event_speaker_ids as $speaker_id ) {
 						$speakers[] = get_the_title( $speaker_id );
 					}
 
@@ -72,7 +72,6 @@ function wpcampus_2016_session_survey_populate( $form ) {
 				break;
 
 		}
-
 	}
 
 	return $form;

@@ -3,11 +3,12 @@
 // Template Name: WPCampus 2016 Livestream
 
 // Add livestream URLs to the page
-add_filter( 'the_content', function( $content ) {
+function wpc_2016_add_livestream_template( $content ) {
 
 	ob_start();
 
-	// Add the template ?>
+	// Add the template
+	?>
 	<script id="wpcampus-2016-livestream-template" type="text/x-handlebars-template">
 		<div id="wpc-ls-event-{{id}}" class="wpc-ls{{#event_types}} {{.}}{{/event_types}}">
 			<h3 class="event-title"><strong>{{title.rendered}}</strong></h3>
@@ -22,11 +23,13 @@ add_filter( 'the_content', function( $content ) {
 	</script>
 	<?php
 
-	// Add the schedule holder ?>
+	// Add the schedule holder
+	?>
 	<div id="wpcampus-2016-livestream"></div>
 	<?php
 
 	return $content . ob_get_clean();
-});
+}
+add_filter( 'the_content', 'wpc_2016_add_livestream_template' );
 
 get_template_part( 'index' );

@@ -6,7 +6,8 @@ $blog_url = get_bloginfo( 'url' );
 // Get directory
 $stylesheet_dir = get_stylesheet_directory_uri();
 
-?><div id="wpc-mailing-list">
+?>
+<div id="wpc-mailing-list">
 	<div class="row">
 		<div class="large-8 large-centered columns">
 			<h2><?php printf( __( 'Subscribe to %s', 'wpcampus-2016' ), 'WPCampus' ); ?></h2>
@@ -15,7 +16,6 @@ $stylesheet_dir = get_stylesheet_directory_uri();
 		</div>
 	</div>
 </div>
-
 <div id="wpc-footer">
 	<div class="row">
 		<div class="small-12 columns">
@@ -39,8 +39,10 @@ $stylesheet_dir = get_stylesheet_directory_uri();
 		</div>
 	</div>
 </div> <!-- #wpcampus-footer -->
+<?php
 
-<?php wp_footer(); ?>
+wp_footer();
 
+?>
 </body>
 </html>

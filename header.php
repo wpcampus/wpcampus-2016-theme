@@ -1,7 +1,7 @@
 <?php
 
 // Get URL
-$blog_url = get_bloginfo('url');
+$blog_url = get_bloginfo( 'url' );
 
 // Description for social media
 $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a gathering of web professionals, educators and people dedicated to the confluence of WordPress in higher education. WPCampus is excited to partner with The University of South-Florida Sarasota-Manatee in order to provide an experience both affordable and relevant for higher education professionals.';
@@ -9,7 +9,8 @@ $desc = 'WPCampus 2016 is the inaugural conference for the WPCampus community, a
 // URL for the tagboard
 $tweets_tagboard = 'https://tagboard.com/wpcampus/300756';
 
-?><!doctype html>
+?>
+<!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
