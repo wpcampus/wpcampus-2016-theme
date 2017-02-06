@@ -50,13 +50,8 @@ function wpcampus_2016_session_survey_populate( $form ) {
 
 			case 'speakername':
 
-				$event_speaker_ids = get_post_meta( $session_id, 'conf_sch_event_speakers', true );
+				$event_speaker_ids = get_post_meta( $session_id, 'conf_sch_event_speaker', false );
 				if ( $event_speaker_ids ) {
-
-					// Make sure its an array
-					if ( ! is_array( $event_speaker_ids ) ) {
-						$event_speaker_ids = implode( ',', $event_speaker_ids );
-					}
 
 					// Get speakers info
 					$speakers = array();
