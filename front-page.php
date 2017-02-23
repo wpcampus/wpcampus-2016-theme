@@ -48,13 +48,13 @@ $blog_url = get_bloginfo( 'url' );
 							<h2>WPCampus Session Recordings Available</h2>
 							<p><strong>All WPCampus sessions were recorded and will be archived on our website.</strong> We have started uploading them to the website so be sure to <a href="/schedule/" style="color:#003366;"><strong>visit the WPCampus schedule</strong></a> to check them out.</p>
 						</div>
+						<?php
 
-						<div class="callout secondary" style="text-align:center;">
+						/*<div class="callout secondary" style="text-align:center;">
 							<h2>Will Your Campus Be WPCampus 2017?</h2>
 							<p><strong><a href="https://wpcampus.org/apply-to-host/">Our hosting application</a> will open Monday, August 22, 2016 and close Friday, October 28, 2016</strong></p>
 							<p>The WPCampus planning team is already hard at work preparing for next year's conference. If you would like your campus to be considered for 2017, please start rounding up any questions you might have and begin&nbsp;talking to campus administrators.</p>
-						</div>
-						<?php
+						</div>*/
 
 						if ( have_posts() ) :
 							while ( have_posts() ) :
@@ -88,6 +88,7 @@ $blog_url = get_bloginfo( 'url' );
 						<?php dynamic_sidebar( 'home-sidebar' ); ?>
 					</div>
 				</div>
+				<?php
 
 			else :
 
