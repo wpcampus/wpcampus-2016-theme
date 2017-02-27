@@ -21,7 +21,7 @@ $tweets_tagboard = 'https://tagboard.com/wpcampus/300756';
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<a href="#wpc-main" id="skip-to-content">Skip to Content</a>
+	<a href="#wpc-main" id="skip-to-content"><?php _e( 'Skip to Content', 'wpcampus' ); ?></a>
 	
 	<div id="wpcampus-2016-main-menu">
 		<div class="toggle-main-menu">

@@ -30,7 +30,6 @@ body {
     &.open-menu {
         overflow: hidden;
     }
-
 }
 
 // Stylize the "show me" button
@@ -50,7 +49,9 @@ body {
     overflow: hidden;
     z-index: 1000000;
 
-    &:focus, &:active, &:hover {
+    &:focus,
+    &:active,
+    &:hover {
         left: 0;
         top: 0;
         width: auto;
@@ -60,7 +61,6 @@ body {
         color: #000;
         padding: 10px;
     }
-
 }
 
 // Alignment
@@ -82,7 +82,6 @@ img {
     &.alignright {
         margin: 20px 0 20px 20px;
     }
-
 }
 
 // Style the buttons
@@ -94,7 +93,6 @@ img {
 		&:hover {
 			background: darken( $wpc-orange, 3% );
 		}
-		
 	}
 
 	&.wpcampus-survey-button {
@@ -107,7 +105,6 @@ img {
 		line-height: 1.5;
 		font-weight: bold;
 	}
-	
 }
 
 // The main menu
@@ -183,11 +180,8 @@ img {
                 &.three {
                     margin-top: 16px;
                 }
-
             }
-
         }
-
     }
     
     .menu {
@@ -211,7 +205,6 @@ img {
                 &:hover {
 	                background: darken( $wpc-header-bg-color, 3% );
                 }
-                
             }
             
             & > a {
@@ -226,7 +219,6 @@ img {
                     background: darken( $wpc-header-bg-color, 8% );
                 	font-weight: bold;
             	}
-            	
             }
             
             &.has-submenu {
@@ -235,11 +227,8 @@ img {
 	                @include reset-ul();
 	                padding: 0 0 10px 0;
                 }
-                
             }
-
         }
-
     }
     
     &.open-menu {
@@ -279,9 +268,7 @@ img {
                         -o-transform: rotate(-45deg);
                         transform: rotate(-45deg);
                     }
-
                 }
-
             }
 
             .open-menu-label {
@@ -291,11 +278,8 @@ img {
             .close-menu-label {
                 display: block;
             }
-
         }
-
     }
-    
 }
 
 // The header
@@ -344,13 +328,11 @@ img {
             max-height: $wpc-header-logo-height;
             margin: 0 auto;
         }
-        
     }    
     
     .wpc-banner {
 	    color: $wpc-banner-color;
     }
-
 }
 
 // Expand the admin bar
@@ -362,9 +344,7 @@ img {
 		body.admin-bar & {
 			top: $wp-admin-bar-height;
 		}
-
 	}
-
 }
 
 // Expand the header
@@ -376,7 +356,6 @@ img {
         &.open-menu {
             overflow: auto;
         }
-
     }
 
     #wpcampus-2016-main-menu {
@@ -429,7 +408,6 @@ img {
                     &:hover {
 		                background: darken( $wpc-header-bg-color, 3% );
 	                }
-	                
                 }
                 
                 &.has-submenu {
@@ -450,7 +428,6 @@ img {
 					    padding: 10px 0;
 					    margin: 0;
 					    opacity: 0;
-					    //@include set-prefix( transition, top ease-in 0.52s );
 					    -webkit-transition: opacity ease-in 0.2s;
 					    -moz-transition: opacity ease-in 0.2s;
 					    -ms-transition: opacity ease-in 0.2s;
@@ -472,9 +449,7 @@ img {
                             & > a:hover {
                                 background: #eee;
                             }
-						    
 					    }
-					    
                     }
                     
                     &:hover {
@@ -482,9 +457,7 @@ img {
 	                    & > .submenu {
 		                    opacity: 1;
 		                }
-		                    
                     }
-                    
                 }
 	            
 				&.current {
@@ -493,11 +466,8 @@ img {
 	                    background: darken( $wpc-header-bg-color, 8% );
 	                	font-weight: bold;
 	            	}
-	            	
 	            }
-                
             }
-
         }
         
         .wpc-banner {
@@ -524,11 +494,8 @@ img {
 	                	color: #000;
 	                	background: rgba(0,0,0,0.08);
                 	}
-                	
                 }
-                
 	        }
-	        
         }
         
         .wpc-header-menu {
@@ -543,9 +510,7 @@ img {
                 	height: $wpc-header-menu-height;
 					line-height: $wpc-header-menu-height;
                 }
-                
 	        }
-	        
         }
 
         .banner-inside {
@@ -577,7 +542,6 @@ img {
                 max-width: $wpc-header-logo-width;
                 max-height: $wpc-header-logo-height;
             }
-
         }
         
         #wpc-header-left,
@@ -591,7 +555,6 @@ img {
 	        .menu {
 		        text-align: right;
 	        }
-	        
         }
         
         #wpc-header-right {
@@ -604,20 +567,13 @@ img {
 	        .wpc-banner {
 		        padding-left: 2px;
 	        }
-	        
 	    }
-	    
     }
-
 }
 
 // The content hero
 #wpc-main-hero {
     background: url('../images/USF-campus.jpg') no-repeat center $wpc-header-height fixed;
-    /*-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;*/
     height: $wpc-main-hero-height;
     position: relative;
 
@@ -646,9 +602,7 @@ img {
             text-transform: uppercase;
             margin: 0;
         }
-
     }
-
 }
 
 #conf-sch-single-livestream .callout,
@@ -665,7 +619,6 @@ img {
 		color: #fff;
 		padding: 1rem;
 	}
-
 }
 
 #wpcampus-2016-livestream {
@@ -688,14 +641,12 @@ img {
 			margin-bottom: 5px;
 
 			.event-speaker {}
-
 		}
 
 		.event-categories {
 			font-style: italic;
 		}
 	}
-
 }
 
 // iframe elements: map
@@ -728,7 +679,6 @@ img {
                     font-size: 0.8rem;
                     margin: -10px 0 18px 0;
                 }
-
             }
 
             textarea {
@@ -749,13 +699,11 @@ img {
                     input {
                         width: 102%;
                     }
-
                 }
 
                 .name_last {
                     width: 48.5%;
                 }
-
             }
 
             .gfield_radio {
@@ -765,11 +713,8 @@ img {
                     overflow: visible;
                     clear: both;
                 }
-
             }
-
         }
-
     }
 
     .gform_footer {
@@ -778,9 +723,7 @@ img {
             width: 100%;
             margin: 0;
         }
-
     }
-
 }
 
 // The galleries
@@ -798,7 +741,6 @@ img {
         margin: 0 0 10px 0 !important;
         padding: 0 10px 0 0;
     }
-
 }
 
 // Blockquotes
@@ -809,7 +751,6 @@ blockquote {
     *:last-child {
         margin-bottom: 0;
     }
-
 }
 
 // The main notification
@@ -823,7 +764,6 @@ blockquote {
     *:last-child {
         margin-bottom: 0;
     }
-
 }
 
 // The main area
@@ -860,18 +800,14 @@ blockquote {
                         &.wpc-sponsor-grad {
                             max-width: 60% !important;
                         }
-
                     }
-
                 }
-
             }
             
             // Styling the share buttons
             .ssba-wrap {
 	            margin: 35px 0 10px 0;
 	        }
-
         }
 
         .wpc-sidebar {
@@ -898,7 +834,6 @@ blockquote {
                         margin-bottom: 8px;
                     }
                 }
-
             }
 
             // Mailing list form
@@ -917,20 +852,15 @@ blockquote {
                     &[type=text] {
                         height: auto;
                     }
-
                 }
 
                 .gform_footer {
                     margin: 0;
                     padding: 0;
                 }
-
             }
-
         }
-
     }
-
 }
 
 // The schedule
@@ -940,7 +870,6 @@ blockquote {
     .wpc-col-time {
         width: 130px;
     }
-
 }
 
 // Mailing list
@@ -997,7 +926,6 @@ blockquote {
                 padding: 0.5em;
                 text-align: left;
             }
-
         }
 
         .gform_footer {
@@ -1015,11 +943,8 @@ blockquote {
                 padding: 0;
                 text-transform: uppercase;
             }
-
         }
-
     }
-
 }
 
 // Move the subscribe button
@@ -1035,7 +960,6 @@ blockquote {
                 input {
                     padding-right: 150px;
                 }
-
             }
 
             .gform_footer {
@@ -1046,13 +970,9 @@ blockquote {
                     top: 0;
                     width: 140px;
                 }
-
             }
-
         }
-
     }
-
 }
 
 // Expand the mailing list
@@ -1064,9 +984,7 @@ blockquote {
             font-size: 1.7rem;
             line-height: 1.2;
         }
-
     }
-
 }
 
 // The footer
@@ -1095,7 +1013,6 @@ blockquote {
         &:hover {
             opacity: $wpc-footer-opacity-hover;
         }
-
     }
 
     .wpc-footer-menu {
@@ -1121,9 +1038,7 @@ blockquote {
                     display: none;
                 }
             }
-
         }
-
     }
 
     .github-message {
@@ -1146,9 +1061,7 @@ blockquote {
             &:hover {
                 opacity: $wpc-footer-opacity-hover;
             }
-
         }
-
     }
 
     .columns {
@@ -1156,7 +1069,6 @@ blockquote {
             margin-bottom: 0;
         }
     }
-
 }
 
 // Medium up
@@ -1178,15 +1090,10 @@ blockquote {
 						width: 50%;
 						list-style-position: inside;
 					}
-						        
 				}
-				
 			}
-			
 		}
-		
 	}
-	
 }
 
 // Large up
@@ -1213,19 +1120,14 @@ blockquote {
                         float: right;
                         margin-left: 20px;
                     }
-
                 }
-
             }
 
             .wpc-sidebar {
                 margin-top: 0;
             }
-
         }
-
     }
-
 }
 
 // Include form styles

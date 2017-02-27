@@ -44,7 +44,6 @@ html, body {
 	a {
 		color: inherit;
 	}
-
 }
 
 .wpc-content {
@@ -63,9 +62,7 @@ html, body {
 				a {
 					color: darken( $wpc-royal-blue, 6% );
 				}
-				
 			}
-			
 		}
 		
 		&:first-child {
@@ -73,7 +70,5 @@ html, body {
 			margin-top: 0;
 			padding-top: 0;
 		}
-		
 	}
-	
 }
