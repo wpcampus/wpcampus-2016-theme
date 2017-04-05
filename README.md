@@ -1,4 +1,4 @@
-# WPCampus 2016 - Theme
+# WPCampus 2016 - WordPress Theme
 
 This is the WordPress theme used to power the 2016 WPCampus conference website at [https://2016.wpcampus.org](https://2016.wpcampus.org).
 
