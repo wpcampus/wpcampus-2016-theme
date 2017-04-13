@@ -15,7 +15,7 @@ require_once( STYLESHEETPATH . '/includes/session-surveys.php' );
 function wpcampus_2016_theme_setup() {
 
 	// Make theme available for translation
-	load_theme_textdomain( 'wpcampus-2016', get_stylesheet_directory() . '/languages' );
+	load_theme_textdomain( 'wpcampus', get_stylesheet_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -210,7 +210,7 @@ function wpcampus_get_breadcrumbs_html() {
 	// Add home
 	$breadcrumbs[] = array(
 		'url'   => get_bloginfo( 'url' ),
-		'label' => __( 'Home', 'wpcampus-2016' ),
+		'label' => __( 'Home', 'wpcampus' ),
 	);
 
 	// Add archive(s)

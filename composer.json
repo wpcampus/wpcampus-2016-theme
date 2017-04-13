@@ -5,8 +5,8 @@
 	"license": "GPL2.0+",
     "authors": [
         {
-            "name": "Rachel Carden",
-            "email": "bamadesigner@gmail.com"
+            "name": "WPCampus",
+            "email": "code@wpcampus.org"
         }
     ],
 	"require-dev": {
