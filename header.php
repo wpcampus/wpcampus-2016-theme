@@ -47,12 +47,7 @@ $tweets_tagboard = 'https://tagboard.com/wpcampus/300756';
 					<li<?php echo is_page( 'transportation' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/venue/transportation/">Transportation</a></li>
 				</ul>
 			</li>
-			<li class="has-submenu<?php echo ( is_page( 'sponsors' ) || is_page( 'become-a-sponsor' ) ) ? ' current': null; ?>">
-				<a href="<?php echo $blog_url; ?>/sponsors">Sponsors</a>
-				<ul class="submenu">
-					<li<?php echo is_page( 'become-a-sponsor' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/sponsors/become-a-sponsor/">Become A Sponsor</a></li>
-				</ul>
-			</li>
+			<li<?php echo is_page( 'sponsors' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/sponsors">Sponsors</a></li>
 			<li><a href="https://wpcampus.org/get-involved/">Join Our Community</a></li>
 			<li><a href="<?php echo $tweets_tagboard; ?>">Tweets</a></li>
 			<li><a href="https://goo.gl/photos/8FyEvaZg7zwj2ZTN6">Photos</a></li>
@@ -108,12 +103,7 @@ $tweets_tagboard = 'https://tagboard.com/wpcampus/300756';
 										<li<?php echo is_page( 'map' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/map/">Map</a></li>
 									</ul>
 								</li>
-								<li class="has-submenu<?php echo ( is_page( 'sponsors' ) || is_page( 'become-a-sponsor' ) ) ? ' current': null; ?>">
-									<a href="<?php echo $blog_url; ?>/sponsors">Sponsors</a>
-									<ul class="submenu">
-										<li<?php echo is_page( 'become-a-sponsor' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/sponsors/become-a-sponsor/">Become A Sponsor</a></li>
-									</ul>
-								</li>
+								<li<?php echo is_page( 'sponsors' ) ? ' class="current"': null; ?>><a href="<?php echo $blog_url; ?>/sponsors">Sponsors</a></li>
 							</ul>
 						</div>
 					</div>
