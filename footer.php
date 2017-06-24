@@ -20,14 +20,20 @@ $stylesheet_dir = get_stylesheet_directory_uri();
 	<div class="row">
 		<div class="small-12 columns">
 			<a class="wpc-logo" href="https://wpcampus.org/"><img src="<?php echo $stylesheet_dir; ?>/assets/images/wpcampus-logo-tagline.svg" alt="<?php printf( __( '%1$s: Where %2$s Meets Higher Education', 'wpcampus' ), 'WPCampus', 'WordPress' ); ?>" /></a>
-			<ul class="wpc-footer-menu" role="navigation">
-				<li><a href="<?php echo $blog_url; ?>/donate/"><?php _e( 'Donate', 'wpcampus' ); ?></a></li>
-				<li><a href="<?php echo $blog_url; ?>/code-of-conduct/"><?php _e( 'Code of Conduct', 'wpcampus' ); ?></a></li>
-				<li><a href="<?php echo $blog_url; ?>/thank-you/"><?php _e( 'Thank You', 'wpcampus' ); ?></a></li>
-				<li><a href="<?php echo $blog_url; ?>/contact/"><?php _e( 'Contact Us', 'wpcampus' ); ?></a></li>
-			</ul>
-			<p><strong>WPCampus is a <a href="https://wpcampus.org" title="Learn more about the WPCampus community">community</a> and conference for those using WordPress in the world of higher education.</strong><br />If you'd like to get involved, <a href="https://wpcampus.org/">visit the WPCampus website</a> for more information.<br />
-			<span class="github-message">This site is powered by <a href="https://wordpress.org/">WordPress</a>. You can view, and contribute to, the theme on <a href="https://github.com/wpcampus/wpcampus-2016-theme">GitHub</a>.</span></p>
+			<?php
+
+			// Print the footer menu.
+			wp_nav_menu( array(
+				'theme_location'    => 'footer',
+				'container'         => false,
+				'menu_id'           => 'wpc-footer-menu',
+				'menu_class'        => 'wpc-footer-menu',
+				'fallback_cb'       => false,
+			));
+
+			?>
+			<p><strong>WPCampus is a community of networking, resources, and events for those using WordPress in the world of higher education.</strong><br />If you are not a member of the WPCampus community, we'd love for you to <a href="https://wpcampus.org/get-involved/">get involved</a>.</p>
+			<p class="disclaimer">This site is powered by <a href="https://wordpress.org/">WordPress</a>. You can view, and contribute to, the theme on <a href="https://github.com/wpcampus/wpcampus-2016-theme">GitHub</a>.<br />WPCampus events are not WordCamps and are not affiliated with the WordPress Foundation.</p>
 			<p class="icons">
 				<a href="https://conferencia.io/events/wpcampus/"><img src="<?php echo $stylesheet_dir; ?>/assets/images/conferencia-mic.png" alt="<?php printf( __( 'Follow %1$s on %2$s', 'wpcampus' ), 'WPCampus', 'conferencia' ); ?>" /></a>
 				<a href="http://lanyrd.com/2016/wpcampus-conference/"><img src="<?php echo $stylesheet_dir; ?>/assets/images/lanyrd-black.png" alt="<?php printf( __( 'Follow %1$s on %2$s', 'wpcampus' ), 'WPCampus', 'Lanyrd' ); ?>" /></a>
@@ -36,6 +42,7 @@ $stylesheet_dir = get_stylesheet_directory_uri();
 				<a href="https://www.youtube.com/wpcampusorg"><img src="<?php echo $stylesheet_dir; ?>/assets/images/youtube-black.svg" alt="<?php printf( __( 'Follow %1$s on %2$s', 'wpcampus' ), 'WPCampus', 'YouTube' ); ?>" /></a>
 				<a href="https://github.com/wpcampus/"><img src="<?php echo $stylesheet_dir; ?>/assets/images/github-black.svg" alt="<?php printf( __( 'Follow %1$s on %2$s', 'wpcampus' ), 'WPCampus', 'GitHub' ); ?>" /></a>
 			</p>
+			<p class="copyright">&copy; <?php echo date( 'Y' ); ?> WPCampus</p>
 		</div>
 	</div>
 </div> <!-- #wpcampus-footer -->

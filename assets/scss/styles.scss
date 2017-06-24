@@ -761,9 +761,22 @@ blockquote {
     font-size: 1.2em;
     line-height: 1.2;
 
-    *:last-child {
-        margin-bottom: 0;
-    }
+	> *:first-child:before {
+		content: '';
+		display: inline-block;
+		line-height: inherit;
+		width: $wpc-notif-icon-width;
+		height: $wpc-notif-icon-height;
+		background: url( '../images/information.png' ) 0 0 no-repeat;
+		background-size: auto $wpc-notif-icon-height;
+		opacity: 0.7;
+		vertical-align: middle;
+		margin: 0 10px 0 0;
+	}
+
+	*:last-child {
+		margin-bottom: 0;
+	}
 }
 
 // The main area
@@ -1041,7 +1054,7 @@ blockquote {
         }
     }
 
-    .github-message {
+    .disclaimer {
         font-style: italic;
     }
 
@@ -1063,6 +1076,13 @@ blockquote {
             }
         }
     }
+
+	.copyright {
+		font-size: 0.8rem;
+		line-height: 1;
+		margin-top: 20px;
+		opacity: 0.8;
+	}
 
     .columns {
         *:last-child {

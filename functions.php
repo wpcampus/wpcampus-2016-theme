@@ -3,8 +3,6 @@
 // Include files.
 require_once( STYLESHEETPATH . '/includes/filters.php' );
 require_once( STYLESHEETPATH . '/includes/shortcodes.php' );
-require_once( STYLESHEETPATH . '/includes/forms-preview.php' );
-require_once( STYLESHEETPATH . '/includes/session-surveys.php' );
 
 /**
  * Sets up theme defaults and registers
@@ -35,6 +33,10 @@ function wpcampus_2016_theme_setup() {
 		'caption',
 	));
 
+	// Register menu locations.
+	register_nav_menus( array(
+		'footer' => __( 'Footer Menu', 'wpcampus' ),
+	));
 }
 add_action( 'after_setup_theme', 'wpcampus_2016_theme_setup' );
 
