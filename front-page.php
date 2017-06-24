@@ -32,9 +32,11 @@ $blog_url = get_bloginfo( 'url' );
 			?>
 			<div class="large-<?php echo $content_columns; ?> columns">
 				<div class="wpc-content">
+					<?php
 
-					<div class="callout secondary" style="text-align:center;"><h2>The "WordPress in Education" Survey</h2><p>After an overwhelming response to our 2016 survey, WPCampus is back this year to dig a little deeper on key topics that schools and campuses care about most when it comes to WordPress and website development. We’d love to include your feedback in our results this year. The larger the data set, the more we all benefit. <strong>The survey will close on June 23rd, 2017.</strong></p><a class="button expand" style="display:block;" href="https://2017.wpcampus.org/announcements/wordpress-in-education-survey/">Take the "WordPress in Education" survey</a></div>
+					wpcampus_2016_print_main_callout();
 
+					?>
 					<h2>What Is WPCampus?</h2>
 					<p>A two-day event with <a href="<?php echo $blog_url; ?>/schedule/">38 sessions from 41 speakers</a> covering a variety of topics, all dedicated to the confluence of WordPress in higher education.</p>
 
