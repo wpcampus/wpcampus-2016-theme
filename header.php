@@ -61,7 +61,12 @@ if ( $main_full_width ) {
 			<li<?php echo is_front_page() ? ' class="current"': null; ?>><a href="/"><?php _e( 'Home', 'wpcampus' ); ?></a></li>
 			<li<?php echo is_page( 'about' ) ? ' class="current"': null; ?>><a href="/about/"><?php _e( 'About', 'wpcampus' ); ?></a></li>
 			<li<?php echo is_page( 'watch' ) ? ' class="current"': null; ?>><a href="/watch/"><?php _e( 'Watch', 'wpcampus' ); ?></a></li>
-			<li<?php echo ( is_page( 'schedule' ) || is_singular( 'schedule' ) ) ? ' class="current"': null; ?>><a href="/schedule/"><?php _e( 'Schedule', 'wpcampus' ); ?></a></li>
+			<li class="has-submenu<?php echo ( is_page( 'schedule' ) || is_singular( 'schedule' ) ) ? ' current': null; ?>">
+				<a href="/schedule/"><?php _e( 'Schedule', 'wpcampus' ); ?></a>
+				<ul class="submenu">
+					<li<?php echo is_post_type_archive( 'speakers' ) ? ' class="current"': null; ?>><a href="/speakers/"><?php _e( 'Speakers', 'wpcampus' ); ?></a></li>
+				</ul>
+			</li>
 			<li<?php echo is_page( 'map' ) ? ' class="current"': null; ?>><a href="/map/"><?php _e( 'Map', 'wpcampus' ); ?></a></li>
 			<li<?php echo is_page( 'attendees' ) ? ' class="current"': null; ?>><a href="/attendees/"><?php _e( 'Attendees', 'wpcampus' ); ?></a></li>
 			<li class="has-submenu<?php echo ( is_page( 'venue' ) || is_page( 'hotels' ) || is_page( 'transportation' ) ) ? ' current': null; ?>">
@@ -96,7 +101,12 @@ if ( $main_full_width ) {
 							<ul class="menu">
 								<li<?php echo is_page( 'about' ) ? ' class="current"': null; ?>><a href="/about/"><?php _e( 'About', 'wpcampus' ); ?></a></li>
 								<li<?php echo is_page( 'watch' ) ? ' class="current"': null; ?>><a href="/watch/"><?php _e( 'Watch', 'wpcampus' ); ?></a></li>
-								<li<?php echo ( is_page( 'schedule' ) || is_singular( 'schedule' ) ) ? ' class="current"': null; ?>><a href="/schedule/"><?php _e( 'Schedule', 'wpcampus' ); ?></a></li>
+								<li class="has-submenu<?php echo ( is_page( 'schedule' ) || is_singular( 'schedule' ) ) ? ' current': null; ?>">
+									<a href="/schedule/"><?php _e( 'Schedule', 'wpcampus' ); ?></a>
+									<ul class="submenu">
+										<li<?php echo is_post_type_archive( 'speakers' ) ? ' class="current"': null; ?>><a href="/speakers/"><?php _e( 'Speakers', 'wpcampus' ); ?></a></li>
+									</ul>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -147,14 +157,16 @@ if ( $main_full_width ) {
 					<div class="large-12 columns">
 						<h1><?php
 
-							// Do not print title with content for blog posts.
-							if ( is_singular( 'post' ) ) {
-								printf( __( '%s 2016 Blog', 'wpcampus' ), 'WPCampus' );
-							} elseif ( is_singular( 'schedule' ) ) {
-								_e( 'Schedule', 'wpcampus' );
-							} else {
-								the_title();
-							}
+						// Do not print title with content for blog posts.
+						if ( is_singular( 'post' ) ) {
+							printf( __( '%s 2016 Blog', 'wpcampus' ), 'WPCampus' );
+						} elseif ( is_singular( 'schedule' ) ) {
+							_e( 'Schedule', 'wpcampus' );
+						} elseif ( is_post_type_archive( 'speakers' ) ) {
+							_e( 'Speakers', 'wpcampus' );
+						} else {
+							the_title();
+						}
 
 						?></h1>
 					</div>
@@ -179,12 +191,15 @@ if ( $main_full_width ) {
 			<div class="row">
 				<?php
 
-				// Get breadcrumbs.
-				$breadcrumbs_html = wpcampus_get_breadcrumbs_html();
-
 				// Setup the sidebar.
 				$content_columns = $sidebar_id && is_active_sidebar( $sidebar_id ) ? 9 : 12;
 
 				?>
 				<div class="large-<?php echo $content_columns; ?> columns">
 					<div class="wpc-content">
+						<?php
+
+						// Print breadcrumbs.
+						if ( ! is_front_page() ) {
+							echo wpcampus_get_breadcrumbs_html();
+						}

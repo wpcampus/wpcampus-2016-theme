@@ -821,6 +821,152 @@ blockquote {
             .ssba-wrap {
 	            margin: 35px 0 10px 0;
 	        }
+
+	        article {
+		        border-top: 1px solid #F3F3F3;
+		        padding: 33px 0 0 0;
+		        margin: 40px 0 0 0;
+
+		        header {
+			        margin: 0 0 15px 0;
+
+			        .entry-title {
+				        margin: 0;
+
+				        a {
+					        color: darken( $wpc-royal-blue, 6% );
+				        }
+			        }
+		        }
+
+		        &:first-child {
+			        border-top: 0;
+			        margin-top: 0;
+			        padding-top: 0;
+		        }
+
+		        .article-thumbnail {
+			        float: left;
+			        width: 100px;
+			        height: 100px;
+			        margin: 0.8rem 30px 10px 0;
+			        //border: 1px solid $wpc-light-gray;
+
+			        @media screen and (min-width: $medium-up) {
+				        width: 150px;
+				        height: 150px;
+			        }
+		        }
+
+		        &.speakers {
+			        .article-thumbnail {
+				        margin-bottom: 20px;
+			        }
+		        }
+
+		        .article-speaker {
+			        overflow: auto;
+
+			        .article-speaker-meta {
+				        display: block;
+				        font-style: italic;
+				        margin: 10px 0 0 0;
+			        }
+
+			        .article-speaker-social-media {
+				        display: block;
+				        list-style: none;
+				        border: 0;
+				        margin: 5px 0 15px 0;
+				        padding: 0;
+				        text-align: left;
+
+				        li {
+					        display: inline-block;
+					        list-style: none;
+					        margin: 5px 10px 0 0;
+					        border: 0;
+					        padding: 0;
+					        font-size: 0.9em;
+					        line-height: 1.8;
+
+					        a {
+						        display: block;
+						        background-color: rgba(#000, 0.05);
+						        padding: 5px 15px;
+						        color: inherit;
+						        text-align: center;
+						        border-radius: 5px;
+						        text-decoration: none;
+						        transition: background-color 1s ease;
+
+						        &:hover {
+							        background-color: rgba(#000, 0.2);
+						        }
+					        }
+
+					        &.twitter {
+						        font-weight: bold;
+
+						        a {
+							        background-color: $twitter-blue;
+							        color: #fff;
+
+							        &:hover {
+								        background-color: darken($twitter-blue, 20%);
+							        }
+						        }
+					        }
+
+					        &.facebook {
+						        font-weight: bold;
+
+						        a {
+							        background-color: $facebook-blue;
+							        color: #fff;
+
+							        &:hover {
+								        background-color: darken($facebook-blue, 20%);
+							        }
+						        }
+					        }
+
+					        &.instagram {
+						        font-weight: bold;
+
+						        a {
+							        background-color: $instagram-blue;
+							        color: #fff;
+
+							        &:hover {
+								        background-color: darken($instagram-blue, 20%);
+							        }
+						        }
+					        }
+
+					        &.linkedin {
+						        font-weight: bold;
+
+						        a {
+							        background-color: $linkedin-blue;
+							        color: #fff;
+
+							        &:hover {
+								        background-color: darken($linkedin-blue, 20%);
+							        }
+						        }
+					        }
+				        }
+			        }
+		        }
+
+		        .article-speaker-sessions {
+
+			        .article-speaker-session-label {
+				        font-weight: bold;
+			        }
+		        }
+	        }
         }
 
         .wpc-sidebar {

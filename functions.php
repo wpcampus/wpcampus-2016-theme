@@ -227,6 +227,14 @@ function wpcampus_get_breadcrumbs_html() {
 		// Add the archive breadcrumb.
 		if ( is_post_type_archive() ) {
 
+			// Add crumb to schedule page.
+			if ( is_post_type_archive( 'speakers' ) ) {
+				$breadcrumbs[] = array(
+					'url'   => '/schedule/',
+					'label' => __( 'Schedule', 'wpcampus' ),
+				);
+			}
+
 			// Get the info.
 			$post_type_archive_link = get_post_type_archive_link( $post_type );
 			$post_type_archive_title = wpcampus_get_post_type_archive_title( $post_type );

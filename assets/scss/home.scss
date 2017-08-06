@@ -45,30 +45,3 @@ html, body {
 		color: inherit;
 	}
 }
-
-.wpc-content {
-
-	article {
-		border-top: 1px solid #F3F3F3;
-		padding: 33px 0 0 0;
-		margin: 40px 0 0 0;
-		
-		header {
-			margin: 0 0 15px 0;
-			
-			.entry-title {
-				margin: 0;
-				
-				a {
-					color: darken( $wpc-royal-blue, 6% );
-				}
-			}
-		}
-		
-		&:first-child {
-			border-top: 0;
-			margin-top: 0;
-			padding-top: 0;
-		}
-	}
-}
