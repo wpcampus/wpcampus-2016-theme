@@ -874,6 +874,22 @@ blockquote {
             }
         }
     }
+
+	&.full-width-main {
+
+		#wpc-content {
+			padding: 0;
+
+			.row {
+				max-width: none;
+			}
+
+			.columns{
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
 }
 
 // The schedule
