@@ -343,7 +343,7 @@ function wpcampus_get_breadcrumbs_html() {
  * Decide which main callout to print.
  */
 function wpcampus_2016_print_main_callout() {
-	wpcampus_2016_print_2017_callout();
+	//wpcampus_2016_print_2017_callout();
 }
 
 /**
