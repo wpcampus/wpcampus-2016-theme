@@ -728,19 +728,8 @@ img {
 
 // The galleries
 .foogallery-container {
-    margin: 0 0 10px 0;
+    margin: 0 0 20px 0 !important;
     overflow: auto;
-
-    .fbx-link {
-        display: block;
-        float: left;
-        width: 20%;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        margin: 0 0 10px 0 !important;
-        padding: 0 10px 0 0;
-    }
 }
 
 // Blockquotes
