@@ -15,6 +15,11 @@ function wpcampus_2016_theme_setup() {
 	// Make theme available for translation.
 	load_theme_textdomain( 'wpcampus', get_stylesheet_directory() . '/languages' );
 
+	// Enable network footer.
+	if ( function_exists( 'wpcampus_enable_network_footer' ) ) {
+		wpcampus_enable_network_footer();
+	}
+
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -31,11 +36,6 @@ function wpcampus_2016_theme_setup() {
 		'comment-list',
 		'gallery',
 		'caption',
-	));
-
-	// Register menu locations.
-	register_nav_menus( array(
-		'footer' => __( 'Footer Menu', 'wpcampus' ),
 	));
 }
 add_action( 'after_setup_theme', 'wpcampus_2016_theme_setup' );
