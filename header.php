@@ -196,7 +196,7 @@ if ( $main_full_width ) {
 
 				?>
 				<div class="large-<?php echo $content_columns; ?> columns">
-					<div class="wpc-content">
+					<div class="wpc-content" role="main">
 						<?php
 
 						// Print breadcrumbs.
