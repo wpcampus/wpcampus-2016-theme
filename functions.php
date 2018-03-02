@@ -81,6 +81,15 @@ function wpcampus_2016_register_sidebars() {
 add_action( 'widgets_init', 'wpcampus_2016_register_sidebars' );
 
 /**
+ * Make sure the Open Sans
+ * font weights we need are added.
+ */
+function wpcampus_2016_load_open_sans_weights( $weights ) {
+	return array_merge( $weights, array( 300, 400, 600 ) );
+}
+add_filter( 'wpcampus_open_sans_font_weights', 'wpcampus_2016_load_open_sans_weights' );
+
+/**
  * Enqueues scripts and styles.
  */
 function wpcampus_2016_enqueue_scripts() {
@@ -88,11 +97,9 @@ function wpcampus_2016_enqueue_scripts() {
 	$theme_dir = get_template_directory();
 	$theme_dir_uri = get_stylesheet_directory_uri();
 
-	// Load fonts.
-	wp_enqueue_style( 'wpcampus-2016-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:600,400,300' );
-
 	// Add our theme stylesheet.
-	wp_enqueue_style( 'wpcampus-2016', $theme_dir_uri . '/assets/css/styles.css', array( 'wpcampus-2016-fonts' ), filemtime( $theme_dir . '/assets/css/styles.css' ) );
+	// wpc-fonts-open-sans is registered in the network plugin.
+	wp_enqueue_style( 'wpcampus-2016', $theme_dir_uri . '/assets/css/styles.css', array( 'wpc-fonts-open-sans' ), filemtime( $theme_dir . '/assets/css/styles.css' ) );
 
 	// Add our theme script.
 	wp_enqueue_script( 'wpcampus-2016', $theme_dir_uri . '/assets/js/wpcampus-2016.min.js', array( 'jquery' ), filemtime( $theme_dir . '/assets/js/wpcampus-2016.min.js' ) );
