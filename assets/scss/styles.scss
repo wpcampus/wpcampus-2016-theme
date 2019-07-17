@@ -72,18 +72,6 @@ body {
     float: right;
 }
 
-// Images
-img {
-
-    &.alignleft {
-        margin: 20px 20px 20px 0;
-    }
-
-    &.alignright {
-        margin: 20px 0 20px 20px;
-    }
-}
-
 // Style the buttons
 .button {
 	
@@ -428,10 +416,6 @@ img {
 					    padding: 10px 0;
 					    margin: 0;
 					    opacity: 0;
-					    -webkit-transition: opacity ease-in 0.2s;
-					    -moz-transition: opacity ease-in 0.2s;
-					    -ms-transition: opacity ease-in 0.2s;
-					    -o-transition: opacity ease-in 0.2s;
 					    transition: opacity ease-in 0.2s;
 					    
 					    & > li {
@@ -514,7 +498,7 @@ img {
         }
 
         .banner-inside {
-            display: inline-block;
+            display: flex;
             width: 100%;
         }
         
@@ -618,6 +602,20 @@ img {
 		display: block;
 		color: #fff;
 		padding: 1rem;
+	}
+}
+
+@media screen and (min-width: 920px) {
+	#conf-sch-event-394 {
+
+		.event-children {
+			display: block;
+
+			.schedule-event {
+				display: block;
+				width: auto;
+			}
+		}
 	}
 }
 
@@ -779,12 +777,22 @@ blockquote {
 
             // Responsive images
             img {
-                display: block;
-                width: 100%;
                 max-width: 500px;
-                float: none;
-                margin-left: auto;
-                margin-right: auto;
+	            height: auto;
+
+	            &.aligncenter {
+		            display: block;
+		            margin-left: auto;
+		            margin-right: auto;
+	            }
+
+	            &.alignleft {
+		            margin: 20px 20px 20px 0;
+	            }
+
+	            &.alignright {
+		            margin: 20px 0 20px 20px;
+	            }
             }
 
             .wpc-sponsor-logos {
@@ -1038,7 +1046,7 @@ blockquote {
 
 // Mailing list
 #wpc-mailing-list {
-    background: #444;
+    background: $wpc-dark-blue;
     padding: 45px 30px 55px 30px;
     color: #fff;
     text-align: center;
@@ -1188,7 +1196,6 @@ blockquote {
 
                 // Responsive images
                 img {
-                    width: auto;
                     max-width: 100%;
 
                     &.alignleft {

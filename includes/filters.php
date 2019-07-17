@@ -51,7 +51,8 @@ add_filter( 'wpcampus_2016_breadcrumbs', function( $breadcrumbs ) {
 				if ( ! empty( $crumb['ID'] ) && $crumb['ID'] == $post->ID ) {
 
 					// Get schedule page
-					if ( $schedule_page = get_page_by_path( 'schedule' ) ) {
+					$schedule_page = wpcampus_network()->get_post_by_name( 'schedule', 'page' );
+					if ( ! empty( $schedule_page->ID ) ) {
 
 						// Add schedule and then add crumb
 						$new_crumbs[] = array(

@@ -16,14 +16,16 @@ $main_full_width = false;
 // Set sidebar ID.
 $sidebar_id = '';
 
-if ( is_front_page() ) {
+/*if ( is_front_page() ) {
 	$sidebar_id = 'home-sidebar';
 } else if ( $is_map_template ) {
 	$sidebar_id = '';
 	$main_full_width = true;
+} else if ( is_page( 'sponsors' ) ) {
+	$sidebar_id = 'sponsors-sidebar';
 } else {
-	$sidebar_id = is_page( 'sponsors' ) ? 'sponsors-sidebar' : 'main-sidebar';
-}
+	$sidebar_id = 'main-sidebar';
+}*/
 
 // Build classes for main element.
 $wpc_main_classes = array();
@@ -45,9 +47,17 @@ if ( $main_full_width ) {
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<a href="#wpc-main" id="skip-to-content"><?php _e( 'Skip to Content', 'wpcampus' ); ?></a>
-	
-	<div id="wpcampus-2016-main-menu">
+	<?php
+
+	// Print network banner.
+	if ( function_exists( 'wpcampus_print_network_banner' ) ) {
+		wpcampus_print_network_banner( array(
+			'skip_nav_id' => 'wpc-main',
+		));
+	}
+
+	?>
+	<div role="navigation" id="wpcampus-2016-main-menu">
 		<div class="toggle-main-menu">
 			<div class="toggle-icon">
 				<div class="bar one"></div>
@@ -85,19 +95,19 @@ if ( $main_full_width ) {
 			<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="/contact/"><?php _e( 'Contact Us', 'wpcampus' ); ?></a></li>
 		</ul>
 	</div>
-	<div id="wpc-header">
+	<div role="banner" id="wpc-header">
 		<div class="row">
 			<div class="large-12 columns">
 				<div class="banner-inside">
 					<div id="wpc-header-left">
-						<div class="wpc-banner">
+						<div role="navigation" class="wpc-banner">
 							<ul class="menu">
 								<li><a href="https://wpcampus.org/get-involved/"><?php _e( 'Community', 'wpcampus' ); ?></a></li>
 								<li><a href="<?php echo $tweets_tagboard; ?>"><?php _e( 'Tweets', 'wpcampus' ); ?></a></li>
 								<li><a href="https://goo.gl/photos/8FyEvaZg7zwj2ZTN6"><?php _e( 'Photos', 'wpcampus' ); ?></a></li>
 							</ul>
 						</div>
-						<div class="wpc-header-menu">
+						<div role="navigation" class="wpc-header-menu">
 							<ul class="menu">
 								<li<?php echo is_page( 'about' ) ? ' class="current"': null; ?>><a href="/about/"><?php _e( 'About', 'wpcampus' ); ?></a></li>
 								<li<?php echo is_page( 'watch' ) ? ' class="current"': null; ?>><a href="/watch/"><?php _e( 'Watch', 'wpcampus' ); ?></a></li>
@@ -114,7 +124,7 @@ if ( $main_full_width ) {
 						<a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/wpcampus-logo-tagline-info-white.svg" alt="<?php printf( __( '%1$s: Where %2$s Meets Higher Education on July 15-16 in Sarasota, Florida', 'wpcampus' ), 'WPCampus', 'WordPress' ); ?>" /></a>
 					</div>
 					<div id="wpc-header-right">
-						<div class="wpc-banner">
+						<div role="navigation" class="wpc-banner">
 							<ul class="menu">
 								<li<?php echo is_page( 'thank-you' ) ? ' class="current"': null; ?>><a href="/thank-you/"><?php _e( 'Thanks', 'wpcampus' ); ?></a></li>
 								<li<?php echo is_page( 'map' ) ? ' class="current"': null; ?>><a href="/map/"><?php _e( 'Map', 'wpcampus' ); ?></a></li>
@@ -122,7 +132,7 @@ if ( $main_full_width ) {
 								<li<?php echo is_page( 'contact' ) ? ' class="current"': null; ?>><a href="/contact/"><?php _e( 'Contact', 'wpcampus' ); ?></a></li>
 							</ul>
 						</div>
-						<div class="wpc-header-menu">
+						<div role="navigation" class="wpc-header-menu">
 							<ul class="menu">
 								<li<?php echo is_page( 'attendees' ) ? ' class="current"': null; ?>><a href="/attendees/"><?php _e( 'Attendees', 'wpcampus' ); ?></a></li>
 								<li class="has-submenu<?php echo ( is_page( 'venue' ) || is_page( 'hotels' ) || is_page( 'transportation' ) ) ? ' current': null; ?>">
@@ -145,39 +155,16 @@ if ( $main_full_width ) {
 
 	// @TODO decrease size of hero image since height decreased?
 
-	if ( is_front_page() ) :
-		?>
-		<div id="wpc-home-hero"></div>
-		<?php
-	else :
-		?>
-		<div id="wpc-main-hero">
-			<div class="wpc-page-title">
-				<div class="row">
-					<div class="large-12 columns">
-						<h1><?php
+	$is_front_page = is_front_page();
 
-						// Do not print title with content for blog posts.
-						if ( is_singular( 'post' ) ) {
-							printf( __( '%s 2016 Blog', 'wpcampus' ), 'WPCampus' );
-						} elseif ( is_singular( 'schedule' ) ) {
-							_e( 'Schedule', 'wpcampus' );
-						} elseif ( is_post_type_archive( 'speakers' ) ) {
-							_e( 'Speakers', 'wpcampus' );
-						} else {
-							the_title();
-						}
-
-						?></h1>
-					</div>
-				</div>
-			</div>
-		</div>
+	if ( $is_front_page ) :
+		?>
+		<div role="presentation" id="wpc-home-hero"></div>
 		<?php
 	endif;
 
 	?>
-	<div id="wpc-main"<?php echo ! empty( $wpc_main_classes ) ? ' class="full-width-main"' : ''; ?>>
+	<div role="main" id="wpc-main"<?php echo ! empty( $wpc_main_classes ) ? ' class="full-width-main"' : ''; ?>>
 		<?php
 
 		/*<div id="wpc-notification"><?php
@@ -185,6 +172,33 @@ if ( $main_full_width ) {
 			$include_link = ! is_page( 'speakers' );
 			?><p><strong>The <?php echo $include_link ? '<a href="/speakers/">call for speakers is open</a>' : 'call for speakers is open'; ?> and will close at 12 midnight PST on March 21, 2016.</strong></p>
 		</div>*/
+
+		if ( ! $is_front_page ) :
+			?>
+			<div id="wpc-main-hero">
+				<div class="wpc-page-title">
+					<div class="row">
+						<div class="large-12 columns">
+							<h1><?php
+
+								// Do not print title with content for blog posts.
+								if ( is_singular( 'post' ) ) {
+									printf( __( '%s 2016 Blog', 'wpcampus' ), 'WPCampus' );
+								} elseif ( is_singular( 'schedule' ) ) {
+									_e( 'Schedule', 'wpcampus' );
+								} elseif ( is_post_type_archive( 'speakers' ) ) {
+									_e( 'Speakers', 'wpcampus' );
+								} else {
+									the_title();
+								}
+
+								?></h1>
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php
+		endif;
 
 		?>
 		<div id="wpc-content">
@@ -196,7 +210,7 @@ if ( $main_full_width ) {
 
 				?>
 				<div class="large-<?php echo $content_columns; ?> columns">
-					<div class="wpc-content" role="main">
+					<div class="wpc-content">
 						<?php
 
 						// Print breadcrumbs.

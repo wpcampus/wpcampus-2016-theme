@@ -15,9 +15,9 @@ function wpcampus_2016_theme_setup() {
 	// Make theme available for translation.
 	load_theme_textdomain( 'wpcampus', get_stylesheet_directory() . '/languages' );
 
-	// Enable network footer.
-	if ( function_exists( 'wpcampus_enable_network_footer' ) ) {
-		wpcampus_enable_network_footer();
+	// Enable network components.
+	if ( function_exists( 'wpcampus_network_enable' ) ) {
+		wpcampus_network_enable( array( 'coc', 'footer' ) );
 	}
 
 	// Add default posts and comments RSS feed links to head.
@@ -139,35 +139,6 @@ function wpcampus_2016_enqueue_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'wpcampus_2016_enqueue_scripts', 20 );
-
-/**
- * Load favicons.
- */
-function wpcampus_2016_add_favicons() {
-
-	// Set the images folder.
-	$favicons_folder = get_stylesheet_directory_uri() . '/assets/images/favicons/';
-
-	?>
-	<link rel="shortcut icon" href="<?php echo $favicons_folder; ?>wpcampus-favicon-60.png"/>
-	<link rel="apple-touch-icon" href="<?php echo $favicons_folder; ?>wpcampus-favicon-60.png"/>
-	<?php
-
-	// Set the image sizes.
-	$image_sizes = array( 57, 72, 76, 114, 120, 144, 152 );
-
-	// Print favicons.
-	foreach ( $image_sizes as $size ) :
-
-		?>
-		<link rel="apple-touch-icon" sizes="<?php echo "{$size}x{$size}"; ?>" href="<?php echo $favicons_folder; ?>wpcampus-favicon-<?php echo $size; ?>.png"/>
-		<?php
-
-	endforeach;
-}
-add_action( 'wp_head', 'wpcampus_2016_add_favicons' );
-add_action( 'admin_head', 'wpcampus_2016_add_favicons' );
-add_action( 'login_head', 'wpcampus_2016_add_favicons' );
 
 /**
  * Get the post type archive title.
@@ -326,7 +297,7 @@ function wpcampus_get_breadcrumbs_html() {
 			$crumb_classes[] = 'current';
 		}
 
-		$breadcrumbs_html .= '<li role="menuitem"' . ( ! empty( $crumb_classes ) ? ' class="' . implode( ' ', $crumb_classes ) . '"' : null ) . '>';
+		$breadcrumbs_html .= '<li' . ( ! empty( $crumb_classes ) ? ' class="' . implode( ' ', $crumb_classes ) . '"' : null ) . '>';
 
 		// Add URL and label.
 		if ( ! empty( $crumb['url'] ) ) {
@@ -340,7 +311,7 @@ function wpcampus_get_breadcrumbs_html() {
 	}
 
 	// Wrap them in nav.
-	$breadcrumbs_html = '<div class="breadcrumbs-wrapper"><nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">' . $breadcrumbs_html . '</nav></div>';
+	$breadcrumbs_html = '<div class="breadcrumbs-wrapper"><nav class="breadcrumbs" aria-label="breadcrumbs"><ul>' . $breadcrumbs_html . '</ul></nav></div>';
 
 	//  We change up the variable so it doesn't interfere with global variable.
 	return $breadcrumbs_html;

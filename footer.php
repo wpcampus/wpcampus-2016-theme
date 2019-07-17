@@ -26,7 +26,7 @@ $stylesheet_dir = get_stylesheet_directory_uri();
 			</div> <!-- .row -->
 		</div> <!-- #wpc-content -->
 	</div> <!-- #wpc-main -->
-	<div id="wpc-mailing-list">
+	<div role="complementary" id="wpc-mailing-list">
 		<div class="row">
 			<div class="large-8 large-centered columns">
 				<h2><?php printf( __( 'Subscribe to %s', 'wpcampus' ), 'WPCampus' ); ?></h2>
@@ -36,6 +36,10 @@ $stylesheet_dir = get_stylesheet_directory_uri();
 		</div>
 	</div>
 	<?php
+
+	if ( function_exists( 'wpcampus_print_network_coc' ) ) {
+		wpcampus_print_network_coc();
+	}
 
 	// Print network footer.
 	if ( function_exists( 'wpcampus_print_network_footer' ) ) {

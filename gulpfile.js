@@ -20,16 +20,24 @@ var dest = {
 }
 
 gulp.task('sass',function() {
-    return gulp.src(src.scss)
-        .pipe(sass({
-        	includePaths: sassPaths,
-			outputStyle: 'compressed'
-		})
-        .on('error',sass.logError))
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions','ie >= 9']
-        }))
-        .pipe(gulp.dest(dest.scss));
+	return gulp.src(src.scss)
+		.pipe(sass({
+			includePaths: sassPaths,
+			outputStyle: 'expanded'
+		}).on('error', sass.logError))
+		.pipe(mergeMediaQueries())
+		.pipe(autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: false
+		}))
+		.pipe(cleanCSS({
+			compatibility: 'ie8'
+		}))
+		.pipe(rename({
+			suffix: '.min'
+		}))
+		.pipe(gulp.dest(dest.scss));
+
 });
 
 gulp.task('js',function() {
